@@ -44,6 +44,13 @@
         "url": "https://datacetools.com/f24-to-excel",
         "description": "Converti moduli F24 PDF in file Excel strutturati.",
         "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "name": "FatturaXLS",
+        "url": "https://datacetools.com/fattura-elettronica-excel",
+        "description": "Converti Fatture Elettroniche XML in file Excel strutturati.",
+        "priceCurrency": "EUR"
       }
     ]
   }
@@ -182,18 +189,39 @@
         </div>
       </a>
 
-      <!-- Placeholder 2 -->
-      <div class="bg-white rounded-2xl border border-dashed border-gray-300 p-6 flex flex-col items-center justify-center gap-3 text-center opacity-50">
-        <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center">
-          <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+      <!-- FatturaXLS — DISPONIBILE -->
+      <a href="/fattura-elettronica-excel"
+         class="tool-card bg-white rounded-2xl border border-gray-200 p-6 flex flex-col gap-4 shadow-sm">
+
+        <!-- Icona -->
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: #eef4fb;">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" fill="#2a9db5" opacity=".15"/>
+            <path d="M14 2v6h6M9 12h1m4 0h1M9 16h6" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#2a9db5" stroke-width="1.8" stroke-linejoin="round"/>
           </svg>
         </div>
-        <div>
-          <p class="font-semibold text-gray-500 text-sm">Prossimamente</p>
-          <p class="text-xs text-gray-400 mt-0.5">Nuovo strumento in arrivo</p>
+
+        <!-- Testo -->
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-1.5">
+            <h3 class="font-bold text-gray-900">FatturaXLS</h3>
+            <span class="text-xs bg-green-100 text-green-700 font-semibold px-2 py-0.5 rounded-full">Disponibile</span>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Carica le Fatture Elettroniche XML e scarica un Excel con fornitore, cliente,
+            righe di dettaglio, riepilogo IVA e scadenze di pagamento.
+          </p>
         </div>
-      </div>
+
+        <!-- Link -->
+        <div class="flex items-center gap-1.5 text-brand text-sm font-semibold mt-auto">
+          Scopri FatturaXLS
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </div>
+      </a>
 
       <!-- Placeholder 3 -->
       <div class="bg-white rounded-2xl border border-dashed border-gray-300 p-6 flex flex-col items-center justify-center gap-3 text-center opacity-50">
@@ -234,15 +262,15 @@
       </div>
       <div class="bg-green-50 rounded-2xl p-5 text-center">
         <div class="text-3xl font-extrabold text-green-600 mb-1">0</div>
-        <div class="text-sm text-gray-600">Dati trasmessi<br/>al server</div>
+        <div class="text-sm text-gray-600">Dati trasmessi<br/>a terzi</div>
       </div>
       <div class="bg-purple-50 rounded-2xl p-5 text-center">
-        <div class="text-3xl font-extrabold text-purple-600 mb-1">100+</div>
-        <div class="text-sm text-gray-600">Codici tributo<br/>riconosciuti</div>
+        <div class="text-3xl font-extrabold text-purple-600 mb-1">2</div>
+        <div class="text-sm text-gray-600">Strumenti<br/>disponibili</div>
       </div>
       <div class="bg-orange-50 rounded-2xl p-5 text-center">
-        <div class="text-3xl font-extrabold text-orange-500 mb-1">3</div>
-        <div class="text-sm text-gray-600">Tipi di F24<br/>supportati</div>
+        <div class="text-3xl font-extrabold text-orange-500 mb-1">IT</div>
+        <div class="text-sm text-gray-600">Pensato per<br/>il mercato italiano</div>
       </div>
     </div>
   </div>
