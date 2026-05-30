@@ -53,7 +53,7 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          { "@type": "Question", "name": "È sicuro connettere la mia banca?", "acceptedAnswer": { "@type": "Answer", "text": "Sì. La connessione avviene tramite protocollo PSD2, lo standard bancario europeo. Le tue credenziali vengono inserite direttamente sul sito della tua banca — CashFlow non le vede mai." } },
+          { "@type": "Question", "name": "È sicuro connettere la mia banca?", "acceptedAnswer": { "@type": "Answer", "text": "Sì. La connessione avviene tramite protocollo PSD2, lo standard bancario europeo. Le tue credenziali vengono inserite direttamente sul sito della tua banca - CashFlow non le vede mai." } },
           { "@type": "Question", "name": "Quanti giorni di storico posso analizzare?", "acceptedAnswer": { "@type": "Answer", "text": "Gli ultimi 90 giorni, il massimo del free tier PSD2. Corrispondono a 3 mesi completi di transazioni." } },
           { "@type": "Question", "name": "Come vengono categorizzate le transazioni?", "acceptedAnswer": { "@type": "Answer", "text": "CashFlow usa un sistema di categorizzazione a 4 livelli: codice MCC, nome merchant, keyword universali e fallback sulla direzione dell'importo. Funziona su qualsiasi banca italiana." } }
         ]
@@ -133,7 +133,7 @@
   <article class="lg:col-span-2 prose-content">
 
     <h2 id="step-1">Passo 1: Apri CashFlow e seleziona la tua banca</h2>
-    <p>Vai su <a href="https://cashflow.datacetools.com" class="text-brand hover:underline font-medium">cashflow.datacetools.com</a> e scegli il tuo istituto bancario dall'elenco. CashFlow supporta le principali banche italiane — Intesa Sanpaolo, UniCredit, Fineco, Banco BPM, BPER Banca, Credem e ING.</p>
+    <p>Vai su <a href="https://cashflow.datacetools.com" class="text-brand hover:underline font-medium">cashflow.datacetools.com</a> e scegli il tuo istituto bancario dall'elenco. CashFlow supporta le principali banche italiane - Intesa Sanpaolo, UniCredit, Fineco, Banco BPM, BPER Banca, Credem e ING.</p>
     <p>Ogni banca nell'elenco è certificata: prima del rilascio viene verificata con dati reali per garantire una categorizzazione accurata al 100%.</p>
 
     <h2 id="step-2">Passo 2: Autorizza la lettura delle transazioni</h2>
@@ -141,7 +141,7 @@
 
     <div class="bg-green-50 border border-green-200 rounded-2xl p-5 my-6">
       <p class="font-semibold text-green-800 text-sm mb-1">Le tue credenziali restano sulla tua banca</p>
-      <p class="text-green-700 text-sm leading-relaxed">CashFlow non vede mai le tue credenziali. Il login avviene direttamente sul sito della tua banca tramite protocollo PSD2 — lo stesso standard usato da Revolut, N26 e tutte le principali app fintech europee.</p>
+      <p class="text-green-700 text-sm leading-relaxed">CashFlow non vede mai le tue credenziali. Il login avviene direttamente sul sito della tua banca tramite protocollo PSD2 - lo stesso standard usato da Revolut, N26 e tutte le principali app fintech europee.</p>
     </div>
 
     <p>L'autorizzazione è in sola lettura: CashFlow può solo leggere l'elenco delle transazioni, non effettuare pagamenti o modifiche al conto.</p>
@@ -149,10 +149,10 @@
     <h2 id="step-3">Passo 3: Scarica l'Excel professionale</h2>
     <p>Dopo l'autorizzazione torni automaticamente su CashFlow. In pochi secondi viene generato il tuo Excel con 4 fogli strutturati:</p>
     <ul>
-      <li><strong>Dashboard KPI</strong> — entrate totali, uscite, saldo netto, medie mensili e top categorie di spesa</li>
-      <li><strong>Riepilogo Mensile</strong> — tabella mese per mese con entrate, uscite e saldo netto</li>
-      <li><strong>Categorie</strong> — dettaglio di ogni categoria di spesa con importi e numero transazioni</li>
-      <li><strong>Transazioni</strong> — elenco completo di ogni movimento con data, importo, beneficiario e categoria assegnata. Filtri Excel attivi.</li>
+      <li><strong>Dashboard KPI</strong> - entrate totali, uscite, saldo netto, medie mensili e top categorie di spesa</li>
+      <li><strong>Riepilogo Mensile</strong> - tabella mese per mese con entrate, uscite e saldo netto</li>
+      <li><strong>Categorie</strong> - dettaglio di ogni categoria di spesa con importi e numero transazioni</li>
+      <li><strong>Transazioni</strong> - elenco completo di ogni movimento con data, importo, beneficiario e categoria assegnata. Filtri Excel attivi.</li>
     </ul>
 
     <p>Non appena scarichi il file, il consenso di accesso viene revocato e tutti i dati vengono eliminati dalla memoria. Non viene conservato nulla.</p>
@@ -160,10 +160,10 @@
     <h2>Come funziona la categorizzazione</h2>
     <p>CashFlow usa un sistema di categorizzazione a 4 livelli, indipendente dalla banca utilizzata:</p>
     <ul>
-      <li><strong>Codice MCC</strong> (Merchant Category Code) — quando disponibile, è il segnale più affidabile. Standard internazionale ISO 18245.</li>
-      <li><strong>Nome merchant</strong> — database di 300+ merchant italiani ed europei noti (Esselunga, Netflix, Trenitalia, Enel, ecc.)</li>
-      <li><strong>Keyword universali</strong> — pattern italiani riconoscibili su qualsiasi formato bancario (affitto, stipendio, F24, mutuo, ecc.)</li>
-      <li><strong>Fallback</strong> — se nessuno dei precedenti si applica, la transazione viene classificata in base alla direzione dell'importo (entrata/uscita)</li>
+      <li><strong>Codice MCC</strong> (Merchant Category Code) - quando disponibile, è il segnale più affidabile. Standard internazionale ISO 18245.</li>
+      <li><strong>Nome merchant</strong> - database di 300+ merchant italiani ed europei noti (Esselunga, Netflix, Trenitalia, Enel, ecc.)</li>
+      <li><strong>Keyword universali</strong> - pattern italiani riconoscibili su qualsiasi formato bancario (affitto, stipendio, F24, mutuo, ecc.)</li>
+      <li><strong>Fallback</strong> - se nessuno dei precedenti si applica, la transazione viene classificata in base alla direzione dell'importo (entrata/uscita)</li>
     </ul>
 
     <p>Questo approccio funziona correttamente con qualsiasi banca italiana, indipendentemente dal formato con cui viene scritta la descrizione della transazione.</p>
@@ -188,19 +188,19 @@
     <h2>Domande frequenti</h2>
 
     <h3>È sicuro connettere la mia banca?</h3>
-    <p>Sì. La connessione avviene tramite protocollo PSD2 (Payment Services Directive 2), lo standard bancario europeo obbligatorio per tutti gli istituti. Le tue credenziali vengono inserite direttamente sul sito della tua banca — CashFlow non le vede mai e non le riceve in nessun momento.</p>
+    <p>Sì. La connessione avviene tramite protocollo PSD2 (Payment Services Directive 2), lo standard bancario europeo obbligatorio per tutti gli istituti. Le tue credenziali vengono inserite direttamente sul sito della tua banca - CashFlow non le vede mai e non le riceve in nessun momento.</p>
 
     <h3>Cosa può fare CashFlow sul mio conto?</h3>
     <p>Solo leggere le transazioni. L'accesso è esclusivamente in lettura (AIS - Account Information Service). Non è possibile effettuare pagamenti, bonifici o qualsiasi altra operazione.</p>
 
     <h3>Quanti giorni di storico posso analizzare?</h3>
-    <p>Gli ultimi 90 giorni, il massimo consentito dal protocollo PSD2 nel free tier. Corrispondono a 3 mesi completi di transazioni — sufficienti per analisi di trend mensili significative.</p>
+    <p>Gli ultimi 90 giorni, il massimo consentito dal protocollo PSD2 nel free tier. Corrispondono a 3 mesi completi di transazioni - sufficienti per analisi di trend mensili significative.</p>
 
     <h3>Cosa succede ai dati dopo il download?</h3>
     <p>Vengono eliminati immediatamente. Nel momento in cui scarichi il file Excel, il consenso viene revocato tramite API e tutti i dati vengono cancellati dalla memoria. Non esiste nessun database dove vengono conservati.</p>
 
     <h3>La mia banca non è nell'elenco. Cosa posso fare?</h3>
-    <p>CashFlow aggiunge banche progressivamente, dopo averle certificate con dati reali. Contattaci a <a href="mailto:datacetools@gmail.com" class="text-brand hover:underline">datacetools@gmail.com</a> indicando la tua banca — la prioritizziamo nell'aggiornamento successivo.</p>
+    <p>CashFlow aggiunge banche progressivamente, dopo averle certificate con dati reali. Contattaci a <a href="mailto:datacetools@gmail.com" class="text-brand hover:underline">datacetools@gmail.com</a> indicando la tua banca - la prioritizziamo nell'aggiornamento successivo.</p>
 
   </article>
 
@@ -251,7 +251,7 @@
   <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
     <div class="flex items-center gap-2">
       <span class="font-semibold text-white">Datace</span>
-      <span>— Data automation per documenti fiscali italiani</span>
+      <span>- Data automation per documenti fiscali italiani</span>
     </div>
     <div class="flex items-center gap-5">
       <a href="/cashflow/" class="hover:text-gray-200 transition-colors">CashFlow</a>
