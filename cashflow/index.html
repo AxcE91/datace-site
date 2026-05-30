@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>CashFlow | Analisi estratto conto bancario in Excel | Datace</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/images/logo-icon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="description" content="Collega la tua banca e ottieni un Excel professionale con KPI, dashboard, categorie di spesa e analisi mensile degli ultimi 90 giorni. Connessione PSD2 certificata, nessun dato salvato." />
+  <meta name="keywords" content="analisi estratto conto excel, cashflow excel banca, analisi spese banca excel, dashboard finanziaria excel, KPI bancari excel, estratto conto dashboard" />
+  <link rel="canonical" href="https://datacetools.com/cashflow/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://datacetools.com/cashflow/" />
+  <meta property="og:title"       content="CashFlow | Analisi estratto conto bancario in Excel | Datace" />
+  <meta property="og:description" content="Collega la tua banca, ottieni un Excel con dashboard KPI, categorie e analisi mensile degli ultimi 90 giorni. PSD2, nessun dato salvato." />
+  <meta name="twitter:card"       content="summary" />
+
+  <!-- JSON-LD: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CashFlow",
+    "url": "https://cashflow.datacetools.com/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "description": "Strumento online per analizzare l'estratto conto bancario e generare un file Excel professionale con KPI, dashboard e categorie di spesa.",
+    "inLanguage": "it",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "featureList": [
+      "Connessione bancaria sicura via protocollo PSD2",
+      "Supporta le principali banche italiane",
+      "90 giorni di storico transazioni",
+      "Categorizzazione automatica banco-agnostica",
+      "Excel con Dashboard KPI, Riepilogo Mensile, Categorie, Transazioni",
+      "Nessun dato salvato, dati eliminati dopo il download"
+    ],
+    "publisher": { "@type": "Organization", "name": "Datace", "url": "https://datacetools.com" }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Datace", "item": "https://datacetools.com/" },
+      { "@type": "ListItem", "position": 2, "name": "CashFlow", "item": "https://datacetools.com/cashflow/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Come analizzare l'estratto conto bancario in Excel",
+    "totalTime": "PT2M",
+    "tool": { "@type": "HowToTool", "name": "CashFlow", "url": "https://cashflow.datacetools.com/" },
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Seleziona la tua banca", "text": "Vai su cashflow.datacetools.com e scegli il tuo istituto bancario dall'elenco." },
+      { "@type": "HowToStep", "position": 2, "name": "Autorizza la lettura", "text": "Vieni reindirizzato al sito ufficiale della tua banca dove autorizzi la lettura delle transazioni degli ultimi 90 giorni. Le credenziali restano sulla tua banca." },
+      { "@type": "HowToStep", "position": 3, "name": "Scarica l'Excel", "text": "In pochi secondi ricevi un Excel professionale con dashboard KPI, categorie di spesa e analisi mensile. I dati vengono eliminati immediatamente." }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "CashFlow può fare operazioni sul mio conto bancario?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. L'accesso è esclusivamente in lettura. CashFlow non può effettuare pagamenti, bonifici o qualsiasi operazione. Vede solo la lista delle transazioni degli ultimi 90 giorni." }
+      },
+      {
+        "@type": "Question",
+        "name": "Le mie credenziali bancarie passano per Datace?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Mai. Il login avviene direttamente sul sito ufficiale della tua banca tramite protocollo PSD2. Datace non vede e non riceve le tue credenziali in nessun momento." }
+      },
+      {
+        "@type": "Question",
+        "name": "Cosa succede ai dati dopo il download?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Vengono eliminati immediatamente. Il consenso viene revocato tramite API e tutti i dati vengono cancellati dalla memoria. Non esiste nessun database dove vengono conservati." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quali banche sono supportate?",
+        "acceptedAnswer": { "@type": "Answer", "text": "CashFlow supporta le principali banche italiane tramite protocollo PSD2: Intesa Sanpaolo, UniCredit, Fineco, Banco BPM, BPER Banca, Credem e ING. L'elenco si espande progressivamente." }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind + Inter -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: {
+        brand: { DEFAULT: '#1c3461', dark: '#152848', light: '#2a4a7f' },
+        teal:  { DEFAULT: '#2a9db5', dark: '#1e7a8a' },
+      }}}
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .tool-card { transition: transform .2s ease, box-shadow .2s ease; }
+    .tool-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(28,52,97,.12); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- ── HEADER ── -->
+<header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+  <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5 group">
+      <svg class="w-8 h-8 rounded-lg" viewBox="0 0 48 48" fill="none">
+        <rect width="48" height="48" rx="10" fill="#1c3461"/>
+        <text x="9" y="34" font-size="26" font-weight="800" fill="white" font-family="Inter,sans-serif">D</text>
+        <circle cx="36" cy="14" r="7" fill="#2a9db5"/>
+        <path d="M33 14l2 2 4-4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="text-xl font-bold text-gray-900 tracking-tight group-hover:text-brand transition-colors">Datace</span>
+    </a>
+    <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-gray-500">
+      <a href="#come-funziona" class="hover:text-brand transition-colors">Come funziona</a>
+      <a href="#faq"           class="hover:text-brand transition-colors">FAQ</a>
+      <a href="/guida/"        class="hover:text-brand transition-colors">Guide</a>
+      <a href="/"              class="hover:text-brand transition-colors">Tutti gli strumenti</a>
+    </nav>
+    <a href="https://cashflow.datacetools.com/"
+       class="hidden sm:inline-flex items-center gap-1.5 bg-brand text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-brand-dark transition-colors shadow-sm">
+      Usa lo strumento
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="bg-brand text-white py-20 px-6">
+  <div class="max-w-3xl mx-auto">
+    <div class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold mb-6 tracking-wide uppercase" style="background:rgba(42,157,181,.2);color:#2a9db5;">
+      Nuovo strumento
+    </div>
+    <h1 class="text-3xl sm:text-4xl font-extrabold mb-5 leading-tight">
+      Il tuo estratto conto<br/>diventa una dashboard aziendale
+    </h1>
+    <p class="text-blue-200 text-base leading-relaxed mb-8 max-w-xl">
+      Collega la tua banca in modo sicuro tramite protocollo PSD2. In pochi secondi ottieni un Excel professionale con KPI, categorie di spesa e analisi mensile degli ultimi 90 giorni.
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <a href="https://cashflow.datacetools.com/"
+         class="inline-flex items-center gap-2 bg-white font-bold px-7 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:bg-gray-50 transition-all text-sm"
+         style="color:#1c3461;">
+        Collega la tua banca
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+      <a href="/guida/come-analizzare-estratto-conto-excel/"
+         class="inline-flex items-center gap-2 text-blue-200 hover:text-white text-sm font-medium transition-colors">
+        Come funziona in dettaglio →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<section class="bg-white border-b border-gray-100 py-4 px-6">
+  <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-gray-500">
+    <span class="flex items-center gap-1.5">
+      <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      Credenziali bancarie mai condivise con noi
+    </span>
+    <span class="flex items-center gap-1.5">
+      <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+      Dati eliminati dopo il download
+    </span>
+    <span class="flex items-center gap-1.5">
+      <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      Protocollo PSD2 — standard bancario europeo
+    </span>
+    <span class="flex items-center gap-1.5">
+      <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      90 giorni di storico
+    </span>
+    <span class="flex items-center gap-1.5">
+      <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+      7 banche italiane supportate
+    </span>
+  </div>
+</section>
+
+<!-- ── COME FUNZIONA ── -->
+<section id="come-funziona" class="py-16 px-6 bg-gray-50">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl font-bold text-gray-900 text-center mb-10">Come funziona</h2>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-sm" style="background:#1c3461;">1</div>
+        <h3 class="font-semibold text-gray-900 mb-2">Seleziona la banca</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Scegli il tuo istituto dall'elenco delle banche certificate e supportate.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-sm" style="background:#1c3461;">2</div>
+        <h3 class="font-semibold text-gray-900 mb-2">Accedi sulla tua banca</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Vieni reindirizzato al sito ufficiale della tua banca. Le credenziali le inserisci solo lì — noi non le vediamo mai.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-sm" style="background:#1c3461;">3</div>
+        <h3 class="font-semibold text-gray-900 mb-2">Scarica l'Excel</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">In pochi secondi il tuo Excel professionale è pronto. I dati vengono eliminati immediatamente dopo il download.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COSA OTTIENI ── -->
+<section class="py-16 px-6 bg-white border-t border-gray-100">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl font-bold text-gray-900 text-center mb-3">Cosa trovi nell'Excel</h2>
+    <p class="text-gray-500 text-sm text-center mb-10">4 fogli strutturati come un report da business analyst.</p>
+    <div class="grid sm:grid-cols-2 gap-5">
+      <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(28,52,97,.08)">
+          <svg class="w-5 h-5" style="color:#1c3461" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-1">Dashboard KPI</h3>
+        <p class="text-sm text-gray-500">Entrate totali, uscite, saldo netto, medie mensili e top categorie di spesa in un colpo d'occhio.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(28,52,97,.08)">
+          <svg class="w-5 h-5" style="color:#1c3461" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-1">Riepilogo Mensile</h3>
+        <p class="text-sm text-gray-500">Tabella mese per mese con entrate, uscite e saldo. Ideale per analisi di trend e variazioni nel tempo.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(28,52,97,.08)">
+          <svg class="w-5 h-5" style="color:#1c3461" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-1">Categorie</h3>
+        <p class="text-sm text-gray-500">Ogni transazione categorizzata automaticamente: casa, utenze, fisco, trasporti, alimentari, abbonamenti e altro.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(28,52,97,.08)">
+          <svg class="w-5 h-5" style="color:#1c3461" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-1">Transazioni</h3>
+        <p class="text-sm text-gray-500">Dettaglio completo di ogni movimento con data, importo, beneficiario e categoria. Filtri Excel attivi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BANCHE SUPPORTATE ── -->
+<section class="py-16 px-6 bg-gray-50 border-t border-gray-100">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl font-bold text-gray-900 mb-3">Banche supportate</h2>
+    <p class="text-gray-500 text-sm mb-10 max-w-lg mx-auto">Ogni banca viene certificata con dati reali prima del rilascio. Categorizzazione verificata al 100%.</p>
+    <div class="flex flex-wrap justify-center gap-3">
+      {% for bank in ["Intesa Sanpaolo", "UniCredit", "Fineco", "Banco BPM", "BPER Banca", "Credem", "ING"] %}
+      <span class="bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">{{ bank }}</span>
+      {% endfor %}
+    </div>
+    <p class="text-xs text-gray-400 mt-6">Altre banche in arrivo progressivamente.</p>
+  </div>
+</section>
+
+<!-- ── SICUREZZA ── -->
+<section class="py-16 px-6 bg-white border-t border-gray-100">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl font-bold text-gray-900 text-center mb-3">La tua sicurezza, al primo posto</h2>
+    <p class="text-gray-500 text-sm text-center mb-10 max-w-lg mx-auto">CashFlow usa il protocollo PSD2 — lo stesso standard di Revolut, N26 e tutte le principali app fintech europee.</p>
+    <div class="grid sm:grid-cols-3 gap-5">
+      <div class="text-center px-4">
+        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3" style="background:rgba(22,163,74,.1)">
+          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 text-sm mb-1">Zero credenziali</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Non inserisci mai username o password su CashFlow. Il login avviene sul sito ufficiale della tua banca.</p>
+      </div>
+      <div class="text-center px-4">
+        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3" style="background:rgba(42,157,181,.1)">
+          <svg class="w-6 h-6" style="color:#2a9db5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 text-sm mb-1">Solo lettura</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Accesso in sola lettura. Non possiamo effettuare pagamenti, bonifici o modifiche sul tuo conto.</p>
+      </div>
+      <div class="text-center px-4">
+        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3" style="background:rgba(28,52,97,.08)">
+          <svg class="w-6 h-6" style="color:#1c3461" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 text-sm mb-1">Cancellazione immediata</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Dopo il download il consenso viene revocato e tutti i dati eliminati. Non conserviamo nulla.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq" class="py-16 px-6 bg-gray-50 border-t border-gray-100">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-2xl font-bold text-gray-900 text-center mb-8">Domande frequenti</h2>
+    <div class="flex flex-col gap-3">
+      <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+        <button class="faq-btn w-full text-left px-5 py-4 flex justify-between items-center gap-3 font-medium text-gray-900 text-sm hover:text-brand transition-colors" onclick="toggleFaq(this)">
+          CashFlow può fare operazioni sul mio conto?
+          <svg class="faq-icon w-4 h-4 text-gray-400 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body hidden px-5 pb-4 text-sm text-gray-500 leading-relaxed border-t border-gray-100">No. L'accesso è esclusivamente in lettura. CashFlow non può effettuare pagamenti, bonifici o qualsiasi altra operazione. Vede solo la lista delle transazioni, esattamente come la vedi tu nell'estratto conto.</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+        <button class="faq-btn w-full text-left px-5 py-4 flex justify-between items-center gap-3 font-medium text-gray-900 text-sm hover:text-brand transition-colors" onclick="toggleFaq(this)">
+          Le mie credenziali bancarie passano per Datace?
+          <svg class="faq-icon w-4 h-4 text-gray-400 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body hidden px-5 pb-4 text-sm text-gray-500 leading-relaxed border-t border-gray-100">Mai. Quando clicchi su una banca, vieni reindirizzato direttamente al sito ufficiale del tuo istituto. Lì inserisci le tue credenziali — Datace non le vede e non le riceve in nessun momento.</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+        <button class="faq-btn w-full text-left px-5 py-4 flex justify-between items-center gap-3 font-medium text-gray-900 text-sm hover:text-brand transition-colors" onclick="toggleFaq(this)">
+          Cosa succede ai miei dati dopo il download?
+          <svg class="faq-icon w-4 h-4 text-gray-400 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body hidden px-5 pb-4 text-sm text-gray-500 leading-relaxed border-t border-gray-100">Vengono eliminati immediatamente. Il consenso viene revocato tramite API e tutti i dati vengono cancellati dalla memoria. Non esiste nessun database dove vengono conservati.</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+        <button class="faq-btn w-full text-left px-5 py-4 flex justify-between items-center gap-3 font-medium text-gray-900 text-sm hover:text-brand transition-colors" onclick="toggleFaq(this)">
+          Quanti giorni di storico posso analizzare?
+          <svg class="faq-icon w-4 h-4 text-gray-400 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body hidden px-5 pb-4 text-sm text-gray-500 leading-relaxed border-t border-gray-100">Gli ultimi 90 giorni — il massimo consentito dal protocollo PSD2 nel free tier. Coprono 3 mesi completi, sufficienti per analisi di trend mensili e KPI significativi.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GUIDE CORRELATE ── -->
+<section class="py-14 px-6 bg-white border-t border-gray-100">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-xl font-bold text-gray-900 mb-6">Guide correlate</h2>
+    <a href="/guida/come-analizzare-estratto-conto-excel/"
+       class="flex items-center gap-4 bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-brand transition-colors group">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(28,52,97,.08)">
+        <svg class="w-5 h-5" style="color:#1c3461" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      </div>
+      <div>
+        <p class="font-semibold text-gray-900 group-hover:text-brand transition-colors text-sm">Come analizzare l'estratto conto bancario in Excel</p>
+        <p class="text-xs text-gray-500 mt-0.5">Guida passo passo — 3 minuti di lettura</p>
+      </div>
+      <svg class="w-4 h-4 text-gray-400 group-hover:text-brand transition-colors ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="bg-gray-900 text-gray-400 py-8 px-6">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+    <div class="flex items-center gap-2">
+      <span class="font-semibold text-white">Datace</span>
+      <span>— Data automation per documenti fiscali italiani</span>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="/"       class="hover:text-gray-200 transition-colors">Strumenti</a>
+      <a href="/guida/" class="hover:text-gray-200 transition-colors">Guide</a>
+      <a href="/privacy" class="hover:text-gray-200 transition-colors">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const body = btn.nextElementSibling;
+  const icon = btn.querySelector('.faq-icon');
+  const isOpen = !body.classList.contains('hidden');
+  document.querySelectorAll('.faq-body').forEach(b => b.classList.add('hidden'));
+  document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = '');
+  if (!isOpen) { body.classList.remove('hidden'); icon.style.transform = 'rotate(180deg)'; }
+}
+</script>
+
+</body>
+</html>

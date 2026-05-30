@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Come analizzare l'estratto conto bancario in Excel | Guida | Datace</title>
+  <link rel="icon" type="image/svg+xml" href="/images/logo-icon.svg">
+  <meta name="description" content="Guida completa per analizzare l'estratto conto bancario e ottenere un Excel professionale con KPI, categorie di spesa e analisi mensile. Connessione sicura PSD2, nessun dato salvato." />
+  <link rel="canonical" href="https://datacetools.com/guida/come-analizzare-estratto-conto-excel/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://datacetools.com/guida/come-analizzare-estratto-conto-excel/" />
+  <meta property="og:title"       content="Come analizzare l'estratto conto bancario in Excel | Datace" />
+  <meta property="og:description" content="Guida passo passo per connettere la tua banca e ottenere un Excel con dashboard KPI, categorie e analisi mensile degli ultimi 90 giorni." />
+  <meta name="twitter:card"       content="summary" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://datacetools.com/guida/come-analizzare-estratto-conto-excel#article",
+        "headline": "Come analizzare l'estratto conto bancario in Excel",
+        "description": "Guida passo passo per connettere la tua banca via PSD2 e ottenere un Excel professionale con dashboard KPI, categorie di spesa e analisi mensile degli ultimi 90 giorni.",
+        "url": "https://datacetools.com/guida/come-analizzare-estratto-conto-excel/",
+        "inLanguage": "it",
+        "author": { "@type": "Organization", "name": "Datace", "url": "https://datacetools.com" },
+        "publisher": {
+          "@type": "Organization", "name": "Datace", "url": "https://datacetools.com",
+          "logo": { "@type": "ImageObject", "url": "https://datacetools.com/images/logo-icon.svg" }
+        },
+        "datePublished": "2026-05-30",
+        "dateModified": "2026-05-30"
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://datacetools.com/guida/come-analizzare-estratto-conto-excel#howto",
+        "name": "Come analizzare l'estratto conto bancario in Excel",
+        "totalTime": "PT2M",
+        "tool": [{ "@type": "HowToTool", "name": "CashFlow (cashflow.datacetools.com)" }],
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Apri CashFlow", "text": "Vai su cashflow.datacetools.com e seleziona la tua banca dall'elenco.", "url": "https://datacetools.com/guida/come-analizzare-estratto-conto-excel#step-1" },
+          { "@type": "HowToStep", "position": 2, "name": "Autorizza la lettura", "text": "Vieni reindirizzato al sito ufficiale della tua banca dove autorizzi la lettura delle transazioni degli ultimi 90 giorni.", "url": "https://datacetools.com/guida/come-analizzare-estratto-conto-excel#step-2" },
+          { "@type": "HowToStep", "position": 3, "name": "Scarica l'Excel", "text": "In pochi secondi ricevi il tuo Excel con dashboard KPI, categorie di spesa e analisi mensile. I dati vengono eliminati immediatamente.", "url": "https://datacetools.com/guida/come-analizzare-estratto-conto-excel#step-3" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "È sicuro connettere la mia banca?", "acceptedAnswer": { "@type": "Answer", "text": "Sì. La connessione avviene tramite protocollo PSD2, lo standard bancario europeo. Le tue credenziali vengono inserite direttamente sul sito della tua banca — CashFlow non le vede mai." } },
+          { "@type": "Question", "name": "Quanti giorni di storico posso analizzare?", "acceptedAnswer": { "@type": "Answer", "text": "Gli ultimi 90 giorni, il massimo del free tier PSD2. Corrispondono a 3 mesi completi di transazioni." } },
+          { "@type": "Question", "name": "Come vengono categorizzate le transazioni?", "acceptedAnswer": { "@type": "Answer", "text": "CashFlow usa un sistema di categorizzazione a 4 livelli: codice MCC, nome merchant, keyword universali e fallback sulla direzione dell'importo. Funziona su qualsiasi banca italiana." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { colors: { brand: '#1c3461', teal: '#2a9db5' }}}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .hero-gradient { background: linear-gradient(135deg, #0f2040 0%, #1c3461 60%, #1d7a94 100%); }
+    .prose-content h2 { font-size: 1.25rem; font-weight: 700; color: #111827; margin: 2rem 0 0.75rem; }
+    .prose-content h3 { font-size: 1.05rem; font-weight: 600; color: #1f2937; margin: 1.5rem 0 0.5rem; }
+    .prose-content p  { color: #4b5563; line-height: 1.75; margin-bottom: 0.75rem; }
+    .prose-content ul { list-style: disc; padding-left: 1.5rem; color: #4b5563; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-content li { margin-bottom: 0.35rem; }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 antialiased">
+
+<!-- ── HEADER ── -->
+<header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+  <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5 group">
+      <svg class="w-9 h-9 shadow-sm rounded-xl flex-shrink-0" viewBox="0 0 48 48" fill="none">
+        <rect width="48" height="48" rx="12" fill="#1c3461"/>
+        <path d="M10 12 L10 36 L21 36 Q32 36 32 24 Q32 12 21 12 Z" fill="white"/>
+        <path d="M16 18 L16 30 L21 30 Q26 30 26 24 Q26 18 21 18 Z" fill="#1c3461"/>
+        <rect x="9" y="12" width="4" height="24" rx="2" fill="#2a9db5"/>
+        <polyline points="29,10 39,10 39,20" stroke="#c4972b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <line x1="31" y1="18" x2="39" y2="10" stroke="#c4972b" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span class="text-xl font-bold text-gray-900 tracking-tight">Datace</span>
+    </a>
+    <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-gray-500">
+      <a href="/" class="hover:text-brand transition-colors">Strumenti</a>
+      <a href="/guida/" class="text-brand font-semibold">Guide</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── BREADCRUMB ── -->
+<div class="bg-white border-b border-gray-100 py-2 px-6">
+  <div class="max-w-5xl mx-auto text-xs text-gray-400 flex items-center gap-1.5">
+    <a href="/" class="hover:text-brand transition-colors">Datace</a>
+    <span>/</span>
+    <a href="/guida/" class="hover:text-brand transition-colors">Guide</a>
+    <span>/</span>
+    <span class="text-gray-600 font-medium">Come analizzare l'estratto conto in Excel</span>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero-gradient text-white py-14 px-6">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex items-center gap-2 mb-4">
+      <span class="text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full" style="background:rgba(42,157,181,.2);color:#7dd3e8;">Guida pratica</span>
+      <span class="text-xs text-blue-300">3 minuti di lettura</span>
+    </div>
+    <h1 class="text-2xl sm:text-3xl font-extrabold mb-4 leading-tight">
+      Come analizzare l'estratto conto bancario in Excel
+    </h1>
+    <p class="text-blue-200 text-sm leading-relaxed max-w-xl">
+      Connetti la tua banca in modo sicuro e ottieni in pochi secondi un Excel professionale con KPI, categorie di spesa e analisi mensile degli ultimi 90 giorni.
+    </p>
+  </div>
+</section>
+
+<!-- ── LAYOUT PRINCIPALE ── -->
+<div class="max-w-5xl mx-auto px-6 py-12 grid lg:grid-cols-3 gap-8">
+
+  <!-- Contenuto articolo -->
+  <article class="lg:col-span-2 prose-content">
+
+    <h2 id="step-1">Passo 1: Apri CashFlow e seleziona la tua banca</h2>
+    <p>Vai su <a href="https://cashflow.datacetools.com" class="text-brand hover:underline font-medium">cashflow.datacetools.com</a> e scegli il tuo istituto bancario dall'elenco. CashFlow supporta le principali banche italiane — Intesa Sanpaolo, UniCredit, Fineco, Banco BPM, BPER Banca, Credem e ING.</p>
+    <p>Ogni banca nell'elenco è certificata: prima del rilascio viene verificata con dati reali per garantire una categorizzazione accurata al 100%.</p>
+
+    <h2 id="step-2">Passo 2: Autorizza la lettura delle transazioni</h2>
+    <p>Dopo aver selezionato la banca, vieni reindirizzato al <strong>sito ufficiale del tuo istituto</strong>. Qui inserisci le tue credenziali bancarie normali e autorizzi la lettura delle transazioni degli ultimi 90 giorni.</p>
+
+    <div class="bg-green-50 border border-green-200 rounded-2xl p-5 my-6">
+      <p class="font-semibold text-green-800 text-sm mb-1">Le tue credenziali restano sulla tua banca</p>
+      <p class="text-green-700 text-sm leading-relaxed">CashFlow non vede mai le tue credenziali. Il login avviene direttamente sul sito della tua banca tramite protocollo PSD2 — lo stesso standard usato da Revolut, N26 e tutte le principali app fintech europee.</p>
+    </div>
+
+    <p>L'autorizzazione è in sola lettura: CashFlow può solo leggere l'elenco delle transazioni, non effettuare pagamenti o modifiche al conto.</p>
+
+    <h2 id="step-3">Passo 3: Scarica l'Excel professionale</h2>
+    <p>Dopo l'autorizzazione torni automaticamente su CashFlow. In pochi secondi viene generato il tuo Excel con 4 fogli strutturati:</p>
+    <ul>
+      <li><strong>Dashboard KPI</strong> — entrate totali, uscite, saldo netto, medie mensili e top categorie di spesa</li>
+      <li><strong>Riepilogo Mensile</strong> — tabella mese per mese con entrate, uscite e saldo netto</li>
+      <li><strong>Categorie</strong> — dettaglio di ogni categoria di spesa con importi e numero transazioni</li>
+      <li><strong>Transazioni</strong> — elenco completo di ogni movimento con data, importo, beneficiario e categoria assegnata. Filtri Excel attivi.</li>
+    </ul>
+
+    <p>Non appena scarichi il file, il consenso di accesso viene revocato e tutti i dati vengono eliminati dalla memoria. Non viene conservato nulla.</p>
+
+    <h2>Come funziona la categorizzazione</h2>
+    <p>CashFlow usa un sistema di categorizzazione a 4 livelli, indipendente dalla banca utilizzata:</p>
+    <ul>
+      <li><strong>Codice MCC</strong> (Merchant Category Code) — quando disponibile, è il segnale più affidabile. Standard internazionale ISO 18245.</li>
+      <li><strong>Nome merchant</strong> — database di 300+ merchant italiani ed europei noti (Esselunga, Netflix, Trenitalia, Enel, ecc.)</li>
+      <li><strong>Keyword universali</strong> — pattern italiani riconoscibili su qualsiasi formato bancario (affitto, stipendio, F24, mutuo, ecc.)</li>
+      <li><strong>Fallback</strong> — se nessuno dei precedenti si applica, la transazione viene classificata in base alla direzione dell'importo (entrata/uscita)</li>
+    </ul>
+
+    <p>Questo approccio funziona correttamente con qualsiasi banca italiana, indipendentemente dal formato con cui viene scritta la descrizione della transazione.</p>
+
+    <h2>Le categorie disponibili</h2>
+    <p>Le transazioni vengono classificate in queste categorie principali:</p>
+    <ul>
+      <li>Entrate (stipendio, pensione, bonifici ricevuti, rimborsi)</li>
+      <li>Casa (affitto, mutuo, condominio)</li>
+      <li>Utenze (luce/gas, acqua, telefono/internet)</li>
+      <li>Fisco (F24, INPS, tasse locali, cartelle esattoriali)</li>
+      <li>Alimentari (supermercati, ristoranti, food delivery)</li>
+      <li>Trasporti (carburante, treno, aereo, taxi, autostrade)</li>
+      <li>Abbonamenti (streaming, palestra, software)</li>
+      <li>Shopping (e-commerce, abbigliamento, elettronica)</li>
+      <li>Salute (farmacia, medico)</li>
+      <li>Assicurazioni</li>
+      <li>Banca (canone, prelievi ATM, addebiti diretti)</li>
+      <li>Trasferimenti (bonifici inviati)</li>
+    </ul>
+
+    <h2>Domande frequenti</h2>
+
+    <h3>È sicuro connettere la mia banca?</h3>
+    <p>Sì. La connessione avviene tramite protocollo PSD2 (Payment Services Directive 2), lo standard bancario europeo obbligatorio per tutti gli istituti. Le tue credenziali vengono inserite direttamente sul sito della tua banca — CashFlow non le vede mai e non le riceve in nessun momento.</p>
+
+    <h3>Cosa può fare CashFlow sul mio conto?</h3>
+    <p>Solo leggere le transazioni. L'accesso è esclusivamente in lettura (AIS - Account Information Service). Non è possibile effettuare pagamenti, bonifici o qualsiasi altra operazione.</p>
+
+    <h3>Quanti giorni di storico posso analizzare?</h3>
+    <p>Gli ultimi 90 giorni, il massimo consentito dal protocollo PSD2 nel free tier. Corrispondono a 3 mesi completi di transazioni — sufficienti per analisi di trend mensili significative.</p>
+
+    <h3>Cosa succede ai dati dopo il download?</h3>
+    <p>Vengono eliminati immediatamente. Nel momento in cui scarichi il file Excel, il consenso viene revocato tramite API e tutti i dati vengono cancellati dalla memoria. Non esiste nessun database dove vengono conservati.</p>
+
+    <h3>La mia banca non è nell'elenco. Cosa posso fare?</h3>
+    <p>CashFlow aggiunge banche progressivamente, dopo averle certificate con dati reali. Contattaci a <a href="mailto:datacetools@gmail.com" class="text-brand hover:underline">datacetools@gmail.com</a> indicando la tua banca — la prioritizziamo nell'aggiornamento successivo.</p>
+
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="lg:col-span-1 flex flex-col gap-5">
+
+    <!-- Caratteristiche -->
+    <div class="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
+      <h3 class="font-bold text-gray-900 mb-4 text-sm">CashFlow supporta</h3>
+      <ul class="flex flex-col gap-2 text-sm text-gray-600">
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Intesa Sanpaolo</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>UniCredit</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Fineco</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Banco BPM</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>BPER Banca</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Credem</li>
+        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>ING</li>
+      </ul>
+      <a href="https://cashflow.datacetools.com"
+         class="mt-4 block text-center bg-brand text-white font-semibold py-2.5 rounded-xl hover:bg-brand-dark transition-colors text-sm" style="background:#1c3461;">
+        Collega la tua banca
+      </a>
+    </div>
+
+    <!-- Link utili -->
+    <div class="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
+      <h3 class="font-bold text-gray-900 mb-3 text-sm">Pagina CashFlow</h3>
+      <a href="/cashflow/" class="text-sm text-brand hover:underline flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        Scopri tutto su CashFlow
+      </a>
+    </div>
+
+    <!-- Guide correlate -->
+    <div class="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
+      <h3 class="font-bold text-gray-900 mb-3 text-sm">Guide correlate</h3>
+      <div class="flex flex-col gap-2">
+        <a href="/guida/come-convertire-f24-excel/" class="text-sm text-gray-600 hover:text-brand transition-colors">Come convertire F24 PDF in Excel →</a>
+        <a href="/guida/come-convertire-fattura-elettronica-excel/" class="text-sm text-gray-600 hover:text-brand transition-colors">Come convertire Fatture Elettroniche →</a>
+        <a href="/guida/come-organizzare-zip-agenzia-entrate/" class="text-sm text-gray-600 hover:text-brand transition-colors">Come organizzare il ZIP AdE →</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="bg-gray-900 text-gray-400 py-8 px-6">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+    <div class="flex items-center gap-2">
+      <span class="font-semibold text-white">Datace</span>
+      <span>— Data automation per documenti fiscali italiani</span>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="/cashflow/" class="hover:text-gray-200 transition-colors">CashFlow</a>
+      <a href="/guida/" class="hover:text-gray-200 transition-colors">Guide</a>
+      <a href="/privacy" class="hover:text-gray-200 transition-colors">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
