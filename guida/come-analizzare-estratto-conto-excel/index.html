@@ -55,7 +55,7 @@
         "mainEntity": [
           { "@type": "Question", "name": "È sicuro connettere la mia banca?", "acceptedAnswer": { "@type": "Answer", "text": "Sì. La connessione avviene tramite protocollo PSD2, lo standard bancario europeo. Le tue credenziali vengono inserite direttamente sul sito della tua banca - CashFlow non le vede mai." } },
           { "@type": "Question", "name": "Quanti giorni di storico posso analizzare?", "acceptedAnswer": { "@type": "Answer", "text": "Gli ultimi 90 giorni, il massimo del free tier PSD2. Corrispondono a 3 mesi completi di transazioni." } },
-          { "@type": "Question", "name": "Come vengono categorizzate le transazioni?", "acceptedAnswer": { "@type": "Answer", "text": "CashFlow usa un sistema di categorizzazione a 4 livelli: codice MCC, nome merchant, keyword universali e fallback sulla direzione dell'importo. Funziona su qualsiasi banca italiana." } }
+          { "@type": "Question", "name": "Come vengono categorizzate le transazioni?", "acceptedAnswer": { "@type": "Answer", "text": "Le transazioni vengono riconosciute e classificate automaticamente: supermercati, utenze, pagamenti fiscali, abbonamenti, trasporti e molto altro. La categorizzazione funziona con qualsiasi banca supportata." } }
         ]
       }
     ]
@@ -157,16 +157,9 @@
 
     <p>Non appena scarichi il file, il consenso di accesso viene revocato e tutti i dati vengono eliminati dalla memoria. Non viene conservato nulla.</p>
 
-    <h2>Come funziona la categorizzazione</h2>
-    <p>CashFlow usa un sistema di categorizzazione a 4 livelli, indipendente dalla banca utilizzata:</p>
-    <ul>
-      <li><strong>Codice MCC</strong> (Merchant Category Code) - quando disponibile, è il segnale più affidabile. Standard internazionale ISO 18245.</li>
-      <li><strong>Nome merchant</strong> - database di 300+ merchant italiani ed europei noti (Esselunga, Netflix, Trenitalia, Enel, ecc.)</li>
-      <li><strong>Keyword universali</strong> - pattern italiani riconoscibili su qualsiasi formato bancario (affitto, stipendio, F24, mutuo, ecc.)</li>
-      <li><strong>Fallback</strong> - se nessuno dei precedenti si applica, la transazione viene classificata in base alla direzione dell'importo (entrata/uscita)</li>
-    </ul>
-
-    <p>Questo approccio funziona correttamente con qualsiasi banca italiana, indipendentemente dal formato con cui viene scritta la descrizione della transazione.</p>
+    <h2>Categorizzazione automatica</h2>
+    <p>Ogni transazione viene riconosciuta e classificata automaticamente, senza nessuna configurazione da parte tua. CashFlow riconosce migliaia di merchant italiani ed europei - dai supermercati alle utility, dai pagamenti fiscali agli abbonamenti digitali.</p>
+    <p>La categorizzazione funziona con qualsiasi banca supportata, in modo uniforme e preciso.</p>
 
     <h2>Le categorie disponibili</h2>
     <p>Le transazioni vengono classificate in queste categorie principali:</p>
