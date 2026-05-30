@@ -91,7 +91,7 @@
       {
         "@type": "Question",
         "name": "Sono supportati i file .p7m firmati digitalmente?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Si. Sono supportate sia le fatture XML semplici sia quelle .xml.p7m firmate digitalmente (CAdES), come quelle scaricate dallo SdI o dal cassetto fiscale." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Si. Sono supportate sia le fatture XML semplici sia quelle .xml.p7m firmate digitalmente, come quelle scaricate dallo SdI o dal cassetto fiscale." }
       },
       {
         "@type": "Question",
@@ -278,7 +278,7 @@
           <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
         </div>
         <h3 class="font-bold text-gray-900 mb-1">Foglio Riepilogo IVA</h3>
-        <p class="text-sm text-gray-500 leading-relaxed">Imponibili e imposte raggruppati per aliquota, con natura dell'operazione (N1-N7) ed esigibilita IVA.</p>
+        <p class="text-sm text-gray-500 leading-relaxed">Imponibili e imposte raggruppati per aliquota, con natura dell'operazione ed esigibilita IVA.</p>
       </div>
     </div>
     <div class="grid sm:grid-cols-2 gap-3">
@@ -315,14 +315,14 @@
         <div class="flex items-center gap-3 mb-3"><span class="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center text-brand font-bold text-xs">XML</span><h3 class="font-bold text-gray-900">Fattura XML</h3></div>
         <p class="text-sm text-gray-500 leading-relaxed mb-3">Il file standard FatturaPA 1.2 emesso da gestionali e portali, sia verso privati (B2B/B2C) sia verso la Pubblica Amministrazione.</p>
         <ul class="space-y-1 text-xs text-gray-400">
-          <li class="flex gap-1.5"><span class="text-brand">·</span> Fatture B2B e B2C (FPR12)</li>
-          <li class="flex gap-1.5"><span class="text-brand">·</span> Fatture verso la PA (FPA12)</li>
+          <li class="flex gap-1.5"><span class="text-brand">·</span> Fatture per privati e aziende (B2B e B2C)</li>
+          <li class="flex gap-1.5"><span class="text-brand">·</span> Fatture verso la Pubblica Amministrazione</li>
           <li class="flex gap-1.5"><span class="text-brand">·</span> Lotti con piu fatture nello stesso file</li>
         </ul>
       </div>
       <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
         <div class="flex items-center gap-3 mb-3"><span class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 font-bold text-xs">P7M</span><h3 class="font-bold text-gray-900">File firmati .p7m</h3></div>
-        <p class="text-sm text-gray-500 leading-relaxed mb-3">Le fatture firmate digitalmente in formato CAdES (.xml.p7m), come quelle scaricate dallo SdI o dal cassetto fiscale.</p>
+        <p class="text-sm text-gray-500 leading-relaxed mb-3">Le fatture firmate digitalmente (.xml.p7m), come quelle scaricate dallo SdI o dal cassetto fiscale.</p>
         <ul class="space-y-1 text-xs text-gray-400">
           <li class="flex gap-1.5"><span class="text-blue-400">·</span> Estrazione automatica dell'XML</li>
           <li class="flex gap-1.5"><span class="text-blue-400">·</span> Nessun software di firma necessario</li>
@@ -330,10 +330,10 @@
       </div>
       <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
         <div class="flex items-center gap-3 mb-3"><span class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500 font-bold text-xs">TD</span><h3 class="font-bold text-gray-900">Tutti i tipi documento</h3></div>
-        <p class="text-sm text-gray-500 leading-relaxed mb-3">Riconosce i codici tipo documento TD01-TD27 e li traduce in descrizioni leggibili nel foglio Excel.</p>
+        <p class="text-sm text-gray-500 leading-relaxed mb-3">Riconosce tutti i tipi di documento e li traduce in descrizioni leggibili nel foglio Excel.</p>
         <ul class="space-y-1 text-xs text-gray-400">
-          <li class="flex gap-1.5"><span class="text-orange-400">·</span> Fatture (TD01) e parcelle (TD06)</li>
-          <li class="flex gap-1.5"><span class="text-orange-400">·</span> Note di credito e debito (TD04, TD05)</li>
+          <li class="flex gap-1.5"><span class="text-orange-400">·</span> Fatture e parcelle</li>
+          <li class="flex gap-1.5"><span class="text-orange-400">·</span> Note di credito e debito</li>
           <li class="flex gap-1.5"><span class="text-orange-400">·</span> Autofatture e reverse charge</li>
         </ul>
       </div>
@@ -375,7 +375,7 @@
 
         <div>
           <h3 class="text-lg font-bold text-gray-800 mb-3">XML semplice o file .p7m firmato</h3>
-          <p>Le fatture elettroniche circolano in due formati: il semplice <strong>.xml</strong> e il <strong>.xml.p7m</strong>, ovvero l'XML racchiuso in una busta di firma digitale CAdES. Entrambi contengono gli stessi dati: FatturaXLS estrae automaticamente il tracciato XML anche dai file firmati, senza bisogno di software di verifica della firma.</p>
+          <p>Le fatture elettroniche circolano in due formati: il semplice <strong>.xml</strong> e il <strong>.xml.p7m</strong>, ovvero l'XML racchiuso in una busta di firma digitale. Entrambi contengono gli stessi dati: FatturaXLS li elabora entrambi automaticamente, senza bisogno di software aggiuntivi.</p>
         </div>
 
       </div>
@@ -403,7 +403,7 @@
           <span class="font-medium text-gray-900 text-sm pr-4">Sono supportati i file .p7m firmati digitalmente?</span>
           <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </summary>
-        <div class="px-6 pb-5 text-sm text-gray-500 leading-relaxed">Si. Sono supportate sia le fatture <strong>XML</strong> semplici sia quelle <strong>.xml.p7m</strong> firmate digitalmente (CAdES), come quelle scaricate dallo SdI o dal cassetto fiscale.</div>
+        <div class="px-6 pb-5 text-sm text-gray-500 leading-relaxed">Si. Sono supportate sia le fatture <strong>XML</strong> semplici sia quelle <strong>.xml.p7m</strong> firmate digitalmente, come quelle scaricate dallo SdI o dal cassetto fiscale.</div>
       </details>
       <details class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden">
         <summary class="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-gray-50 transition-colors">

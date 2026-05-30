@@ -63,7 +63,7 @@
           {
             "@type": "HowToStep", "position": 3,
             "name": "Elaborazione automatica",
-            "text": "Il sistema estrae tutti gli XML interni, li analizza (FPR12, FPA12, notifiche SdI) e classifica ogni fattura come attiva o passiva.",
+            "text": "Il sistema analizza tutti i file interni e classifica ogni fattura come attiva o passiva.",
             "url": "https://datacetools.com/guida/come-organizzare-zip-agenzia-entrate#step-3"
           },
           {
@@ -228,11 +228,11 @@
       AdE Organizer apre il ZIP in memoria e per ogni file XML al suo interno:
     </p>
     <ul>
-      <li>Riconosce il formato: FPR12 (privati), FPA12 (pubblica amministrazione), .xml.p7m firmati</li>
+      <li>Gestisce fatture per privati, pubblica amministrazione e file con firma digitale</li>
       <li>Rileva il tipo di documento (fattura, nota di credito, parcella, autofattura...)</li>
       <li>Estrae fornitore, cliente, data, importo totale</li>
       <li>Classifica la fattura come <strong>Attiva</strong>, <strong>Passiva</strong> o <strong>Unknown</strong></li>
-      <li>Riconosce le notifiche SdI (RC, NS, MC, EC, DT) e le separa dalle fatture</li>
+      <li>Riconosce e organizza le notifiche SdI e le separa dalle fatture</li>
     </ul>
 
     <h2 id="step-4">Passo 4: Scarica il risultato</h2>
