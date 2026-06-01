@@ -3,26 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Google Search Console -->
   <meta name="google-site-verification" content="aBsjbMCgIMxYkbRcWz6SeD5mHXBb-KRGvx3bucboyxE" />
-
-  <!-- SEO -->
   <title>AdE Organizer | Organizza ZIP Fatture e Corrispettivi in Excel | Datace</title>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/images/logo-icon.svg">
   <meta name="description" content="Carica il file ZIP scaricato da Fatture e Corrispettivi dell'Agenzia delle Entrate e ottieni un Excel strutturato e un archivio organizzato per anno e mese. Nessun dato salvato." />
   <meta name="keywords" content="organizzare zip agenzia entrate, fatture corrispettivi zip excel, zip fatture elettroniche organizzare, ade organizer, fatture xml excel, zip sdi excel" />
   <link rel="canonical" href="https://datacetools.com/ade-organizer/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://datacetools.com/ade-organizer/" />
-  <meta property="og:title"       content="AdE Organizer | Organizza ZIP Fatture e Corrispettivi in Excel" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://datacetools.com/ade-organizer/" />
+  <meta property="og:title" content="AdE Organizer | Organizza ZIP Fatture e Corrispettivi in Excel" />
   <meta property="og:description" content="Carica il ZIP di Fatture e Corrispettivi e scarica un Excel strutturato con archivio organizzato per anno e mese. Nessun dato salvato." />
-  <meta name="twitter:card"       content="summary" />
+  <meta name="twitter:card" content="summary" />
 
-  <!-- JSON-LD: WebApplication -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,19 +27,10 @@
     "description": "Strumento online per organizzare il file ZIP scaricato da Fatture e Corrispettivi dell'Agenzia delle Entrate. Genera un Excel strutturato e un archivio riorganizzato per anno e mese.",
     "inLanguage": "it",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "featureList": [
-      "Supporta ZIP da Fatture e Corrispettivi AdE",
-      "Processa fatture in tutti i formati supportati",
-      "Classifica automaticamente fatture attive e passive",
-      "Genera Excel strutturato con denominazione, P.IVA, data, importo",
-      "Archivio riorganizzato per Anno/Mese",
-      "Nessun dato salvato, elaborazione in RAM"
-    ],
+    "featureList": ["Supporta ZIP da Fatture e Corrispettivi AdE","Processa fatture in tutti i formati supportati","Classifica automaticamente fatture attive e passive","Genera Excel strutturato con denominazione, P.IVA, data, importo","Archivio riorganizzato per Anno/Mese","Nessun dato salvato, elaborazione in RAM"],
     "publisher": { "@type": "Organization", "name": "Datace", "url": "https://datacetools.com" }
   }
   </script>
-
-  <!-- JSON-LD: BreadcrumbList -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -57,8 +41,6 @@
     ]
   }
   </script>
-
-  <!-- JSON-LD: HowTo -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -73,8 +55,6 @@
     ]
   }
   </script>
-
-  <!-- JSON-LD: FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -88,341 +68,362 @@
   }
   </script>
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { DEFAULT: '#1c3461', light: '#2a9db5', dark: '#0f2040', 50: '#eef4fb', gold: '#c4972b' }
-          },
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
-        }
-      }
-    }
-  </script>
+  <script>tailwind.config={theme:{extend:{colors:{brand:{DEFAULT:'#1c3461',light:'#2a9db5',dark:'#0f2040',50:'#eef4fb',gold:'#F59E0B'}},fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
-
   <style>
-    .hero-gradient { background: linear-gradient(135deg, #0f2040 0%, #1c3461 55%, #1d7a94 100%); }
-    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(28,52,97,0.15); }
-    .step-line::after { content: ''; position: absolute; top: 24px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: #e5e7eb; }
-    @media (max-width: 767px) { .step-line::after { display: none; } }
-    .faq-item summary { list-style: none; }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item[open] summary .faq-icon { transform: rotate(45deg); }
-    .faq-icon { transition: transform 0.2s ease; }
+    :root{--navy:#060E1F;--navy2:#0A1628;--navy3:#0F2040;--gold:#F59E0B;--gold2:#FBBF24;--teal:#1d7a94;--border:rgba(255,255,255,0.07);--muted:rgba(255,255,255,0.45);}
+    *{box-sizing:border-box;}body{background:var(--navy);color:white;}
+    .logo-bar{transform-box:fill-box;transform-origin:left center;}
+    .logo-bar-1{animation:barStream 2.8s ease-in-out infinite 0s;}
+    .logo-bar-2{animation:barStream 2.8s ease-in-out infinite .22s;}
+    .logo-bar-3{animation:barStream 2.8s ease-in-out infinite .44s;}
+    @keyframes barStream{0%,100%{transform:scaleX(1);opacity:1;}30%{transform:scaleX(0.32);opacity:0.5;}60%{transform:scaleX(1);opacity:1;}}
+    .label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);}
+    .label::before{content:'';width:20px;height:1px;background:var(--gold);}
+    .grad-text{background:linear-gradient(90deg,#fff 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .stat-num{font-size:2.8rem;font-weight:800;line-height:1;background:linear-gradient(135deg,#fff,#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .dark-card{background:linear-gradient(135deg,rgba(15,32,64,.8),rgba(6,14,31,.9));border:1px solid var(--border);border-radius:20px;padding:24px;transition:border-color .3s ease,transform .3s ease;}
+    .dark-card:hover{border-color:rgba(255,255,255,.14);transform:translateY(-3px);}
+    .pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:500;color:#93c5fd;letter-spacing:.04em;}
+    .pill-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:white;color:#0F2040;font-weight:700;font-size:14px;padding:14px 28px;border-radius:12px;transition:transform .2s ease,box-shadow .2s ease;text-decoration:none;}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,255,255,.15);}
+    .btn-secondary{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.2);color:white;font-weight:600;font-size:14px;padding:14px 28px;border-radius:12px;transition:background .2s ease;text-decoration:none;}
+    .btn-secondary:hover{background:rgba(255,255,255,.06);}
+    .faq-item summary{list-style:none;}.faq-item summary::-webkit-details-marker{display:none;}
+    .faq-item[open] summary .faq-icon{transform:rotate(45deg);}.faq-icon{transition:transform 0.2s ease;}
+    .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;align-items:start;}
+    .footer-col-title{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:16px;}
+    .footer-link{display:block;font-size:14px;color:rgba(255,255,255,.45);margin-bottom:10px;text-decoration:none;transition:color .2s ease;}
+    .footer-link:hover{color:white;}
+    .footer-bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.2);}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;gap:8px;text-align:center;}}
   </style>
 </head>
 
-<body class="bg-white font-sans text-gray-800 antialiased">
+<body class="font-sans antialiased" style="background:#060E1F;color:white;">
 
-<!-- -- HEADER ---------------------------------------------------------------- -->
-<header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+<!-- HEADER -->
+<header style="background:rgba(6,14,31,.85);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(16px);" class="sticky top-0 z-50">
   <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2.5 group">
-      <svg class="w-9 h-9 shadow-sm rounded-xl flex-shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="48" height="48" rx="12" fill="#1c3461"/>
-        <path d="M10 12 L10 36 L21 36 Q32 36 32 24 Q32 12 21 12 Z" fill="white"/>
-        <path d="M16 18 L16 30 L21 30 Q26 30 26 24 Q26 18 21 18 Z" fill="#1c3461"/>
-        <rect x="9" y="12" width="4" height="24" rx="2" fill="#2a9db5"/>
-        <polyline points="29,10 39,10 39,20" stroke="#c4972b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <line x1="31" y1="18" x2="39" y2="10" stroke="#c4972b" stroke-width="3" stroke-linecap="round"/>
+    <a href="/" class="flex items-center gap-3">
+      <svg class="w-9 h-9 flex-shrink-0" viewBox="0 0 48 48" fill="none">
+        <defs>
+          <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient>
+          <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f2040"/><stop offset="100%" stop-color="#1c3461"/></linearGradient>
+        </defs>
+        <rect width="48" height="48" rx="12" fill="url(#iconBg)"/>
+        <rect class="logo-bar logo-bar-1" x="10" y="11" width="28" height="6" rx="3" fill="url(#sg)"/>
+        <rect class="logo-bar logo-bar-2" x="10" y="21" width="20" height="6" rx="3" fill="white"/>
+        <rect class="logo-bar logo-bar-3" x="10" y="31" width="12" height="6" rx="3" fill="white" fill-opacity="0.35"/>
       </svg>
-      <span class="text-xl font-bold text-gray-900 tracking-tight">Datace</span>
+      <div class="flex flex-col leading-tight">
+        <span style="color:white;" class="text-lg font-bold tracking-widest uppercase">Datace</span>
+        <span style="color:rgba(255,255,255,.4);" class="text-[9px] font-medium tracking-[0.2em] uppercase">Smart Tools for Business</span>
+      </div>
     </a>
-    <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-gray-500">
-      <a href="#come-funziona" class="hover:text-brand transition-colors">Come funziona</a>
-      <a href="#faq"           class="hover:text-brand transition-colors">FAQ</a>
-      <a href="/guida/"         class="hover:text-brand transition-colors">Guide</a>
-      <a href="/"              class="hover:text-brand transition-colors">Tutti gli strumenti</a>
+    <nav class="hidden sm:flex items-center gap-6 text-sm font-medium" style="color:rgba(255,255,255,.5);">
+      <a href="#come-funziona" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Come funziona</a>
+      <a href="#faq"           style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">FAQ</a>
+      <a href="/guida/"        style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Guide</a>
+      <a href="/"              style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Tutti gli strumenti</a>
     </nav>
-    <a href="https://zip.datacetools.com/" class="hidden sm:inline-flex items-center gap-1.5 bg-brand text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-brand-dark transition-colors shadow-sm">
-      Usa lo strumento
-      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-    </a>
+    <a href="https://zip.datacetools.com/" style="background:white;color:#0f2040;font-weight:700;font-size:13px;padding:9px 20px;border-radius:10px;transition:all .2s ease;white-space:nowrap;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">Usa lo strumento</a>
   </div>
 </header>
 
-
-<!-- -- HERO ------------------------------------------------------------------ -->
-<section class="hero-gradient text-white py-20 px-6">
-  <div class="max-w-4xl mx-auto">
+<!-- HERO -->
+<section class="px-6 py-24" style="background:var(--navy);position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-20%;left:-10%;width:55%;height:80%;background:radial-gradient(ellipse,rgba(29,122,148,.18) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-10%;right:-5%;width:45%;height:70%;background:radial-gradient(ellipse,rgba(245,158,11,.07) 0%,transparent 60%);pointer-events:none;"></div>
+  <div class="max-w-4xl mx-auto" style="position:relative;z-index:1;">
     <div class="max-w-2xl">
-      <p class="inline-flex items-center gap-2 text-sm font-medium bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-6">
-        <svg class="w-4 h-4 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-        Strumento professionale per commercialisti e aziende
-      </p>
-      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-4">
-        Organizza il ZIP<br/>di Fatture e Corrispettivi
+      <div class="mb-6"><span class="pill"><span class="pill-dot"></span> Strumento professionale per commercialisti e aziende</span></div>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;line-height:1.08;letter-spacing:-.02em;" class="mb-5">
+        Organizza il ZIP<br/><span class="grad-text">di Fatture e Corrispettivi</span>
       </h1>
-      <p class="text-blue-100 text-xl leading-relaxed mb-8 max-w-xl">
+      <p style="font-size:1.05rem;color:var(--muted);line-height:1.8;" class="mb-8 max-w-xl">
         Carica il file ZIP dell'Agenzia delle Entrate e scarica un Excel strutturato con le fatture organizzate per anno e mese. Nessuna installazione, nessun dato salvato.
       </p>
-      <div class="flex flex-wrap items-center gap-4">
-        <a href="https://zip.datacetools.com/" class="inline-flex items-center gap-2 bg-white text-brand font-bold px-7 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:bg-brand-50 transition-all text-base">
+      <div class="flex flex-wrap gap-3">
+        <a href="https://zip.datacetools.com/" class="btn-primary">
           Organizza ora
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
-        <p class="text-blue-200 text-sm">Nessun dato salvato</p>
+        <a href="#come-funziona" class="btn-secondary">Come funziona</a>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- -- TRUST BAR ------------------------------------------------------------- -->
-<section class="border-b border-gray-100 bg-gray-50 py-5 px-6">
-  <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-    <div><p class="text-2xl font-extrabold text-brand">100%</p><p class="text-xs text-gray-500 mt-0.5">Elaborazione in RAM<br/>nessun file salvato</p></div>
-    <div><p class="text-2xl font-extrabold text-green-600">0</p><p class="text-xs text-gray-500 mt-0.5">Dati trasmessi<br/>o ceduti a terzi</p></div>
-    <div><p class="text-2xl font-extrabold text-purple-600">100MB</p><p class="text-xs text-gray-500 mt-0.5">Dimensione max<br/>file ZIP</p></div>
-    <div><p class="text-2xl font-extrabold text-orange-500">2</p><p class="text-xs text-gray-500 mt-0.5">Output generati<br/>Excel + ZIP</p></div>
+<!-- STATS BAR -->
+<div style="background:rgba(255,255,255,.025);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" class="px-6 py-10">
+  <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+    <div><div class="stat-num">100%</div><div style="font-size:13px;color:var(--muted);margin-top:6px;">Elaborazione in RAM<br/>nessun file salvato</div></div>
+    <div style="border-left:1px solid rgba(255,255,255,.07);"><div class="stat-num">0</div><div style="font-size:13px;color:var(--muted);margin-top:6px;">Dati trasmessi<br/>o ceduti a terzi</div></div>
+    <div style="border-left:1px solid rgba(255,255,255,.07);"><div class="stat-num" style="font-size:2rem;">100MB</div><div style="font-size:13px;color:var(--muted);margin-top:6px;">Dimensione max<br/>file ZIP</div></div>
+    <div style="border-left:1px solid rgba(255,255,255,.07);"><div class="stat-num">2</div><div style="font-size:13px;color:var(--muted);margin-top:6px;">Output generati<br/>Excel + ZIP</div></div>
   </div>
-</section>
+</div>
 
-
-<!-- -- COME FUNZIONA --------------------------------------------------------- -->
-<section id="come-funziona" class="py-16 px-6">
+<!-- COME FUNZIONA -->
+<section id="come-funziona" class="px-6 py-20" style="background:var(--navy);">
   <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-900">Come funziona</h2>
-      <p class="text-gray-500 mt-2">Tre passaggi, meno di un minuto</p>
+    <div class="text-center mb-14">
+      <div class="label mb-4" style="justify-content:center;">Il processo</div>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;">Come funziona</h2>
+      <p style="color:var(--muted);margin-top:8px;">Tre passaggi, meno di un minuto</p>
     </div>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="relative text-center step-line">
-        <div class="w-12 h-12 rounded-full bg-brand text-white font-bold text-lg flex items-center justify-center mx-auto mb-4 shadow-md">1</div>
-        <h3 class="font-semibold text-gray-900 mb-2">Carica il file ZIP</h3>
-        <p class="text-sm text-gray-500 leading-relaxed">Trascina il file ZIP scaricato da <strong>Fatture e Corrispettivi</strong> dell'Agenzia delle Entrate. Max 100 MB.</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="dark-card text-center">
+        <div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><span style="font-size:18px;font-weight:800;color:var(--gold);">1</span></div>
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:10px;">Carica il file ZIP</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;">Trascina il file ZIP scaricato da <strong style="color:white;">Fatture e Corrispettivi</strong> dell'Agenzia delle Entrate. Max 100 MB.</p>
       </div>
-      <div class="relative text-center step-line">
-        <div class="w-12 h-12 rounded-full bg-brand text-white font-bold text-lg flex items-center justify-center mx-auto mb-4 shadow-md">2</div>
-        <h3 class="font-semibold text-gray-900 mb-2">Elaborazione automatica</h3>
-        <p class="text-sm text-gray-500 leading-relaxed">Il motore analizza tutti gli XML: FPR12, FPA12, .p7m e notifiche SdI. Classifica attive e passive automaticamente.</p>
+      <div class="dark-card text-center">
+        <div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><span style="font-size:18px;font-weight:800;color:var(--gold);">2</span></div>
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:10px;">Elaborazione automatica</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;">Il motore analizza tutti gli XML: FPR12, FPA12, .p7m e notifiche SdI. Classifica attive e passive automaticamente.</p>
       </div>
-      <div class="text-center">
-        <div class="w-12 h-12 rounded-full bg-brand-light text-white font-bold text-lg flex items-center justify-center mx-auto mb-4 shadow-md">3</div>
-        <h3 class="font-semibold text-gray-900 mb-2">Scarica il risultato</h3>
-        <p class="text-sm text-gray-500 leading-relaxed">Ricevi un unico ZIP con <strong>Excel strutturato</strong> e <strong>archivio organizzato</strong> per Anno/Mese. Subito pronto all'uso.</p>
+      <div class="dark-card text-center">
+        <div style="width:52px;height:52px;border-radius:16px;background:rgba(29,122,148,.3);border:1px solid rgba(29,122,148,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><span style="font-size:18px;font-weight:800;color:#2a9db5;">3</span></div>
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:10px;">Scarica il risultato</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;">Ricevi un unico ZIP con <strong style="color:white;">Excel strutturato</strong> e <strong style="color:white;">archivio organizzato</strong> per Anno/Mese. Subito pronto all'uso.</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- -- COSA OTTIENI ---------------------------------------------------------- -->
-<section class="bg-gray-50 py-16 px-6 border-t border-gray-100">
+<!-- COSA OTTIENI -->
+<section style="background:rgba(255,255,255,.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" class="px-6 py-20">
   <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-900">Cosa ottieni</h2>
-      <p class="text-gray-500 mt-2">Un unico ZIP con due file pronti all'uso</p>
+    <div class="text-center mb-14">
+      <div class="label mb-4" style="justify-content:center;">Output</div>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;">Cosa ottieni</h2>
+      <p style="color:var(--muted);margin-top:8px;">Un unico ZIP con due file pronti all'uso</p>
     </div>
-    <div class="grid md:grid-cols-2 gap-6 mb-10">
-      <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm card-hover">
-        <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 24 24"><path d="M9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4zm2.5 2.1h-15V5h15v14.1zm0-16.1h-15c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
+    <div class="grid md:grid-cols-2 gap-5 mb-8">
+      <div class="dark-card">
+        <div style="width:40px;height:40px;border-radius:12px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg class="w-5 h-5" style="color:#86efac;" fill="currentColor" viewBox="0 0 24 24"><path d="M9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4zm2.5 2.1h-15V5h15v14.1zm0-16.1h-15c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
         </div>
-        <h3 class="font-bold text-gray-900 mb-1">fatture_organizzate.xlsx</h3>
-        <p class="text-sm text-gray-500 leading-relaxed mb-3">Un foglio Excel con una riga per ogni fattura trovata nel ZIP.</p>
-        <ul class="space-y-1 text-xs text-gray-400">
-          <li class="flex gap-1.5"><span class="text-brand"></span> Denominazione cliente o fornitore</li>
-          <li class="flex gap-1.5"><span class="text-brand"></span> P.IVA / Codice Fiscale</li>
-          <li class="flex gap-1.5"><span class="text-brand"></span> Data fattura e importo totale</li>
-          <li class="flex gap-1.5"><span class="text-brand"></span> Tipo: Attiva / Passiva / Unknown</li>
-          <li class="flex gap-1.5"><span class="text-brand"></span> Nome file originale</li>
+        <h3 style="font-size:15px;font-weight:700;margin-bottom:8px;">fatture_organizzate.xlsx</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;">Un foglio Excel con una riga per ogni fattura trovata nel ZIP.</p>
+        <ul>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:2px 0;">· Denominazione cliente o fornitore</li>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:2px 0;">· P.IVA / Codice Fiscale</li>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:2px 0;">· Data fattura e importo totale</li>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:2px 0;">· Tipo: Attiva / Passiva / Unknown</li>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:2px 0;">· Nome file originale</li>
         </ul>
       </div>
-      <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm card-hover">
-        <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+      <div class="dark-card">
+        <div style="width:40px;height:40px;border-radius:12px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <svg class="w-5 h-5" style="color:#93c5fd;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
         </div>
-        <h3 class="font-bold text-gray-900 mb-1">archivio_organizzato.zip</h3>
-        <p class="text-sm text-gray-500 leading-relaxed mb-3">Tutti i file XML riorganizzati in cartelle per anno e mese.</p>
-        <ul class="space-y-1 text-xs font-mono text-gray-400">
-          <li>/2026/</li>
-          <li>&nbsp;&nbsp;/Gennaio/</li>
-          <li>&nbsp;&nbsp;&nbsp;&nbsp;2026-01_ROSSI_SRL_1240.50.xml</li>
-          <li>&nbsp;&nbsp;/Febbraio/</li>
-          <li>&nbsp;&nbsp;&nbsp;&nbsp;2026-02_BIANCHI_SPA_980.00.xml</li>
-          <li>/Notifiche/</li>
+        <h3 style="font-size:15px;font-weight:700;margin-bottom:8px;">archivio_organizzato.zip</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;">Tutti i file XML riorganizzati in cartelle per anno e mese.</p>
+        <ul style="font-family:monospace;">
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:1px 0;">/2026/</li>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:1px 0;">&nbsp;&nbsp;/Gennaio/</li>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:1px 0;">&nbsp;&nbsp;&nbsp;&nbsp;2026-01_ROSSI_SRL_1240.50.xml</li>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:1px 0;">&nbsp;&nbsp;/Febbraio/</li>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:1px 0;">/Notifiche/</li>
         </ul>
       </div>
     </div>
     <div class="grid sm:grid-cols-2 gap-3">
-      <div class="flex items-start gap-3 bg-white rounded-xl border border-gray-100 p-4">
-        <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-        <div><p class="text-sm font-medium text-gray-800">Notifiche SdI gestite</p><p class="text-xs text-gray-400 mt-0.5">RC, NS, MC, EC, DT in cartella dedicata</p></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:16px;">
+        <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#86efac;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        <div><p style="font-size:14px;font-weight:600;">Notifiche SdI gestite</p><p style="font-size:12px;color:var(--muted);margin-top:2px;">RC, NS, MC, EC, DT in cartella dedicata</p></div>
       </div>
-      <div class="flex items-start gap-3 bg-white rounded-xl border border-gray-100 p-4">
-        <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-        <div><p class="text-sm font-medium text-gray-800">Classificazione attive/passive</p><p class="text-xs text-gray-400 mt-0.5">Automatica da cartelle o tramite P.IVA</p></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:16px;">
+        <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#86efac;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        <div><p style="font-size:14px;font-weight:600;">Classificazione attive/passive</p><p style="font-size:12px;color:var(--muted);margin-top:2px;">Automatica da cartelle o tramite P.IVA</p></div>
       </div>
-      <div class="flex items-start gap-3 bg-white rounded-xl border border-gray-100 p-4">
-        <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-        <div><p class="text-sm font-medium text-gray-800">Nessuna installazione</p><p class="text-xs text-gray-400 mt-0.5">Funziona su qualsiasi browser e dispositivo</p></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:16px;">
+        <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#86efac;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        <div><p style="font-size:14px;font-weight:600;">Nessuna installazione</p><p style="font-size:12px;color:var(--muted);margin-top:2px;">Funziona su qualsiasi browser e dispositivo</p></div>
       </div>
-      <div class="flex items-start gap-3 bg-white rounded-xl border border-gray-100 p-4">
-        <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-        <div><p class="text-sm font-medium text-gray-800">Privacy garantita</p><p class="text-xs text-gray-400 mt-0.5">Elaborazione in RAM, zero dati salvati</p></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:16px;">
+        <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#86efac;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        <div><p style="font-size:14px;font-weight:600;">Privacy garantita</p><p style="font-size:12px;color:var(--muted);margin-top:2px;">Elaborazione in RAM, zero dati salvati</p></div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- -- FORMATI SUPPORTATI ---------------------------------------------------- -->
-<section class="py-16 px-6 border-t border-gray-100">
+<!-- FORMATI SUPPORTATI -->
+<section class="px-6 py-20" style="background:var(--navy);">
   <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold text-gray-900">Cosa c' dentro il ZIP AdE</h2>
-      <p class="text-gray-500 mt-2">AdE Organizer riconosce e gestisce tutti i formati presenti</p>
+    <div class="text-center mb-12">
+      <div class="label mb-4" style="justify-content:center;">Compatibilità</div>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;">Cosa c'è dentro il ZIP AdE</h2>
+      <p style="color:var(--muted);margin-top:8px;">AdE Organizer riconosce e gestisce tutti i formati presenti</p>
     </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-        <div class="flex items-center gap-3 mb-3"><span class="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center text-brand font-bold text-xs">XML</span><h3 class="font-bold text-gray-900">Fatture XML</h3></div>
-        <p class="text-sm text-gray-500 leading-relaxed mb-3">Le fatture elettroniche in formato FatturaPA, sia B2B/B2C (FPR12) che verso la PA (FPA12).</p>
-        <ul class="space-y-1 text-xs text-gray-400">
-          <li class="flex gap-1.5"><span class="text-brand"></span> Fatture B2B e B2C (FPR12)</li>
-          <li class="flex gap-1.5"><span class="text-brand"></span> Fatture verso la PA (FPA12)</li>
-          <li class="flex gap-1.5"><span class="text-brand"></span> Tutti i tipi TD01-TD27</li>
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="dark-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <span style="width:36px;height:36px;border-radius:10px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;color:var(--gold);">XML</span>
+          <h3 style="font-size:15px;font-weight:700;">Fatture XML</h3>
+        </div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;">Le fatture elettroniche in formato FatturaPA, sia B2B/B2C (FPR12) che verso la PA (FPA12).</p>
+        <ul>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:2px 0;">· Fatture B2B e B2C (FPR12)</li>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:2px 0;">· Fatture verso la PA (FPA12)</li>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:2px 0;">· Tutti i tipi TD01-TD27</li>
         </ul>
       </div>
-      <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-        <div class="flex items-center gap-3 mb-3"><span class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 font-bold text-xs">P7M</span><h3 class="font-bold text-gray-900">File firmati .p7m</h3></div>
-        <p class="text-sm text-gray-500 leading-relaxed mb-3">Le fatture firmate digitalmente (CAdES), estratte e analizzate automaticamente senza software esterni.</p>
-        <ul class="space-y-1 text-xs text-gray-400">
-          <li class="flex gap-1.5"><span class="text-blue-400"></span> Estrazione XML automatica</li>
-          <li class="flex gap-1.5"><span class="text-blue-400"></span> Gestione encoding ISO/UTF-8</li>
+      <div class="dark-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <span style="width:36px;height:36px;border-radius:10px;background:rgba(96,165,250,.1);border:1px solid rgba(96,165,250,.2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;color:#93c5fd;">P7M</span>
+          <h3 style="font-size:15px;font-weight:700;">File firmati .p7m</h3>
+        </div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;">Le fatture firmate digitalmente (CAdES), estratte e analizzate automaticamente senza software esterni.</p>
+        <ul>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:2px 0;">· Estrazione XML automatica</li>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:2px 0;">· Gestione encoding ISO/UTF-8</li>
         </ul>
       </div>
-      <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-        <div class="flex items-center gap-3 mb-3"><span class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500 font-bold text-xs">SdI</span><h3 class="font-bold text-gray-900">Notifiche SdI</h3></div>
-        <p class="text-sm text-gray-500 leading-relaxed mb-3">Le notifiche del Sistema di Interscambio presenti nel ZIP, separate e archiviate in cartella dedicata.</p>
-        <ul class="space-y-1 text-xs text-gray-400">
-          <li class="flex gap-1.5"><span class="text-orange-400"></span> RC, NS, MC, EC, DT</li>
-          <li class="flex gap-1.5"><span class="text-orange-400"></span> Cartella /Notifiche/ dedicata</li>
+      <div class="dark-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <span style="width:36px;height:36px;border-radius:10px;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;color:#fbbf24;">SdI</span>
+          <h3 style="font-size:15px;font-weight:700;">Notifiche SdI</h3>
+        </div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;">Le notifiche del Sistema di Interscambio presenti nel ZIP, separate e archiviate in cartella dedicata.</p>
+        <ul>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:2px 0;">· RC, NS, MC, EC, DT</li>
+          <li style="font-size:12px;color:rgba(255,255,255,.4);padding:2px 0;">· Cartella /Notifiche/ dedicata</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- -- ARTICOLO SEO ---------------------------------------------------------- -->
-<section class="bg-gray-50 py-16 px-6 border-t border-gray-100">
+<!-- ARTICOLO SEO -->
+<section style="background:rgba(255,255,255,.02);border-top:1px solid var(--border);" class="px-6 py-20">
   <div class="max-w-3xl mx-auto">
     <article>
-      <h2 class="text-3xl font-bold text-gray-900 mb-2">Il download ZIP di Fatture e Corrispettivi: come funziona e come usarlo</h2>
-      <p class="text-gray-400 text-sm mb-8">Guida pratica per commercialisti e responsabili amministrativi</p>
-      <div class="space-y-8 text-sm leading-relaxed text-gray-600">
-
-        <div>
-          <h3 class="text-lg font-bold text-gray-800 mb-3">Perche organizzare il ZIP dell'Agenzia Entrate</h3>
-          <p>Il portale Fatture e Corrispettivi dell'Agenzia delle Entrate permette di scaricare in blocco tutte le fatture elettroniche ricevute e inviate tramite il Sistema di Interscambio. Il problema e che il download arriva come un archivio ZIP grezzo: decine o centinaia di file con nomi tecnici assegnati dallo SdI, senza nessuna struttura logica.</p>
-          <p>Per studi di commercialisti e uffici amministrativi che devono lavorare su quei file, avere tutto organizzato per anno e mese  e un Excel con i dati principali  fa risparmiare ore di lavoro manuale ogni mese.</p>
+      <div class="label mb-4">Guida</div>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:8px;">Il download ZIP di Fatture e Corrispettivi: come funziona e come usarlo</h2>
+      <p style="color:rgba(255,255,255,.3);font-size:13px;margin-bottom:40px;">Guida pratica per commercialisti e responsabili amministrativi</p>
+      <div style="font-size:14px;line-height:1.8;color:var(--muted);">
+        <div style="margin-bottom:36px;">
+          <h3 style="font-size:17px;font-weight:700;color:white;margin-bottom:12px;">Perché organizzare il ZIP dell'Agenzia Entrate</h3>
+          <p>Il portale Fatture e Corrispettivi dell'Agenzia delle Entrate permette di scaricare in blocco tutte le fatture elettroniche ricevute e inviate tramite il Sistema di Interscambio. Il problema è che il download arriva come un archivio ZIP grezzo: decine o centinaia di file con nomi tecnici assegnati dallo SdI, senza nessuna struttura logica.</p>
+          <p style="margin-top:12px;">Per studi di commercialisti e uffici amministrativi che devono lavorare su quei file, avere tutto organizzato per anno e mese — e un Excel con i dati principali — fa risparmiare ore di lavoro manuale ogni mese.</p>
         </div>
-
         <div>
-          <h3 class="text-lg font-bold text-gray-800 mb-3">Come distinguere fatture attive e passive nel ZIP</h3>
-          <p>Il ZIP scaricato da Fatture e Corrispettivi puo contenere sia fatture emesse (attive) che ricevute (passive). AdE Organizer usa due metodi per classificarle:</p>
-          <div class="mt-3 grid sm:grid-cols-2 gap-3">
-            <div class="bg-white rounded-xl border border-gray-200 p-4">
-              <p class="font-semibold text-gray-800 text-xs uppercase tracking-wide mb-1">Metodo 1: struttura cartelle</p>
-              <p class="text-xs text-gray-500">Se nel ZIP ci sono cartelle con nomi come "emesse", "attive", "ricevute", "passive", il sistema le riconosce automaticamente.</p>
+          <h3 style="font-size:17px;font-weight:700;color:white;margin-bottom:12px;">Come distinguere fatture attive e passive nel ZIP</h3>
+          <p style="margin-bottom:16px;">Il ZIP scaricato da Fatture e Corrispettivi può contenere sia fatture emesse (attive) che ricevute (passive). AdE Organizer usa due metodi per classificarle:</p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:14px;">
+              <p style="font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:6px;">Metodo 1: struttura cartelle</p>
+              <p style="font-size:12px;color:rgba(255,255,255,.5);">Se nel ZIP ci sono cartelle con nomi come "emesse", "attive", "ricevute", "passive", il sistema le riconosce automaticamente.</p>
             </div>
-            <div class="bg-white rounded-xl border border-gray-200 p-4">
-              <p class="font-semibold text-gray-800 text-xs uppercase tracking-wide mb-1">Metodo 2: P.IVA utente</p>
-              <p class="text-xs text-gray-500">Se inserisci la tua P.IVA, il sistema confronta cedente e cessionario di ogni fattura per classificarla come attiva o passiva.</p>
+            <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:14px;">
+              <p style="font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:6px;">Metodo 2: P.IVA utente</p>
+              <p style="font-size:12px;color:rgba(255,255,255,.5);">Se inserisci la tua P.IVA, il sistema confronta cedente e cessionario di ogni fattura per classificarla come attiva o passiva.</p>
             </div>
           </div>
         </div>
-
       </div>
     </article>
   </div>
 </section>
 
-
-<!-- -- FAQ ------------------------------------------------------------------- -->
-<section id="faq" class="py-16 px-6 border-t border-gray-100">
+<!-- FAQ -->
+<section id="faq" style="background:var(--navy);border-top:1px solid var(--border);" class="px-6 py-20">
   <div class="max-w-3xl mx-auto">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold text-gray-900">Domande frequenti</h2>
+    <div class="text-center mb-12">
+      <div class="label mb-4" style="justify-content:center;">FAQ</div>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;">Domande frequenti</h2>
     </div>
-    <div class="space-y-3">
-      <details class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden">
-        <summary class="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-gray-50 transition-colors">
-          <span class="font-medium text-gray-900 text-sm pr-4">Come si organizza il ZIP di Fatture e Corrispettivi?</span>
-          <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <details class="faq-item" style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;" onmouseover="this.parentElement.style.borderColor='rgba(255,255,255,.12)'" onmouseout="this.parentElement.style.borderColor='rgba(255,255,255,.07)'">
+          <span style="font-weight:600;font-size:14px;padding-right:16px;">Come si organizza il ZIP di Fatture e Corrispettivi?</span>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:rgba(255,255,255,.3);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </summary>
-        <div class="px-6 pb-5 text-sm text-gray-500 leading-relaxed">Carica il file ZIP su <a href="https://zip.datacetools.com/" class="text-brand hover:underline">zip.datacetools.com</a>. AdE Organizer analizza automaticamente tutti gli XML interni e restituisce un Excel strutturato e un archivio organizzato per anno e mese.</div>
+        <div style="padding:0 24px 20px;font-size:13px;color:var(--muted);line-height:1.7;">Carica il file ZIP su <a href="https://zip.datacetools.com/" style="color:#93c5fd;">zip.datacetools.com</a>. AdE Organizer analizza automaticamente tutti gli XML interni e restituisce un Excel strutturato e un archivio organizzato per anno e mese.</div>
       </details>
-      <details class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden">
-        <summary class="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-gray-50 transition-colors">
-          <span class="font-medium text-gray-900 text-sm pr-4">Come distinguo fatture attive e passive?</span>
-          <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+      <details class="faq-item" style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;" onmouseover="this.parentElement.style.borderColor='rgba(255,255,255,.12)'" onmouseout="this.parentElement.style.borderColor='rgba(255,255,255,.07)'">
+          <span style="font-weight:600;font-size:14px;padding-right:16px;">Come distinguo fatture attive e passive?</span>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:rgba(255,255,255,.3);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </summary>
-        <div class="px-6 pb-5 text-sm text-gray-500 leading-relaxed">AdE Organizer rileva il tipo dalla struttura delle cartelle nel ZIP. Se non e rilevabile automaticamente, inserisci la tua <strong>P.IVA o Codice Fiscale</strong> nell'apposito campo: il sistema confronta cedente e cessionario di ogni fattura per classificarla correttamente.</div>
+        <div style="padding:0 24px 20px;font-size:13px;color:var(--muted);line-height:1.7;">AdE Organizer rileva il tipo dalla struttura delle cartelle nel ZIP. Se non è rilevabile automaticamente, inserisci la tua <strong style="color:white;">P.IVA o Codice Fiscale</strong> nell'apposito campo: il sistema confronta cedente e cessionario di ogni fattura per classificarla correttamente.</div>
       </details>
-      <details class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden">
-        <summary class="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-gray-50 transition-colors">
-          <span class="font-medium text-gray-900 text-sm pr-4">I miei file vengono salvati?</span>
-          <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+      <details class="faq-item" style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;" onmouseover="this.parentElement.style.borderColor='rgba(255,255,255,.12)'" onmouseout="this.parentElement.style.borderColor='rgba(255,255,255,.07)'">
+          <span style="font-weight:600;font-size:14px;padding-right:16px;">I miei file vengono salvati?</span>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:rgba(255,255,255,.3);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </summary>
-        <div class="px-6 pb-5 text-sm text-gray-500 leading-relaxed">No. Tutto avviene in memoria RAM. Il file ZIP non viene mai scritto su disco e viene eliminato immediatamente dopo l'elaborazione. Nessun dato viene trasmesso a terzi.</div>
+        <div style="padding:0 24px 20px;font-size:13px;color:var(--muted);line-height:1.7;">No. Tutto avviene in memoria RAM. Il file ZIP non viene mai scritto su disco e viene eliminato immediatamente dopo l'elaborazione. Nessun dato viene trasmesso a terzi.</div>
       </details>
-      <details class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden">
-        <summary class="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-gray-50 transition-colors">
-          <span class="font-medium text-gray-900 text-sm pr-4">Serve registrarsi per usare AdE Organizer?</span>
-          <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+      <details class="faq-item" style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;" onmouseover="this.parentElement.style.borderColor='rgba(255,255,255,.12)'" onmouseout="this.parentElement.style.borderColor='rgba(255,255,255,.07)'">
+          <span style="font-weight:600;font-size:14px;padding-right:16px;">Serve registrarsi per usare AdE Organizer?</span>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:rgba(255,255,255,.3);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </summary>
-        <div class="px-6 pb-5 text-sm text-gray-500 leading-relaxed">No. Non serve registrarsi ne installare nulla. Carica il ZIP e scarica il risultato direttamente dal browser.</div>
+        <div style="padding:0 24px 20px;font-size:13px;color:var(--muted);line-height:1.7;">No. Non serve registrarsi né installare nulla. Carica il ZIP e scarica il risultato direttamente dal browser.</div>
       </details>
-      <details class="faq-item bg-white border border-gray-200 rounded-2xl overflow-hidden">
-        <summary class="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-gray-50 transition-colors">
-          <span class="font-medium text-gray-900 text-sm pr-4">Sono supportate le notifiche SdI nel ZIP?</span>
-          <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+      <details class="faq-item" style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <summary style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;" onmouseover="this.parentElement.style.borderColor='rgba(255,255,255,.12)'" onmouseout="this.parentElement.style.borderColor='rgba(255,255,255,.07)'">
+          <span style="font-weight:600;font-size:14px;padding-right:16px;">Sono supportate le notifiche SdI nel ZIP?</span>
+          <svg class="faq-icon w-5 h-5 flex-shrink-0" style="color:rgba(255,255,255,.3);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         </summary>
-        <div class="px-6 pb-5 text-sm text-gray-500 leading-relaxed">Si. AdE Organizer riconosce e gestisce le notifiche SdI (RC, NS, MC, EC, DT) presenti nel ZIP, inserendole in una cartella <strong>/Notifiche/</strong> dedicata nell'archivio organizzato.</div>
+        <div style="padding:0 24px 20px;font-size:13px;color:var(--muted);line-height:1.7;">Sì. AdE Organizer riconosce e gestisce le notifiche SdI (RC, NS, MC, EC, DT) presenti nel ZIP, inserendole in una cartella <strong style="color:white;">/Notifiche/</strong> dedicata nell'archivio organizzato.</div>
       </details>
     </div>
   </div>
 </section>
 
-
-
-
-
-
-
-
-<!-- -- FOOTER ---------------------------------------------------------------- -->
-<footer class="bg-gray-900 text-gray-400 py-8 px-6">
-  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
-    <a href="/" class="flex items-center gap-2">
-      <svg class="w-6 h-6 rounded-lg" viewBox="0 0 48 48" fill="none">
-        <rect width="48" height="48" rx="10" fill="#1c3461"/>
-        <path d="M10 12 L10 36 L21 36 Q32 36 32 24 Q32 12 21 12 Z" fill="white"/>
-        <path d="M16 18 L16 30 L21 30 Q26 30 26 24 Q26 18 21 18 Z" fill="#1c3461"/>
-        <rect x="9" y="12" width="4" height="24" rx="2" fill="#2a9db5"/>
-        <polyline points="29,10 39,10 39,20" stroke="#c4972b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <line x1="31" y1="18" x2="39" y2="10" stroke="#c4972b" stroke-width="3" stroke-linecap="round"/>
-      </svg>
-      <span class="text-white font-semibold">Datace</span>
-    </a>
-    <div class="flex items-center gap-4 text-xs">
-      <a href="/"       class="hover:text-gray-200 transition-colors">Strumenti</a>
-      <span class="text-gray-600"></span>
-      <a href="/guida/"  class="hover:text-gray-200 transition-colors">Guide</a>
-      <span class="text-gray-600"></span>
-      <a href="/chi-siamo"  class="hover:text-gray-200 transition-colors">Chi siamo</a>
-      <span class="text-gray-600"></span>
-      <a href="/privacy"    class="hover:text-gray-200 transition-colors">Privacy</a>
+<!-- FOOTER -->
+<footer style="background:#04080F;border-top:1px solid rgba(255,255,255,.06);" class="px-6 pt-16 pb-10">
+  <div class="max-w-5xl mx-auto">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <svg class="w-9 h-9" viewBox="0 0 48 48" fill="none">
+            <defs>
+              <linearGradient id="fIconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f2040"/><stop offset="100%" stop-color="#1c3461"/></linearGradient>
+              <linearGradient id="fsg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="12" fill="url(#fIconBg)"/>
+            <rect class="logo-bar logo-bar-1" x="10" y="11" width="28" height="6" rx="3" fill="url(#fsg)"/>
+            <rect class="logo-bar logo-bar-2" x="10" y="21" width="20" height="6" rx="3" fill="white"/>
+            <rect class="logo-bar logo-bar-3" x="10" y="31" width="12" height="6" rx="3" fill="white" fill-opacity="0.35"/>
+          </svg>
+          <div>
+            <div style="color:white;font-weight:700;font-size:15px;letter-spacing:.15em;text-transform:uppercase;">Datace</div>
+            <div style="color:rgba(255,255,255,.3);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:2px;">Smart Tools for Business</div>
+          </div>
+        </div>
+        <p style="font-size:13px;color:rgba(255,255,255,.3);line-height:1.7;max-width:240px;">Strumenti professionali per automatizzare il lavoro documentale italiano.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Strumenti</div>
+        <a href="/f24-to-excel/" class="footer-link">F24xls</a>
+        <a href="/fattura-elettronica-excel/" class="footer-link">FatturaXLS</a>
+        <a href="/ade-organizer/" class="footer-link">AdE Organizer</a>
+        <a href="/scadenzef24/" class="footer-link">ScadenzeF24</a>
+        <a href="/bustachiara/" class="footer-link">BustaChiara</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Risorse</div>
+        <a href="/guida/" class="footer-link">Guide</a>
+        <a href="/chi-siamo" class="footer-link">Chi siamo</a>
+        <a href="/privacy/" class="footer-link">Privacy Policy</a>
+        <a href="mailto:datacetools@gmail.com" class="footer-link">Contatti</a>
+      </div>
     </div>
-    <p class="text-xs">&copy; 2026 Datace &nbsp;&nbsp; Tutti i diritti riservati</p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Datace. Tutti i diritti riservati.</span>
+      <span style="color:rgba(255,255,255,.12);">Made in Italy</span>
+    </div>
   </div>
 </footer>
 

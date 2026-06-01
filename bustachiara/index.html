@@ -3,35 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Google Search Console -->
   <meta name="google-site-verification" content="aBsjbMCgIMxYkbRcWz6SeD5mHXBb-KRGvx3bucboyxE" />
-
-  <!-- SEO -->
   <title>BustaChiara | Capire la busta paga in un clic | Datace</title>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="icon" type="image/svg+xml" href="/images/logo-icon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="description" content="Carica la tua busta paga PDF e ricevi un Excel che spiega ogni voce in italiano. Lordo, INPS, IRPEF, netto, addizionali — tutto chiaro. Privato, nessun dato salvato." />
-  <link rel="canonical" href="https://datacetools.com/BustaChiara/" />
+  <link rel="canonical" href="https://datacetools.com/bustachiara/" />
   <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://datacetools.com/BustaChiara/" />
-  <meta property="og:title"       content="BustaChiara | Capire la busta paga in un clic | Datace" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://datacetools.com/bustachiara/" />
+  <meta property="og:title" content="BustaChiara | Capire la busta paga in un clic | Datace" />
   <meta property="og:description" content="Carica la tua busta paga PDF e scopri cosa significa ogni voce. Export Excel professionale con spiegazioni in italiano." />
-  <meta name="twitter:card"       content="summary" />
+  <meta name="twitter:card" content="summary" />
 
-  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "@id": "https://datacetools.com/BustaChiara/#app",
+        "@id": "https://datacetools.com/bustachiara/#app",
         "name": "BustaChiara",
         "url": "https://payroll.datacetools.com/",
         "description": "Carica la tua busta paga PDF e ricevi un Excel che spiega ogni voce in italiano. Lordo, INPS, IRPEF, netto — tutto chiaro.",
@@ -45,270 +38,293 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Datace", "item": "https://datacetools.com/" },
-          { "@type": "ListItem", "position": 2, "name": "BustaChiara", "item": "https://datacetools.com/BustaChiara/" }
+          { "@type": "ListItem", "position": 2, "name": "BustaChiara", "item": "https://datacetools.com/bustachiara/" }
         ]
       }
     ]
   }
   </script>
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { DEFAULT: '#1c3461', light: '#2a9db5', dark: '#0f2040', 50: '#eef4fb', gold: '#c4972b' }
-          },
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
-        }
-      }
-    }
-  </script>
+  <script>tailwind.config={theme:{extend:{colors:{brand:{DEFAULT:'#1c3461',light:'#2a9db5',dark:'#0f2040',50:'#eef4fb',gold:'#F59E0B'}},fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
-
   <style>
-    .hero-gradient { background: linear-gradient(135deg, #0f2040 0%, #1c3461 60%, #1d7a94 100%); }
-    .tool-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .tool-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(28,52,97,0.14); }
+    :root{--navy:#060E1F;--navy2:#0A1628;--navy3:#0F2040;--gold:#F59E0B;--gold2:#FBBF24;--teal:#1d7a94;--border:rgba(255,255,255,0.07);--muted:rgba(255,255,255,0.45);}
+    *{box-sizing:border-box;}body{background:var(--navy);color:white;}
+    .logo-bar{transform-box:fill-box;transform-origin:left center;}
+    .logo-bar-1{animation:barStream 2.8s ease-in-out infinite 0s;}
+    .logo-bar-2{animation:barStream 2.8s ease-in-out infinite .22s;}
+    .logo-bar-3{animation:barStream 2.8s ease-in-out infinite .44s;}
+    @keyframes barStream{0%,100%{transform:scaleX(1);opacity:1;}30%{transform:scaleX(0.32);opacity:0.5;}60%{transform:scaleX(1);opacity:1;}}
+    .label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);}
+    .label::before{content:'';width:20px;height:1px;background:var(--gold);}
+    .grad-text{background:linear-gradient(90deg,#fff 0%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .stat-num{font-size:2.8rem;font-weight:800;line-height:1;background:linear-gradient(135deg,#fff,#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .dark-card{background:linear-gradient(135deg,rgba(15,32,64,.8),rgba(6,14,31,.9));border:1px solid var(--border);border-radius:20px;padding:24px;transition:border-color .3s ease,transform .3s ease;}
+    .dark-card:hover{border-color:rgba(255,255,255,.14);transform:translateY(-3px);}
+    .pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:500;color:#93c5fd;letter-spacing:.04em;}
+    .pill-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:white;color:#0F2040;font-weight:700;font-size:14px;padding:14px 28px;border-radius:12px;transition:transform .2s ease,box-shadow .2s ease;text-decoration:none;}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,255,255,.15);}
+    .btn-secondary{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.2);color:white;font-weight:600;font-size:14px;padding:14px 28px;border-radius:12px;transition:background .2s ease;text-decoration:none;}
+    .btn-secondary:hover{background:rgba(255,255,255,.06);}
+    .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;align-items:start;}
+    .footer-col-title{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:16px;}
+    .footer-link{display:block;font-size:14px;color:rgba(255,255,255,.45);margin-bottom:10px;text-decoration:none;transition:color .2s ease;}
+    .footer-link:hover{color:white;}
+    .footer-bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.2);}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;gap:8px;text-align:center;}}
   </style>
 </head>
 
-<body class="bg-gray-50 font-sans text-gray-800 antialiased">
+<body class="font-sans antialiased" style="background:#060E1F;color:white;">
 
-<!-- ── HEADER ──────────────────────────────────────────────────────────────── -->
-<header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+<!-- HEADER -->
+<header style="background:rgba(6,14,31,.85);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(16px);" class="sticky top-0 z-50">
   <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2.5 group">
-      <svg class="w-9 h-9 shadow-sm rounded-xl flex-shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="48" height="48" rx="12" fill="#1c3461"/>
-        <path d="M10 12 L10 36 L21 36 Q32 36 32 24 Q32 12 21 12 Z" fill="white"/>
-        <path d="M16 18 L16 30 L21 30 Q26 30 26 24 Q26 18 21 18 Z" fill="#1c3461"/>
-        <rect x="9" y="12" width="4" height="24" rx="2" fill="#2a9db5"/>
-        <polyline points="29,10 39,10 39,20" stroke="#c4972b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <line x1="31" y1="18" x2="39" y2="10" stroke="#c4972b" stroke-width="3" stroke-linecap="round"/>
+    <a href="/" class="flex items-center gap-3">
+      <svg class="w-9 h-9 flex-shrink-0" viewBox="0 0 48 48" fill="none">
+        <defs>
+          <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient>
+          <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f2040"/><stop offset="100%" stop-color="#1c3461"/></linearGradient>
+        </defs>
+        <rect width="48" height="48" rx="12" fill="url(#iconBg)"/>
+        <rect class="logo-bar logo-bar-1" x="10" y="11" width="28" height="6" rx="3" fill="url(#sg)"/>
+        <rect class="logo-bar logo-bar-2" x="10" y="21" width="20" height="6" rx="3" fill="white"/>
+        <rect class="logo-bar logo-bar-3" x="10" y="31" width="12" height="6" rx="3" fill="white" fill-opacity="0.35"/>
       </svg>
-      <span class="text-xl font-bold text-gray-900 tracking-tight">Datace</span>
+      <div class="flex flex-col leading-tight">
+        <span style="color:white;" class="text-lg font-bold tracking-widest uppercase">Datace</span>
+        <span style="color:rgba(255,255,255,.4);" class="text-[9px] font-medium tracking-[0.2em] uppercase">Smart Tools for Business</span>
+      </div>
     </a>
-    <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-gray-500">
-      <a href="/#strumenti" class="hover:text-brand transition-colors">Strumenti</a>
-      <a href="/guida/"     class="hover:text-brand transition-colors">Guide</a>
-      <a href="/chi-siamo"  class="hover:text-brand transition-colors">Chi siamo</a>
+    <nav class="hidden sm:flex items-center gap-6 text-sm font-medium" style="color:rgba(255,255,255,.5);">
+      <a href="/#strumenti" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Strumenti</a>
+      <a href="/guida/"     style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Guide</a>
+      <a href="/chi-siamo"  style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Chi siamo</a>
     </nav>
+    <a href="https://payroll.datacetools.com/" style="background:white;color:#0f2040;font-weight:700;font-size:13px;padding:9px 20px;border-radius:10px;transition:all .2s ease;white-space:nowrap;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">Apri BustaChiara</a>
   </div>
 </header>
 
-<!-- ── BREADCRUMB ───────────────────────────────────────────────────────────── -->
-<div class="bg-white border-b border-gray-100 py-2 px-6">
-  <div class="max-w-5xl mx-auto text-xs text-gray-400 flex items-center gap-1.5">
-    <a href="/" class="hover:text-brand transition-colors">Datace</a>
-    <span>/</span>
-    <span class="text-gray-600 font-medium">BustaChiara</span>
-  </div>
-</div>
-
-<!-- ── HERO ────────────────────────────────────────────────────────────────── -->
-<section class="hero-gradient text-white py-20 px-6">
-  <div class="max-w-3xl mx-auto text-center">
-    <span class="inline-block text-xs font-semibold bg-white/10 text-blue-100 px-3 py-1 rounded-full mb-6 uppercase tracking-widest">Nuovo strumento</span>
-    <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-5">
-      Capisci la tua busta paga<br class="hidden sm:block"/> in un clic
+<!-- HERO -->
+<section class="px-6 py-24" style="background:var(--navy);position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-20%;left:-10%;width:55%;height:80%;background:radial-gradient(ellipse,rgba(29,122,148,.18) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-10%;right:-5%;width:45%;height:70%;background:radial-gradient(ellipse,rgba(245,158,11,.07) 0%,transparent 60%);pointer-events:none;"></div>
+  <div class="max-w-4xl mx-auto text-center" style="position:relative;z-index:1;">
+    <div class="mb-6"><span class="pill"><span class="pill-dot"></span> Nuovo strumento</span></div>
+    <h1 style="font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.08;letter-spacing:-.02em;" class="mb-5">
+      Capisci la tua busta paga<br/><span class="grad-text">in un clic</span>
     </h1>
-    <p class="text-blue-100 text-lg max-w-2xl mx-auto mb-8">
-      Carica il PDF della tua busta paga e ricevi un <strong class="text-white">Excel con ogni voce spiegata in italiano</strong>. Lordo, INPS, IRPEF, addizionali, netto — tutto chiaro, senza cercare su Google.
+    <p style="font-size:1.05rem;color:var(--muted);line-height:1.8;max-width:600px;margin:0 auto 32px;">
+      Carica il PDF della tua busta paga e ricevi un <strong style="color:white;">Excel con ogni voce spiegata in italiano</strong>. Lordo, INPS, IRPEF, addizionali, netto — tutto chiaro, senza cercare su Google.
     </p>
-    <a href="https://payroll.datacetools.com/"
-       class="inline-flex items-center gap-2 bg-white text-brand font-bold px-8 py-4 rounded-2xl hover:bg-gray-100 transition-colors shadow-lg text-base">
-      Apri BustaChiara
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-      </svg>
-    </a>
-    <p class="text-blue-200 text-xs mt-4">Gratuito &nbsp;·&nbsp; Nessuna registrazione &nbsp;·&nbsp; Nessun dato salvato</p>
+    <div class="flex flex-wrap gap-3 justify-center">
+      <a href="https://payroll.datacetools.com/" class="btn-primary">
+        Apri BustaChiara
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+    <p style="color:rgba(255,255,255,.3);font-size:12px;margin-top:16px;">Gratuito &nbsp;·&nbsp; Nessuna registrazione &nbsp;·&nbsp; Nessun dato salvato</p>
   </div>
 </section>
 
-<!-- ── TRUST BAR ─────────────────────────────────────────────────────────── -->
-<div class="bg-white border-b border-gray-100 py-4 px-6">
-  <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-gray-500">
-    <span class="flex items-center gap-1.5">
-      <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+<!-- TRUST BAR -->
+<div style="background:rgba(255,255,255,.025);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" class="px-6 py-8">
+  <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-x-10 gap-y-3" style="font-size:13px;color:var(--muted);">
+    <span style="display:flex;align-items:center;gap:8px;">
+      <svg class="w-4 h-4" style="color:#86efac;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
       Nessuna installazione
     </span>
-    <span class="flex items-center gap-1.5">
-      <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+    <span style="display:flex;align-items:center;gap:8px;">
+      <svg class="w-4 h-4" style="color:#86efac;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
       Elaborazione in pochi secondi
     </span>
-    <span class="flex items-center gap-1.5">
-      <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+    <span style="display:flex;align-items:center;gap:8px;">
+      <svg class="w-4 h-4" style="color:#86efac;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
       Nessun dato salvato
     </span>
-    <span class="flex items-center gap-1.5">
-      <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+    <span style="display:flex;align-items:center;gap:8px;">
+      <svg class="w-4 h-4" style="color:#86efac;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
       Supporta TeamSystem, Zucchetti, NoiPA, DATEV e altri
     </span>
   </div>
 </div>
 
-<!-- ── COME FUNZIONA ─────────────────────────────────────────────────────── -->
-<section class="py-16 px-6 bg-gray-50">
+<!-- COME FUNZIONA -->
+<section class="px-6 py-20" style="background:var(--navy);">
   <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-2xl font-bold text-gray-900">Come funziona</h2>
-      <p class="text-gray-500 mt-1 text-sm">Tre passi, meno di un minuto</p>
+    <div class="text-center mb-14">
+      <div class="label mb-4" style="justify-content:center;">Il processo</div>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;">Come funziona</h2>
+      <p style="color:var(--muted);margin-top:8px;">Tre passi, meno di un minuto</p>
     </div>
     <div class="grid sm:grid-cols-3 gap-6">
-      <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm text-center">
-        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4" style="background:#eef4fb;">
-          <span class="text-xl font-extrabold" style="color:#1c3461;">1</span>
-        </div>
-        <h3 class="font-bold text-gray-900 mb-2">Carica il PDF</h3>
-        <p class="text-sm text-gray-500 leading-relaxed">Trascina o seleziona il PDF della tua busta paga. Se è protetto da password, inseriscila nel campo apposito.</p>
+      <div class="dark-card text-center">
+        <div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><span style="font-size:18px;font-weight:800;color:var(--gold);">1</span></div>
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:10px;">Carica il PDF</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;">Trascina o seleziona il PDF della tua busta paga. Se è protetto da password, inseriscila nel campo apposito.</p>
       </div>
-      <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm text-center">
-        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4" style="background:#eef4fb;">
-          <span class="text-xl font-extrabold" style="color:#1c3461;">2</span>
-        </div>
-        <h3 class="font-bold text-gray-900 mb-2">L'AI legge e analizza</h3>
-        <p class="text-sm text-gray-500 leading-relaxed">Il sistema estrae il testo dal PDF e lo invia a un modello AI che identifica e classifica ogni voce retributiva.</p>
+      <div class="dark-card text-center">
+        <div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><span style="font-size:18px;font-weight:800;color:var(--gold);">2</span></div>
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:10px;">L'AI legge e analizza</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;">Il sistema estrae il testo dal PDF e lo invia a un modello AI che identifica e classifica ogni voce retributiva.</p>
       </div>
-      <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm text-center">
-        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4" style="background:#eef4fb;">
-          <span class="text-xl font-extrabold" style="color:#1c3461;">3</span>
-        </div>
-        <h3 class="font-bold text-gray-900 mb-2">Scarica l'Excel</h3>
-        <p class="text-sm text-gray-500 leading-relaxed">Ricevi un file .xlsx con ogni voce spiegata in italiano semplice, la matematica verificata e il netto confermato.</p>
+      <div class="dark-card text-center">
+        <div style="width:52px;height:52px;border-radius:16px;background:rgba(29,122,148,.3);border:1px solid rgba(29,122,148,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><span style="font-size:18px;font-weight:800;color:#2a9db5;">3</span></div>
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:10px;">Scarica l'Excel</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;">Ricevi un file .xlsx con ogni voce spiegata in italiano semplice, la matematica verificata e il netto confermato.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── COSA OTTIENI ───────────────────────────────────────────────────────── -->
-<section class="py-16 px-6 bg-white border-t border-gray-100">
+<!-- COSA OTTIENI -->
+<section style="background:rgba(255,255,255,.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" class="px-6 py-20">
   <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-2xl font-bold text-gray-900">Cosa contiene l'Excel</h2>
-      <p class="text-gray-500 mt-1 text-sm">Un foglio professionale che spiega ogni voce</p>
+    <div class="text-center mb-14">
+      <div class="label mb-4" style="justify-content:center;">Output</div>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;">Cosa contiene l'Excel</h2>
+      <p style="color:var(--muted);margin-top:8px;">Un foglio professionale che spiega ogni voce</p>
     </div>
     <div class="grid sm:grid-cols-2 gap-5">
-      <div class="flex items-start gap-4 rounded-2xl border border-gray-100 p-5 shadow-sm">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eef4fb;">
-          <svg class="w-5 h-5" fill="none" stroke="#1c3461" stroke-width="2" viewBox="0 0 24 24">
+      <div class="dark-card" style="display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:44px;height:44px;border-radius:12px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg class="w-5 h-5" style="color:var(--gold);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
           </svg>
         </div>
         <div>
-          <p class="font-semibold text-gray-900 text-sm mb-1">Competenze e retribuzione lorda</p>
-          <p class="text-xs text-gray-500 leading-relaxed">Stipendio base, scatti, straordinari, indennità — ogni voce con il suo importo e la spiegazione di cosa rappresenta.</p>
+          <p style="font-weight:700;font-size:14px;margin-bottom:6px;">Competenze e retribuzione lorda</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Stipendio base, scatti, straordinari, indennità — ogni voce con il suo importo e la spiegazione di cosa rappresenta.</p>
         </div>
       </div>
-      <div class="flex items-start gap-4 rounded-2xl border border-gray-100 p-5 shadow-sm">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eef4fb;">
-          <svg class="w-5 h-5" fill="none" stroke="#1c3461" stroke-width="2" viewBox="0 0 24 24">
+      <div class="dark-card" style="display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:44px;height:44px;border-radius:12px;background:rgba(96,165,250,.1);border:1px solid rgba(96,165,250,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg class="w-5 h-5" style="color:#93c5fd;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z"/>
           </svg>
         </div>
         <div>
-          <p class="font-semibold text-gray-900 text-sm mb-1">Contributi INPS e previdenza</p>
-          <p class="text-xs text-gray-500 leading-relaxed">Contributi a carico del dipendente, fondo pensione complementare, aliquote applicate.</p>
+          <p style="font-weight:700;font-size:14px;margin-bottom:6px;">Contributi INPS e previdenza</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Contributi a carico del dipendente, fondo pensione complementare, aliquote applicate.</p>
         </div>
       </div>
-      <div class="flex items-start gap-4 rounded-2xl border border-gray-100 p-5 shadow-sm">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eef4fb;">
-          <svg class="w-5 h-5" fill="none" stroke="#1c3461" stroke-width="2" viewBox="0 0 24 24">
+      <div class="dark-card" style="display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:44px;height:44px;border-radius:12px;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg class="w-5 h-5" style="color:#c4b5fd;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/>
           </svg>
         </div>
         <div>
-          <p class="font-semibold text-gray-900 text-sm mb-1">IRPEF e addizionali</p>
-          <p class="text-xs text-gray-500 leading-relaxed">IRPEF netta, addizionale regionale, addizionale comunale (saldo e acconto), detrazioni applicate.</p>
+          <p style="font-weight:700;font-size:14px;margin-bottom:6px;">IRPEF e addizionali</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6;">IRPEF netta, addizionale regionale, addizionale comunale (saldo e acconto), detrazioni applicate.</p>
         </div>
       </div>
-      <div class="flex items-start gap-4 rounded-2xl border border-gray-100 p-5 shadow-sm">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eef4fb;">
-          <svg class="w-5 h-5" fill="none" stroke="#1c3461" stroke-width="2" viewBox="0 0 24 24">
+      <div class="dark-card" style="display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:44px;height:44px;border-radius:12px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg class="w-5 h-5" style="color:#86efac;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
         </div>
         <div>
-          <p class="font-semibold text-gray-900 text-sm mb-1">Netto verificato matematicamente</p>
-          <p class="text-xs text-gray-500 leading-relaxed">Il sistema verifica che Lordo − trattenute = Netto in busta. Se c'è discrepanza, viene segnalata.</p>
+          <p style="font-weight:700;font-size:14px;margin-bottom:6px;">Netto verificato matematicamente</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Il sistema verifica che Lordo − trattenute = Netto in busta. Se c'è discrepanza, viene segnalata.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── SOFTWARE SUPPORTATI ───────────────────────────────────────────────── -->
-<section class="py-16 px-6 bg-gray-50 border-t border-gray-100">
+<!-- SOFTWARE SUPPORTATI -->
+<section class="px-6 py-20" style="background:var(--navy);">
   <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-10">
-      <h2 class="text-2xl font-bold text-gray-900">Software paghe supportati</h2>
-      <p class="text-gray-500 mt-1 text-sm">Rilevamento automatico del layout</p>
+    <div class="text-center mb-12">
+      <div class="label mb-4" style="justify-content:center;">Compatibilità</div>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;">Software paghe supportati</h2>
+      <p style="color:var(--muted);margin-top:8px;">Rilevamento automatico del layout</p>
     </div>
-    <div class="flex flex-wrap justify-center gap-3">
-      <span class="bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">TeamSystem</span>
-      <span class="bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">Zucchetti</span>
-      <span class="bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">NoiPA / RGS</span>
-      <span class="bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">DATEV</span>
-      <span class="bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">OSRA / Wolters Kluwer</span>
-      <span class="bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">ADP</span>
-      <span class="bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">Inaz</span>
-      <span class="bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">JOB / Sistemi S.p.A.</span>
-      <span class="bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm font-medium text-gray-500 shadow-sm italic">e altri</span>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
+      <span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);">TeamSystem</span>
+      <span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);">Zucchetti</span>
+      <span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);">NoiPA / RGS</span>
+      <span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);">DATEV</span>
+      <span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);">OSRA / Wolters Kluwer</span>
+      <span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);">ADP</span>
+      <span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);">Inaz</span>
+      <span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);">JOB / Sistemi S.p.A.</span>
+      <span style="background:transparent;border:1px dashed rgba(255,255,255,.15);border-radius:12px;padding:10px 18px;font-size:13px;font-style:italic;color:rgba(255,255,255,.3);">e altri</span>
     </div>
   </div>
 </section>
 
-<!-- ── PRIVACY ───────────────────────────────────────────────────────────── -->
-<section class="py-16 px-6 bg-white border-t border-gray-100">
+<!-- PRIVACY -->
+<section style="background:rgba(255,255,255,.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" class="px-6 py-20">
   <div class="max-w-3xl mx-auto">
-    <div class="bg-brand rounded-2xl p-8 text-white flex items-start gap-5">
-      <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
+    <div style="background:linear-gradient(135deg,rgba(28,52,97,.6),rgba(15,32,64,.8));border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:32px;display:flex;align-items:flex-start;gap:20px;">
+      <div style="width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
         </svg>
       </div>
       <div>
-        <p class="font-bold text-lg mb-2">La tua busta paga è privata.</p>
-        <p class="text-blue-100 text-sm leading-relaxed mb-3">
+        <p style="font-weight:700;font-size:17px;margin-bottom:10px;">La tua busta paga è privata.</p>
+        <p style="color:var(--muted);font-size:13px;line-height:1.7;margin-bottom:10px;">
           Il PDF viene elaborato esclusivamente in memoria RAM e cancellato immediatamente dopo la generazione dell'Excel. Nessun file viene scritto su disco, nessun dato viene conservato o trasmesso a terzi.
         </p>
-        <p class="text-blue-200 text-xs">
+        <p style="color:rgba(255,255,255,.3);font-size:12px;line-height:1.6;">
           Il testo estratto dal PDF viene inviato all'API di Google Gemini per l'analisi. Google non utilizza i dati inviati tramite API per addestrare i propri modelli (Google API Additional Terms).
         </p>
-        <a href="/privacy" class="inline-block mt-3 text-xs text-brand-light hover:underline font-medium">Leggi la Privacy Policy completa →</a>
+        <a href="/privacy/" style="display:inline-block;margin-top:14px;font-size:12px;color:#93c5fd;font-weight:600;text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Leggi la Privacy Policy completa →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ──────────────────────────────────────────────────────────────── -->
-<footer class="bg-gray-900 text-gray-400 py-8 px-6">
-  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
-    <div class="flex items-center gap-2">
-      <svg class="w-6 h-6 rounded-lg" viewBox="0 0 48 48" fill="none">
-        <rect width="48" height="48" rx="10" fill="#1c3461"/>
-        <path d="M10 12 L10 36 L21 36 Q32 36 32 24 Q32 12 21 12 Z" fill="white"/>
-        <path d="M16 18 L16 30 L21 30 Q26 30 26 24 Q26 18 21 18 Z" fill="#1c3461"/>
-        <rect x="9" y="12" width="4" height="24" rx="2" fill="#2a9db5"/>
-        <polyline points="29,10 39,10 39,20" stroke="#c4972b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <line x1="31" y1="18" x2="39" y2="10" stroke="#c4972b" stroke-width="3" stroke-linecap="round"/>
-      </svg>
-      <span class="text-white font-semibold">Datace</span>
+<!-- FOOTER -->
+<footer style="background:#04080F;border-top:1px solid rgba(255,255,255,.06);" class="px-6 pt-16 pb-10">
+  <div class="max-w-5xl mx-auto">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <svg class="w-9 h-9" viewBox="0 0 48 48" fill="none">
+            <defs>
+              <linearGradient id="fIconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f2040"/><stop offset="100%" stop-color="#1c3461"/></linearGradient>
+              <linearGradient id="fsg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="12" fill="url(#fIconBg)"/>
+            <rect class="logo-bar logo-bar-1" x="10" y="11" width="28" height="6" rx="3" fill="url(#fsg)"/>
+            <rect class="logo-bar logo-bar-2" x="10" y="21" width="20" height="6" rx="3" fill="white"/>
+            <rect class="logo-bar logo-bar-3" x="10" y="31" width="12" height="6" rx="3" fill="white" fill-opacity="0.35"/>
+          </svg>
+          <div>
+            <div style="color:white;font-weight:700;font-size:15px;letter-spacing:.15em;text-transform:uppercase;">Datace</div>
+            <div style="color:rgba(255,255,255,.3);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:2px;">Smart Tools for Business</div>
+          </div>
+        </div>
+        <p style="font-size:13px;color:rgba(255,255,255,.3);line-height:1.7;max-width:240px;">Strumenti professionali per automatizzare il lavoro documentale italiano.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Strumenti</div>
+        <a href="/f24-to-excel/" class="footer-link">F24xls</a>
+        <a href="/fattura-elettronica-excel/" class="footer-link">FatturaXLS</a>
+        <a href="/ade-organizer/" class="footer-link">AdE Organizer</a>
+        <a href="/scadenzef24/" class="footer-link">ScadenzeF24</a>
+        <a href="/bustachiara/" class="footer-link">BustaChiara</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Risorse</div>
+        <a href="/guida/" class="footer-link">Guide</a>
+        <a href="/chi-siamo" class="footer-link">Chi siamo</a>
+        <a href="/privacy/" class="footer-link">Privacy Policy</a>
+        <a href="mailto:datacetools@gmail.com" class="footer-link">Contatti</a>
+      </div>
     </div>
-    <div class="flex items-center gap-4 text-xs">
-      <a href="/"        class="hover:text-gray-200 transition-colors">Strumenti</a>
-      <span class="text-gray-600">·</span>
-      <a href="/guida/"  class="hover:text-gray-200 transition-colors">Guide</a>
-      <span class="text-gray-600">·</span>
-      <a href="/chi-siamo" class="hover:text-gray-200 transition-colors">Chi siamo</a>
-      <span class="text-gray-600">·</span>
-      <a href="/privacy" class="hover:text-gray-200 transition-colors">Privacy Policy</a>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Datace. Tutti i diritti riservati.</span>
+      <span style="color:rgba(255,255,255,.12);">Made in Italy</span>
     </div>
-    <p class="text-xs">&copy; 2026 Datace &nbsp;·&nbsp; Tutti i diritti riservati</p>
   </div>
 </footer>
 

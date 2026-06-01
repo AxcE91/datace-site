@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Concepts – Datace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] } } }
+    }
+  </script>
+  <style>
+    .tool-card { transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .tool-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(28,52,97,0.12); }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans p-10 space-y-16">
+
+<!-- ═══════════════════════════════════════════════════════════════
+     VARIANTE A — Card orizzontale compatta (2 colonne)
+     Icona a sinistra, testo a destra, badge in alto, CTA inline
+════════════════════════════════════════════════════════════════ -->
+<section>
+  <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Variante A — Orizzontale 2 colonne</p>
+  <div class="grid grid-cols-2 gap-4">
+
+    <a href="#" class="tool-card bg-white rounded-2xl border border-gray-200 p-5 flex items-center gap-5 shadow-sm">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eef4fb;">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" fill="#1c3461" opacity=".15"/>
+          <path d="M14 2v6h6M8 13h8M8 17h5" stroke="#1c3461" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#1c3461" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 mb-1">
+          <h3 class="font-bold text-gray-900 text-sm">F24xls</h3>
+          <span class="text-xs bg-green-100 text-green-700 font-semibold px-2 py-0.5 rounded-full">Disponibile</span>
+        </div>
+        <p class="text-xs text-gray-500 leading-relaxed">Estrazione strutturata dei dati F24 da PDF verso Excel. Output ordinato su 3 fogli, gestione batch.</p>
+      </div>
+      <svg class="w-4 h-4 flex-shrink-0 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+
+    <a href="#" class="tool-card bg-white rounded-2xl border border-gray-200 p-5 flex items-center gap-5 shadow-sm">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eef4fb;">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" fill="#1c3461" opacity=".15"/>
+          <path d="M14 2v6h6" stroke="#1c3461" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#1c3461" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M8 12l2.5 2.5L8 17M12.5 17H16" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 mb-1">
+          <h3 class="font-bold text-gray-900 text-sm">FatturaXLS</h3>
+          <span class="text-xs bg-green-100 text-green-700 font-semibold px-2 py-0.5 rounded-full">Disponibile</span>
+        </div>
+        <p class="text-xs text-gray-500 leading-relaxed">Converti Fatture Elettroniche XML e .p7m in Excel su 5 fogli: Riepilogo, Righe, IVA, Notifiche SdI.</p>
+      </div>
+      <svg class="w-4 h-4 flex-shrink-0 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+
+    <a href="#" class="tool-card bg-white rounded-2xl border border-gray-200 p-5 flex items-center gap-5 shadow-sm">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eef4fb;">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+          <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" fill="#1c3461" opacity=".15"/>
+          <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" stroke="#1c3461" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M12 18v-6M9 15l3-3 3 3" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 mb-1">
+          <h3 class="font-bold text-gray-900 text-sm">AdE Organizer</h3>
+          <span class="text-xs bg-green-100 text-green-700 font-semibold px-2 py-0.5 rounded-full">Disponibile</span>
+        </div>
+        <p class="text-xs text-gray-500 leading-relaxed">Organizza il ZIP di Fatture e Corrispettivi dell'AdE. Excel strutturato + archivio per anno e mese.</p>
+      </div>
+      <svg class="w-4 h-4 flex-shrink-0 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+
+    <a href="#" class="tool-card bg-white rounded-2xl border border-gray-200 p-5 flex items-center gap-5 shadow-sm">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eef4fb;">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+          <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="#1c3461" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M9 14h2m4 0h-2m-2 3h2" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 mb-1">
+          <h3 class="font-bold text-gray-900 text-sm">ScadenzeF24</h3>
+          <span class="text-xs bg-green-100 text-green-700 font-semibold px-2 py-0.5 rounded-full">Disponibile</span>
+        </div>
+        <p class="text-xs text-gray-500 leading-relaxed">Prevedi IRPEF, IVA, INPS e IMU dai tuoi F24 PDF. Cashflow fiscale con semaforo e calendario .ics.</p>
+      </div>
+      <svg class="w-4 h-4 flex-shrink-0 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     VARIANTE B — Orizzontale 4 colonne (mantieni 4 col ma più flat)
+     Icona top, testo compatto, niente CTA testuale — solo freccia
+════════════════════════════════════════════════════════════════ -->
+<section>
+  <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Variante B — Flat 4 colonne, più basse</p>
+  <div class="grid grid-cols-4 gap-4">
+
+    <a href="#" class="tool-card bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 shadow-sm">
+      <div class="flex items-center justify-between">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:#eef4fb;">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" fill="#1c3461" opacity=".15"/>
+            <path d="M14 2v6h6M8 13h8M8 17h5" stroke="#1c3461" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#1c3461" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="text-xs bg-green-100 text-green-700 font-semibold px-2 py-0.5 rounded-full">Disponibile</span>
+      </div>
+      <div>
+        <h3 class="font-bold text-gray-900 text-sm mb-1">F24xls</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Da PDF F24 a Excel strutturato. 3 fogli, batch, workflow admin.</p>
+      </div>
+      <div class="flex items-center gap-1 text-xs font-semibold mt-auto" style="color:#1c3461;">
+        Apri <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </div>
+    </a>
+
+    <a href="#" class="tool-card bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 shadow-sm">
+      <div class="flex items-center justify-between">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:#eef4fb;">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" fill="#1c3461" opacity=".15"/>
+            <path d="M14 2v6h6" stroke="#1c3461" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#1c3461" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M8 12l2.5 2.5L8 17M12.5 17H16" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="text-xs bg-green-100 text-green-700 font-semibold px-2 py-0.5 rounded-full">Disponibile</span>
+      </div>
+      <div>
+        <h3 class="font-bold text-gray-900 text-sm mb-1">FatturaXLS</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">XML e .p7m in Excel. 5 fogli: Riepilogo, Righe, IVA, SdI, Allegati.</p>
+      </div>
+      <div class="flex items-center gap-1 text-xs font-semibold mt-auto" style="color:#1c3461;">
+        Apri <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </div>
+    </a>
+
+    <a href="#" class="tool-card bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 shadow-sm">
+      <div class="flex items-center justify-between">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:#eef4fb;">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24">
+            <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" fill="#1c3461" opacity=".15"/>
+            <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" stroke="#1c3461" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M12 18v-6M9 15l3-3 3 3" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="text-xs bg-green-100 text-green-700 font-semibold px-2 py-0.5 rounded-full">Disponibile</span>
+      </div>
+      <div>
+        <h3 class="font-bold text-gray-900 text-sm mb-1">AdE Organizer</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">ZIP dell'AdE in Excel strutturato. Archivio per anno e mese.</p>
+      </div>
+      <div class="flex items-center gap-1 text-xs font-semibold mt-auto" style="color:#1c3461;">
+        Apri <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </div>
+    </a>
+
+    <a href="#" class="tool-card bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 shadow-sm">
+      <div class="flex items-center justify-between">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:#eef4fb;">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24">
+            <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="#1c3461" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M9 14h2m4 0h-2m-2 3h2" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="text-xs bg-green-100 text-green-700 font-semibold px-2 py-0.5 rounded-full">Disponibile</span>
+      </div>
+      <div>
+        <h3 class="font-bold text-gray-900 text-sm mb-1">ScadenzeF24</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">IRPEF, IVA, INPS e IMU previsti dai tuoi F24. Cashflow + .ics.</p>
+      </div>
+      <div class="flex items-center gap-1 text-xs font-semibold mt-auto" style="color:#1c3461;">
+        Apri <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+</body>
+</html>
