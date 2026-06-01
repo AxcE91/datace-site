@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
@@ -108,384 +108,592 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
 
   <style>
-    .hero-gradient { background: linear-gradient(135deg, #0f2040 0%, #1c3461 60%, #1d7a94 100%); }
-    .tool-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .tool-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(28,52,97,0.18); }
+    :root {
+      --navy:    #060E1F;
+      --navy2:   #0A1628;
+      --navy3:   #0F2040;
+      --gold:    #F59E0B;
+      --gold2:   #FBBF24;
+      --teal:    #1d7a94;
+      --border:  rgba(255,255,255,0.07);
+      --border2: rgba(255,255,255,0.12);
+      --muted:   rgba(255,255,255,0.45);
+    }
+
+    * { box-sizing: border-box; }
+
+    body { background: var(--navy); color: white; }
+
+    /* ── Hero depth ── */
+    .hero-glow-teal {
+      position:absolute; top:-30%; left:-15%;
+      width:60%; height:90%;
+      background: radial-gradient(ellipse at center, rgba(29,122,148,.16) 0%, transparent 65%);
+      pointer-events:none; z-index:0;
+    }
+    .hero-glow-gold {
+      position:absolute; top:10%; right:-10%;
+      width:50%; height:75%;
+      background: radial-gradient(ellipse at center, rgba(245,158,11,.06) 0%, transparent 60%);
+      pointer-events:none; z-index:0;
+    }
+    .hero-grid {
+      position:absolute; inset:0;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%);
+      pointer-events:none; z-index:0;
+    }
+    .hero > .max-w-6xl { position:relative; z-index:1; }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .hero { min-height: auto; padding-top: 60px; padding-bottom: 60px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .stats-section .grid { grid-template-columns: 1fr; gap: 24px; }
+      .stats-section [style*="border-left"] { border-left: none !important; border-right: none !important; border-top: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); padding: 24px 0; }
+      .pillar { padding: 24px; }
+      .tool-card { padding: 22px; }
+      .excel-grid th, .excel-grid td { padding: 5px 7px; font-size: 10px; }
+    }
+
+    /* ── Footer ── */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .footer-col-title {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(255,255,255,.25); margin-bottom: 16px;
+    }
+    .footer-link {
+      display: block; font-size: 14px;
+      color: rgba(255,255,255,.45);
+      margin-bottom: 10px; text-decoration: none;
+      transition: color .2s ease;
+    }
+    .footer-link:hover { color: white; }
+    .footer-bottom {
+      margin-top: 48px; padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,.06);
+      display: flex; align-items: center;
+      justify-content: space-between;
+      font-size: 13px; color: rgba(255,255,255,.2);
+    }
+
+    /* ── Logo bars ── */
+    .logo-bar { transform-box: fill-box; transform-origin: left center; }
+    .logo-bar-1 { animation: barStream 2.8s ease-in-out infinite 0s; }
+    .logo-bar-2 { animation: barStream 2.8s ease-in-out infinite .22s; }
+    .logo-bar-3 { animation: barStream 2.8s ease-in-out infinite .44s; }
+    @keyframes barStream {
+      0%,100% { transform:scaleX(1);    opacity:1;   }
+      30%     { transform:scaleX(0.32); opacity:0.5; }
+      60%     { transform:scaleX(1);    opacity:1;   }
+    }
+
+    /* ── Scroll entrance ── */
+    .fade-up { opacity:0; transform:translateY(32px); transition:opacity .6s ease, transform .6s ease; }
+    .fade-up.in-view { opacity:1; transform:translateY(0); }
+    .d1{transition-delay:.05s} .d2{transition-delay:.15s}
+    .d3{transition-delay:.25s} .d4{transition-delay:.35s} .d5{transition-delay:.45s}
+
+    /* ── Section label ── */
+    .label {
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:11px; font-weight:600; letter-spacing:.15em;
+      text-transform:uppercase; color:var(--gold);
+    }
+    .label::before { content:''; width:20px; height:1px; background:var(--gold); }
+
+    /* ── Gradient text ── */
+    .grad-text {
+      background: linear-gradient(90deg,#fff 0%,#93c5fd 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .grad-gold {
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--navy);
+      position:relative; overflow:hidden;
+      min-height: 92vh;
+      display:flex; align-items:center;
+    }
+    .hero::before {
+      content:'';
+      position:absolute; top:-20%; left:-10%;
+      width:55%; height:80%;
+      background: radial-gradient(ellipse, rgba(29,122,148,.18) 0%, transparent 65%);
+      pointer-events:none;
+    }
+    .hero::after {
+      content:'';
+      position:absolute; bottom:-10%; right:-5%;
+      width:45%; height:70%;
+      background: radial-gradient(ellipse, rgba(245,158,11,.07) 0%, transparent 60%);
+      pointer-events:none;
+    }
+
+    /* ── Pill ── */
+    .pill {
+      display:inline-flex; align-items:center; gap:6px;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
+      border-radius:999px; padding:5px 14px;
+      font-size:12px; font-weight:500; color:#93c5fd; letter-spacing:.04em;
+    }
+    .pill-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+
+    /* ── CTA buttons ── */
+    .btn-primary {
+      display:inline-flex; align-items:center; gap:8px;
+      background:white; color:#0F2040;
+      font-weight:700; font-size:14px; letter-spacing:.01em;
+      padding:14px 28px; border-radius:12px;
+      box-shadow:0 0 0 0 rgba(255,255,255,.2);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(255,255,255,.15); }
+    .btn-secondary {
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid rgba(255,255,255,.2); color:white;
+      font-weight:600; font-size:14px;
+      padding:14px 28px; border-radius:12px;
+      transition: background .2s ease, border-color .2s ease;
+    }
+    .btn-secondary:hover { background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.35); }
+
+    /* ── Transformation visual ── */
+    .transform-wrap {
+      position:relative;
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .doc-card {
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--border);
+      border-radius:16px; padding:18px;
+      backdrop-filter:blur(10px);
+    }
+    .doc-card .doc-top {
+      display:flex; align-items:center; gap:10px; margin-bottom:14px;
+    }
+    .badge-pdf { background:rgba(239,68,68,.15); border:1px solid rgba(239,68,68,.3);
+      border-radius:6px; padding:3px 8px; font-size:10px; font-weight:700; color:#fca5a5; }
+    .badge-xlsx { background:rgba(34,197,94,.12); border:1px solid rgba(34,197,94,.25);
+      border-radius:6px; padding:3px 8px; font-size:10px; font-weight:700; color:#86efac; }
+    .doc-lines .line { height:6px; border-radius:3px; background:rgba(255,255,255,.08); margin-bottom:7px; }
+
+    /* ── Excel mockup ── */
+    .excel-wrap {
+      background:rgba(10,22,40,.95);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:16px; overflow:hidden;
+    }
+    .excel-tabs {
+      display:flex; gap:2px; padding:10px 12px 0;
+      background:rgba(0,0,0,.2);
+    }
+    .excel-tab {
+      padding:5px 14px; border-radius:6px 6px 0 0;
+      font-size:11px; font-weight:600; cursor:default;
+    }
+    .excel-tab.active { background:#1c3461; color:white; }
+    .excel-tab:not(.active) { color:rgba(255,255,255,.3); }
+    .excel-grid { width:100%; border-collapse:collapse; font-size:11px; }
+    .excel-grid th {
+      background:rgba(28,52,97,.5); color:rgba(255,255,255,.5);
+      padding:6px 10px; text-align:left; font-weight:600;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .excel-grid td {
+      padding:6px 10px; color:rgba(255,255,255,.75);
+      border-bottom:1px solid rgba(255,255,255,.04);
+    }
+    .excel-grid .amt { color:var(--gold); font-family:monospace; text-align:right; }
+    .excel-grid tr:last-child td { background:rgba(245,158,11,.06); font-weight:700; }
+    .excel-grid tr:last-child .amt { color:var(--gold2); }
+
+    /* ── Arrow ── */
+    .transform-arrow {
+      display:flex; align-items:center; gap:10px;
+      padding:0 8px;
+    }
+    .arrow-line { flex:1; height:1px; background:linear-gradient(90deg,var(--gold),rgba(245,158,11,.2)); }
+    .arrow-chip {
+      background:rgba(245,158,11,.1); border:1px solid rgba(245,158,11,.25);
+      border-radius:999px; padding:4px 12px;
+      font-size:11px; font-weight:700; color:var(--gold); letter-spacing:.05em;
+      white-space:nowrap;
+    }
+    .arrow-head { color:var(--gold); font-size:16px; }
+
+    /* ── Stats ── */
+    .stats-section {
+      background:rgba(255,255,255,.025);
+      border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+    }
+    .stat-num {
+      font-size:3rem; font-weight:800; line-height:1;
+      background:linear-gradient(135deg,#fff,#93c5fd);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+
+    /* ── Tool cards premium ── */
+    .tool-card {
+      background: linear-gradient(135deg, rgba(15,32,64,.8), rgba(6,14,31,.9));
+      border:1px solid var(--border);
+      border-radius:20px; padding:28px;
+      display:flex; flex-direction:column; gap:20px;
+      position:relative; overflow:hidden;
+      transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+      text-decoration:none; color:white;
+    }
+    .tool-card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:1px;
+      background:linear-gradient(90deg,transparent,rgba(245,158,11,.4),transparent);
+      opacity:0; transition:opacity .3s ease;
+    }
+    .tool-card:hover {
+      border-color:rgba(255,255,255,.14);
+      transform:translateY(-5px);
+      box-shadow:0 24px 60px rgba(0,0,0,.5);
+    }
+    .tool-card:hover::before { opacity:1; }
+    .tool-card .t-icon {
+      width:48px; height:48px; border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(28,52,97,.6); border:1px solid rgba(255,255,255,.08);
+      transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+      flex-shrink:0;
+    }
+    .tool-card:hover .t-icon { transform:scale(1.15) translateY(-2px); }
+    .tool-card .t-name { font-size:16px; font-weight:700; color:white; margin:0; }
+    .tool-card .t-desc { font-size:13px; color:var(--muted); line-height:1.6; margin:0; }
+    .tool-card .t-cta {
+      display:flex; align-items:center; gap:6px;
+      font-size:13px; font-weight:600; color:rgba(255,255,255,.5);
+      margin-top:auto;
+      transition: color .2s ease, gap .2s ease;
+    }
+    .tool-card:hover .t-cta { color:white; gap:10px; }
+    .tool-card .t-badge {
+      font-size:10px; font-weight:700; letter-spacing:.05em;
+      padding:3px 9px; border-radius:999px;
+    }
+    .badge-green { background:rgba(34,197,94,.12); color:#86efac; border:1px solid rgba(34,197,94,.2); }
+    .badge-blue  { background:rgba(96,165,250,.12); color:#93c5fd; border:1px solid rgba(96,165,250,.2); }
+    .badge-dashed { background:transparent; border:1px dashed rgba(255,255,255,.1); color:rgba(255,255,255,.25); }
+
+    /* Coming soon card */
+    .card-soon {
+      background:transparent;
+      border:1px dashed rgba(255,255,255,.07);
+      border-radius:20px; padding:28px;
+      display:flex; flex-direction:column; align-items:center;
+      justify-content:center; text-align:center; gap:12px;
+      min-height:200px;
+    }
+
+    /* ── Pillars ── */
+    .pillar {
+      border:1px solid var(--border);
+      border-radius:20px; padding:32px;
+      background:rgba(255,255,255,.02);
+      transition: border-color .25s ease;
+    }
+    .pillar:hover { border-color:rgba(255,255,255,.12); }
+    .pillar-icon {
+      width:52px; height:52px; border-radius:16px;
+      background:rgba(28,52,97,.5); border:1px solid rgba(255,255,255,.06);
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:20px;
+    }
+    .pillar h3 { font-size:18px; font-weight:700; margin:0 0 10px; }
+    .pillar p  { font-size:14px; color:var(--muted); line-height:1.7; margin:0; }
+
+    /* ── Divider ── */
+    .divider { border:none; border-top:1px solid var(--border); margin:0; }
+
+    /* ── Contact ── */
+    .contact-section { background:rgba(255,255,255,.02); border-top:1px solid var(--border); }
+    .contact-email {
+      display:inline-flex; align-items:center; gap:10px;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+      border-radius:14px; padding:14px 24px;
+      color:white; font-weight:600; font-size:15px;
+      transition: background .2s, border-color .2s;
+    }
+    .contact-email:hover { background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.2); }
   </style>
 </head>
 
-<body class="bg-gray-50 font-sans text-gray-800 antialiased">
+<body class="font-sans antialiased" style="background:#060E1F;color:white;">
 
 <!-- ── HEADER ──────────────────────────────────────────────────────────────── -->
-<header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+<header style="background:rgba(6,14,31,.85);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(16px);" class="sticky top-0 z-50">
   <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
 
-    <a href="/" class="flex items-center gap-2.5 group">
-      <svg class="w-9 h-9 shadow-sm rounded-xl flex-shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="48" height="48" rx="12" fill="#1c3461"/>
-        <path d="M10 12 L10 36 L21 36 Q32 36 32 24 Q32 12 21 12 Z" fill="white"/>
-        <path d="M16 18 L16 30 L21 30 Q26 30 26 24 Q26 18 21 18 Z" fill="#1c3461"/>
-        <rect x="9" y="12" width="4" height="24" rx="2" fill="#2a9db5"/>
-        <polyline points="29,10 39,10 39,20" stroke="#c4972b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <line x1="31" y1="18" x2="39" y2="10" stroke="#c4972b" stroke-width="3" stroke-linecap="round"/>
+    <a href="/" class="flex items-center gap-3 group">
+      <svg class="w-9 h-9 flex-shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#F59E0B"/>
+            <stop offset="100%" stop-color="#FBBF24"/>
+          </linearGradient>
+          <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0f2040"/>
+            <stop offset="100%" stop-color="#1c3461"/>
+          </linearGradient>
+        </defs>
+        <!-- Background -->
+        <rect width="48" height="48" rx="12" fill="url(#iconBg)"/>
+        <!-- Bar 1 - Gold (full) -->
+        <rect class="logo-bar logo-bar-1" x="10" y="11" width="28" height="6" rx="3" fill="url(#sg)"/>
+        <!-- Bar 2 - White (medium) -->
+        <rect class="logo-bar logo-bar-2" x="10" y="21" width="20" height="6" rx="3" fill="white"/>
+        <!-- Bar 3 - White dim (short) -->
+        <rect class="logo-bar logo-bar-3" x="10" y="31" width="12" height="6" rx="3" fill="white" fill-opacity="0.35"/>
       </svg>
-      <span class="text-xl font-bold text-gray-900 tracking-tight">Datace</span>
+      <div class="flex flex-col leading-tight">
+        <span style="color:white;" class="text-lg font-bold tracking-widest uppercase">Datace</span>
+        <span style="color:rgba(255,255,255,.4);" class="text-[9px] font-medium tracking-[0.2em] uppercase">Smart Tools for Business</span>
+      </div>
     </a>
 
-    <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-gray-500">
-      <a href="#strumenti"  class="hover:text-brand transition-colors">Strumenti</a>
-      <a href="/guida/"      class="hover:text-brand transition-colors">Guide</a>
-      <a href="/chi-siamo"  class="hover:text-brand transition-colors">Chi siamo</a>
-      <a href="#contatti"   class="hover:text-brand transition-colors">Contatti</a>
+    <nav class="hidden sm:flex items-center gap-6 text-sm font-medium" style="color:rgba(255,255,255,.5);">
+      <a href="#strumenti" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Strumenti</a>
+      <a href="/guida/"    style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Guide</a>
+      <a href="/chi-siamo" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Chi siamo</a>
+      <a href="#contatti"  style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Contatti</a>
     </nav>
+    <a href="#strumenti" style="background:white;color:#0f2040;font-weight:700;font-size:13px;padding:9px 20px;border-radius:10px;letter-spacing:.01em;transition:all .2s ease;white-space:nowrap;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">Inizia ora</a>
   </div>
 </header>
 
 
-<!-- ── HERO ────────────────────────────────────────────────────────────────── -->
-<section class="hero-gradient text-white py-24 px-6">
-  <div class="max-w-3xl mx-auto text-center">
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- HERO -->
+<section class="hero px-6">
+  <div class="hero-glow-teal"></div>
+  <div class="hero-glow-gold"></div>
+  <div class="hero-grid"></div>
+  <div class="max-w-6xl mx-auto w-full py-24">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <!-- Pill -->
+        <div class="mb-7"><span class="pill"><span class="pill-dot"></span> 5 strumenti · Made in Italy</span></div>
 
-    <div class="flex items-center justify-center gap-3 mb-8">
-      <svg width="52" height="52" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="48" height="48" rx="12" fill="rgba(255,255,255,0.12)"/>
-        <path d="M10 12 L10 36 L21 36 Q32 36 32 24 Q32 12 21 12 Z" fill="white"/>
-        <path d="M16 18 L16 30 L21 30 Q26 30 26 24 Q26 18 21 18 Z" fill="#1c3461"/>
-        <rect x="9" y="12" width="4" height="24" rx="2" fill="#2a9db5"/>
-        <polyline points="29,10 39,10 39,20" stroke="#c4972b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <line x1="31" y1="18" x2="39" y2="10" stroke="#c4972b" stroke-width="3" stroke-linecap="round"/>
-      </svg>
-      <span class="text-4xl font-black tracking-widest text-white">DATACE</span>
+        <h1 style="font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1.08;letter-spacing:-.02em;" class="mb-6">Il lavoro documentale,<br><span class="grad-text">finalmente automatizzato.</span></h1>
+
+        <p style="font-size:1.05rem;color:rgba(255,255,255,.5);line-height:1.8;" class="mb-8 max-w-lg">Datace trasforma documenti fiscali e amministrativi italiani in dati Excel strutturati. Pensato per commercialisti, studi contabili e aziende.</p>
+
+        <div class="flex flex-wrap gap-3 mb-10">
+          <a href="#strumenti" class="btn-primary">Esplora la suite <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          <a href="#come-funziona" class="btn-secondary">Come funziona</a>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:16px 28px;">
+          <span style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.35);">
+            <svg width="13" height="13" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            Nessuna installazione
+          </span>
+          <span style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.35);">
+            <svg width="13" height="13" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            Output Excel multi-foglio
+          </span>
+          <span style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.35);">
+            <svg width="13" height="13" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            100% normativa italiana
+          </span>
+          <span style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.35);">
+            <svg width="13" height="13" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            Zero dati salvati
+          </span>
+        </div>
+      </div>
+      <div class="transform-wrap hidden lg:flex flex-col" style="gap:10px;">
+        <div class="doc-card">
+          <div class="doc-top"><span class="badge-pdf">PDF</span><span style="font-size:13px;color:rgba(255,255,255,.4);font-family:monospace;">F24_Marzo2025.pdf</span></div>
+          <div class="doc-lines">
+            <div class="line" style="width:100%"></div><div class="line" style="width:78%"></div><div class="line" style="width:88%"></div>
+            <div class="line" style="width:65%;margin-top:12px;background:rgba(255,255,255,.05)"></div><div class="line" style="width:82%;background:rgba(255,255,255,.05)"></div>
+          </div>
+        </div>
+        <div class="transform-arrow">
+          <div class="arrow-line"></div><div class="arrow-chip">Datace elabora</div>
+          <div class="arrow-line" style="background:linear-gradient(90deg,rgba(245,158,11,.2),transparent);"></div><span class="arrow-head">&#8594;</span>
+        </div>
+        <div class="excel-wrap">
+          <div class="excel-tabs"><div class="excel-tab active">Riepilogo</div><div class="excel-tab">Righe F24</div><div class="excel-tab">Compensazioni</div></div>
+          <table class="excel-grid" style="width:100%">
+            <thead><tr><th>Codice tributo</th><th>Sezione</th><th>Descrizione</th><th style="text-align:right">Importo</th></tr></thead>
+            <tbody>
+              <tr><td style="font-family:monospace">1001</td><td>IRPEF</td><td style="color:rgba(255,255,255,.4)">Acconto II rata</td><td class="amt">&#8364; 1.240,00</td></tr>
+              <tr><td style="font-family:monospace">3918</td><td>IVA</td><td style="color:rgba(255,255,255,.4)">Liquidazione mensile</td><td class="amt">&#8364; 3.480,00</td></tr>
+              <tr><td style="font-family:monospace">0100</td><td>INPS</td><td style="color:rgba(255,255,255,.4)">Contributi artigiani</td><td class="amt">&#8364; 890,50</td></tr>
+              <tr style="border-left:2px solid #F59E0B;"><td colspan="3" style="font-weight:700;font-size:12px;color:rgba(255,255,255,.7);padding-left:8px;">TOTALE VERSATO</td><td class="amt" style="font-size:13px;font-weight:800;">&#8364; 5.610,50</td></tr>
+            </tbody>
+          </table>
+          <div style="padding:8px 12px;display:flex;align-items:center;gap:6px;border-top:1px solid rgba(255,255,255,.05);"><span class="badge-xlsx">XLSX</span><span style="font-size:11px;color:rgba(255,255,255,.25);font-family:monospace;">F24_Marzo2025_export.xlsx · pronto al download</span></div>
+        </div>
+      </div>
     </div>
-
-    <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight mb-5">
-      Data automation per documenti fiscali italiani
-    </h1>
-    <p class="text-blue-100 text-lg max-w-2xl mx-auto mb-4">
-      Trasforma PDF fiscali e documenti amministrativi in dati strutturati, pronti per Excel, analisi e workflow operativi.
-    </p>
-    <p class="text-blue-200 text-base max-w-2xl mx-auto mb-10">
-      Datace sviluppa strumenti professionali per commercialisti, studi contabili e aziende che lavorano ogni giorno con grandi volumi di documenti.
-    </p>
   </div>
 </section>
 
-<!-- ── TRUST BAR ────────────────────────────────────────────────────────────── -->
-<div class="bg-white border-b border-gray-100 py-4 px-6">
-  <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-gray-500">
-    <span class="flex items-center gap-1.5">
-      <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      Nessuna installazione
-    </span>
-    <span class="flex items-center gap-1.5">
-      <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      Elaborazione veloce
-    </span>
-    <span class="flex items-center gap-1.5">
-      <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      Output strutturato
-    </span>
-    <span class="flex items-center gap-1.5">
-      <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      Pensato per uso professionale
-    </span>
-    <span class="flex items-center gap-1.5">
-      <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      Nessun dato salvato
-    </span>
+<!-- STATS -->
+<div class="stats-section px-6 py-12">
+  <div class="max-w-4xl mx-auto grid grid-cols-3 gap-8 text-center">
+    <div><div class="stat-num">5</div><div style="font-size:13px;color:rgba(255,255,255,.4);margin-top:6px;">Strumenti nella suite</div></div>
+    <div style="border-left:1px solid rgba(255,255,255,.07);border-right:1px solid rgba(255,255,255,.07);"><div class="stat-num">0</div><div style="font-size:13px;color:rgba(255,255,255,.4);margin-top:6px;">Dati salvati sui server</div></div>
+    <div><div class="stat-num" style="font-size:2.5rem">&lt;30s</div><div style="font-size:13px;color:rgba(255,255,255,.4);margin-top:6px;">Tempo medio per file</div></div>
   </div>
 </div>
 
-
-<!-- ── COSA FACCIAMO ───────────────────────────────────────────────────────── -->
-<section class="py-16 px-6 bg-gray-50">
-  <div class="max-w-3xl mx-auto text-center">
-    <h2 class="text-2xl font-bold text-gray-900 mb-4">Automatizziamo attività manuali ripetitive</h2>
-    <p class="text-gray-600 leading-relaxed mb-3">
-      I documenti fiscali italiani sono spesso complessi da leggere, estrarre e verificare manualmente.
-    </p>
-    <p class="text-gray-600 leading-relaxed mb-3">
-      Datace semplifica questo processo trasformando file PDF e modelli fiscali in dati strutturati, coerenti ed esportabili.
-    </p>
-    <p class="text-gray-600 leading-relaxed font-medium">
-      Riduci il tempo operativo, limita gli errori manuali e velocizza i workflow amministrativi.
-    </p>
-  </div>
-</section>
-
-
-<!-- ── STRUMENTI ───────────────────────────────────────────────────────────── -->
-<section id="strumenti" class="py-16 px-6 bg-white border-t border-gray-100">
-  <div class="max-w-4xl mx-auto">
-
-    <div class="text-center mb-10">
-      <h2 class="text-2xl font-bold text-gray-900">Strumenti progettati per workflow reali</h2>
-      <p class="text-gray-500 mt-1 text-sm">Nessuna installazione &nbsp;·&nbsp; Nessun dato salvato</p>
-    </div>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-
-      <!-- F24xls -->
-      <a href="/f24-to-excel/" class="tool-card bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 shadow-sm">
-        <div class="flex items-center justify-between">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:#eef4fb;">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24">
-              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" fill="#1c3461" opacity=".15"/>
-              <path d="M14 2v6h6M8 13h8M8 17h5" stroke="#1c3461" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#1c3461" stroke-width="1.8" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <span class="text-xs bg-green-100 text-green-700 font-semibold px-2 py-0.5 rounded-full">Disponibile</span>
-        </div>
-        <div>
-          <h3 class="font-bold text-gray-900 text-sm mb-1">F24xls</h3>
-          <p class="text-xs text-gray-500 leading-relaxed">Da PDF F24 a Excel strutturato. 3 fogli, batch, workflow admin.</p>
-        </div>
-        <div class="flex items-center gap-1 text-xs font-semibold mt-auto" style="color:#1c3461;">
-          Apri strumento <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </div>
+<!-- SUITE -->
+<section id="strumenti" class="px-6 py-24" style="background:var(--navy);">
+  <div class="max-w-5xl mx-auto">
+    <div class="mb-14"><div class="label mb-4">La suite</div><h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;" class="max-w-xl">Ogni strumento.<br>Un problema risolto.</h2></div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <a href="/f24-to-excel/" class="tool-card fade-up d1">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;"><div class="t-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" fill="rgba(245,158,11,.15)"/><path d="M14 2v6h6M8 13h8M8 17h5" stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#F59E0B" stroke-width="1.8" stroke-linejoin="round"/></svg></div><span class="t-badge badge-green">Disponibile</span></div>
+        <div><p class="t-name">F24xls</p><p class="t-desc">PDF F24 &rarr; Excel strutturato su 3 fogli. Batch processing, zero errori manuali.</p></div>
+        <div class="t-cta">Apri strumento <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
       </a>
-
-      <!-- FatturaXLS -->
-      <a href="/fattura-elettronica-excel/" class="tool-card bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 shadow-sm">
-        <div class="flex items-center justify-between">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:#eef4fb;">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24">
-              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" fill="#1c3461" opacity=".15"/>
-              <path d="M14 2v6h6" stroke="#1c3461" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#1c3461" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M8 12l2.5 2.5L8 17M12.5 17H16" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <span class="text-xs bg-green-100 text-green-700 font-semibold px-2 py-0.5 rounded-full">Disponibile</span>
-        </div>
-        <div>
-          <h3 class="font-bold text-gray-900 text-sm mb-1">FatturaXLS</h3>
-          <p class="text-xs text-gray-500 leading-relaxed">XML e .p7m in Excel. 5 fogli: Riepilogo, Righe, IVA, SdI, Allegati.</p>
-        </div>
-        <div class="flex items-center gap-1 text-xs font-semibold mt-auto" style="color:#1c3461;">
-          Apri strumento <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </div>
+      <a href="/fattura-elettronica-excel/" class="tool-card fade-up d2">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;"><div class="t-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" fill="rgba(29,122,148,.2)"/><path d="M14 2v6h6" stroke="#1d7a94" stroke-width="1.8" stroke-linecap="round"/><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#1d7a94" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 12l2.5 2.5L8 17M12.5 17H16" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round"/></svg></div><span class="t-badge badge-green">Disponibile</span></div>
+        <div><p class="t-name">FatturaXLS</p><p class="t-desc">Fatture XML e .p7m &rarr; Excel su 5 fogli. Riepilogo, Righe, IVA, SdI, Allegati.</p></div>
+        <div class="t-cta">Apri strumento <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
       </a>
-
-      <!-- AdE Organizer -->
-      <a href="/ade-organizer/" class="tool-card bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 shadow-sm">
-        <div class="flex items-center justify-between">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:#eef4fb;">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24">
-              <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" fill="#1c3461" opacity=".15"/>
-              <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" stroke="#1c3461" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M12 18v-6M9 15l3-3 3 3" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <span class="text-xs bg-green-100 text-green-700 font-semibold px-2 py-0.5 rounded-full">Disponibile</span>
-        </div>
-        <div>
-          <h3 class="font-bold text-gray-900 text-sm mb-1">AdE Organizer</h3>
-          <p class="text-xs text-gray-500 leading-relaxed">ZIP dell'AdE in Excel strutturato. Archivio per anno e mese.</p>
-        </div>
-        <div class="flex items-center gap-1 text-xs font-semibold mt-auto" style="color:#1c3461;">
-          Apri strumento <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </div>
+      <a href="/ade-organizer/" class="tool-card fade-up d3">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;"><div class="t-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" fill="rgba(245,158,11,.1)" stroke="#F59E0B" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 18v-6M9 15l3-3 3 3" stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round"/></svg></div><span class="t-badge badge-green">Disponibile</span></div>
+        <div><p class="t-name">AdE Organizer</p><p class="t-desc">ZIP Agenzia Entrate &rarr; Excel strutturato + archivio per anno e mese.</p></div>
+        <div class="t-cta">Apri strumento <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
       </a>
-
-      <!-- ScadenzeF24 -->
-      <a href="/scadenzef24/" class="tool-card bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 shadow-sm">
-        <div class="flex items-center justify-between">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:#eef4fb;">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24">
-              <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="#1c3461" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M9 14h2m4 0h-2m-2 3h2" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <span class="text-xs bg-green-100 text-green-700 font-semibold px-2 py-0.5 rounded-full">Disponibile</span>
-        </div>
-        <div>
-          <h3 class="font-bold text-gray-900 text-sm mb-1">ScadenzeF24</h3>
-          <p class="text-xs text-gray-500 leading-relaxed">IRPEF, IVA, INPS e IMU previsti dai tuoi F24. Cashflow + .ics.</p>
-        </div>
-        <div class="flex items-center gap-1 text-xs font-semibold mt-auto" style="color:#1c3461;">
-          Apri strumento <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </div>
+      <a href="/scadenzef24/" class="tool-card fade-up d2">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;"><div class="t-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="#1d7a94" stroke-width="1.8" stroke-linecap="round"/><path d="M9 14h2m4 0h-2m-2 3h2" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round"/></svg></div><span class="t-badge badge-green">Disponibile</span></div>
+        <div><p class="t-name">ScadenzeF24</p><p class="t-desc">IRPEF, IVA, INPS, IMU dai tuoi F24. Cashflow fiscale + previsione scadenze + export .ics.</p></div>
+        <div class="t-cta">Apri strumento <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
       </a>
-
-      <!-- BustaChiara -->
-      <a href="/BustaChiara/" class="tool-card bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3 shadow-sm">
-        <div class="flex items-center justify-between">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:#eef4fb;">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24">
-              <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke="#1c3461" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M12 2v4m0 0l2-2m-2 2L10 4" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <span class="text-xs bg-blue-100 text-blue-700 font-semibold px-2 py-0.5 rounded-full">Nuovo</span>
-        </div>
-        <div>
-          <h3 class="font-bold text-gray-900 text-sm mb-1">BustaChiara</h3>
-          <p class="text-xs text-gray-500 leading-relaxed">Busta paga PDF in Excel spiegato. Lordo, INPS, IRPEF e netto — tutto chiaro in italiano.</p>
-        </div>
-        <div class="flex items-center gap-1 text-xs font-semibold mt-auto" style="color:#1c3461;">
-          Apri strumento <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </div>
+      <a href="/BustaChiara/" class="tool-card fade-up d3">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;"><div class="t-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round"/></svg></div><span class="t-badge badge-blue">Nuovo</span></div>
+        <div><p class="t-name">BustaChiara</p><p class="t-desc">Busta paga PDF &rarr; Excel spiegato voce per voce. Lordo, INPS, IRPEF e netto verificati.</p></div>
+        <div class="t-cta">Apri strumento <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
       </a>
-
+      <div class="card-soon fade-up d4"><svg width="28" height="28" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg><div><p style="font-size:14px;font-weight:600;color:rgba(255,255,255,.2);">Nuovi strumenti</p><p style="font-size:12px;color:rgba(255,255,255,.15);margin-top:4px;">La suite si espande. Torna presto.</p></div></div>
     </div>
   </div>
 </section>
 
-
-<!-- ── PER CHI ─────────────────────────────────────────────────────────────── -->
-<section class="py-16 px-6 bg-gray-50 border-t border-gray-100">
-  <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-10">
-      <h2 class="text-2xl font-bold text-gray-900">Costruito per professionisti</h2>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-      <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background:#eef4fb;">
-          <svg class="w-5 h-5" fill="none" stroke="#1c3461" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-          </svg>
-        </div>
-        <p class="font-semibold text-gray-900 text-sm mb-1">Commercialisti</p>
-        <p class="text-gray-500 text-xs leading-relaxed">Riduci attività manuali ripetitive e velocizza l'elaborazione dei documenti.</p>
-      </div>
-
-      <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background:#eef4fb;">
-          <svg class="w-5 h-5" fill="none" stroke="#1c3461" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-          </svg>
-        </div>
-        <p class="font-semibold text-gray-900 text-sm mb-1">Studi contabili</p>
-        <p class="text-gray-500 text-xs leading-relaxed">Gestisci grandi quantità di dati fiscali in modo più strutturato.</p>
-      </div>
-
-      <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background:#eef4fb;">
-          <svg class="w-5 h-5" fill="none" stroke="#1c3461" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
-        </div>
-        <p class="font-semibold text-gray-900 text-sm mb-1">Aziende</p>
-        <p class="text-gray-500 text-xs leading-relaxed">Centralizza l'elaborazione documentale amministrativa.</p>
-      </div>
-
-      <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background:#eef4fb;">
-          <svg class="w-5 h-5" fill="none" stroke="#1c3461" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-          </svg>
-        </div>
-        <p class="font-semibold text-gray-900 text-sm mb-1">Data Analyst & Operations</p>
-        <p class="text-gray-500 text-xs leading-relaxed">Ottieni dati puliti e pronti per analisi, controlli e reporting.</p>
-      </div>
-
+<!-- COME FUNZIONA -->
+<section id="come-funziona" style="background:rgba(255,255,255,.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" class="px-6 py-24">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16"><div class="label mb-4" style="justify-content:center;">Il processo</div><h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.02em;">Tre passi. Niente di pi&ugrave;.</h2></div>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="fade-up d1 text-center"><div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg></div><div style="font-size:11px;font-weight:700;letter-spacing:.15em;color:rgba(255,255,255,.2);text-transform:uppercase;margin-bottom:10px;">01</div><h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">Carica il documento</h3><p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;">PDF, XML o ZIP. Trascina o seleziona dal dispositivo.</p></div>
+      <div class="fade-up d2 text-center"><div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg></div><div style="font-size:11px;font-weight:700;letter-spacing:.15em;color:rgba(255,255,255,.2);text-transform:uppercase;margin-bottom:10px;">02</div><h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">Datace elabora</h3><p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;">Estrazione, strutturazione e validazione automatica dei dati fiscali.</p></div>
+      <div class="fade-up d3 text-center"><div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg></div><div style="font-size:11px;font-weight:700;letter-spacing:.15em;color:rgba(255,255,255,.2);text-transform:uppercase;margin-bottom:10px;">03</div><h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">Scarica l'Excel</h3><p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;">Multi-foglio, strutturato, pronto per analisi e workflow.</p></div>
     </div>
   </div>
 </section>
 
-
-<!-- ── PERCHÉ DATACE ───────────────────────────────────────────────────────── -->
-<section id="chi-siamo" class="py-16 px-6 bg-white border-t border-gray-100">
-  <div class="max-w-4xl mx-auto grid sm:grid-cols-2 gap-12 items-center">
-    <div>
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">Precisione operativa prima di tutto</h2>
-      <p class="text-gray-600 leading-relaxed mb-4">
-        Datace nasce da esigenze reali di elaborazione documentale in contesti professionali.
-      </p>
-      <p class="text-gray-600 leading-relaxed mb-4">
-        Ogni strumento viene progettato per essere affidabile, veloce, intuitivo, preciso e immediatamente utilizzabile.
-      </p>
-      <p class="text-gray-600 leading-relaxed font-medium">
-        Non costruiamo utility generiche. Costruiamo strumenti verticali per workflow fiscali italiani.
-      </p>
-    </div>
-    <div class="flex flex-col gap-3">
-      <div class="flex items-start gap-4 rounded-2xl border border-gray-100 p-5 shadow-sm">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eef4fb;">
-          <svg class="w-5 h-5" fill="none" stroke="#1c3461" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
-        </div>
-        <div>
-          <p class="font-semibold text-gray-900 text-sm">Veloce</p>
-          <p class="text-gray-500 text-sm mt-0.5">Da documento a Excel in pochi secondi, anche in batch.</p>
-        </div>
-      </div>
-      <div class="flex items-start gap-4 rounded-2xl border border-gray-100 p-5 shadow-sm">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eef4fb;">
-          <svg class="w-5 h-5" fill="none" stroke="#1c3461" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-          </svg>
-        </div>
-        <div>
-          <p class="font-semibold text-gray-900 text-sm">Privato</p>
-          <p class="text-gray-500 text-sm mt-0.5">Elaboriamo e scartiamo. A noi non rimane nulla dei tuoi documenti.</p>
-        </div>
-      </div>
-      <div class="flex items-start gap-4 rounded-2xl border border-gray-100 p-5 shadow-sm">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eef4fb;">
-          <svg class="w-5 h-5" fill="none" stroke="#1c3461" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/>
-          </svg>
-        </div>
-        <div>
-          <p class="font-semibold text-gray-900 text-sm">Italiano</p>
-          <p class="text-gray-500 text-sm mt-0.5">Costruito per la normativa fiscale italiana. F24, FatturaPA, SdI.</p>
-        </div>
-      </div>
+<!-- PILLARS -->
+<section id="chi-siamo" class="px-6 py-24" style="background:var(--navy);">
+  <div class="max-w-5xl mx-auto">
+    <div class="mb-14"><div class="label mb-4">Perch&eacute; Datace</div><h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.02em;" class="max-w-lg">Costruito per chi non pu&ograve; permettersi errori.</h2></div>
+    <div class="grid sm:grid-cols-3 gap-5">
+      <div class="pillar fade-up d1"><div class="pillar-icon"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3>Veloce</h3><p>Da documento grezzo a Excel in meno di 30 secondi. Anche in batch con decine di file.</p></div>
+      <div class="pillar fade-up d2"><div class="pillar-icon"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div><h3>Zero retention</h3><p>Elaboriamo e scartiamo immediatamente. I tuoi documenti non toccano mai un database. Nessun log, nessuna copia.</p></div>
+      <div class="pillar fade-up d3"><div class="pillar-icon"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg></div><h3>100% Italiano</h3><p>Progettato per F24, FatturaPA, SdI e INPS. Non uno strumento generico - uno strumento tuo.</p></div>
     </div>
   </div>
 </section>
 
-
-
-<!-- ── CONTATTI ────────────────────────────────────────────────────────────── -->
-<section id="contatti" class="py-16 px-6 bg-white border-t border-gray-100">
-  <div class="max-w-xl mx-auto text-center">
-    <h2 class="text-2xl font-bold text-gray-900 mb-3">Contatti</h2>
-    <p class="text-gray-500 mb-6 text-sm">
-      Esigenze specifiche, segnalazioni tecniche o vuoi essere informato sui nuovi strumenti?
-    </p>
-    <a href="mailto:datacetools@gmail.com"
-       class="inline-flex items-center gap-2 bg-brand text-white font-semibold px-6 py-3 rounded-xl hover:bg-brand-dark transition-colors shadow-md"
-       aria-label="Invia email a Datace">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-      </svg>
-      datacetools@gmail.com
-    </a>
+<!-- CONTATTI -->
+<section id="contatti" class="contact-section px-6 py-20 text-center">
+  <div class="max-w-lg mx-auto">
+    <div class="label mb-6" style="justify-content:center;">Contatti</div>
+    <h2 style="font-size:2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;">Parliamo.</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,.4);line-height:1.7;margin-bottom:32px;">Esigenze specifiche, segnalazioni o vuoi essere aggiornato sui nuovi strumenti?</p>
+    <a href="mailto:datacetools@gmail.com" class="contact-email"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>datacetools@gmail.com</a>
   </div>
 </section>
 
+<!-- FOOTER -->
+<footer style="background:#04080F;border-top:1px solid rgba(255,255,255,.06);" class="px-6 pt-16 pb-10">
+  <div class="max-w-5xl mx-auto">
+    <div class="footer-grid">
 
-<!-- ── FOOTER ──────────────────────────────────────────────────────────────── -->
-<footer class="bg-gray-900 text-gray-400 py-8 px-6">
-  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
-    <div class="flex items-center gap-2">
-      <svg class="w-6 h-6 rounded-lg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="48" height="48" rx="10" fill="#1c3461"/>
-        <path d="M10 12 L10 36 L21 36 Q32 36 32 24 Q32 12 21 12 Z" fill="white"/>
-        <path d="M16 18 L16 30 L21 30 Q26 30 26 24 Q26 18 21 18 Z" fill="#1c3461"/>
-        <rect x="9" y="12" width="4" height="24" rx="2" fill="#2a9db5"/>
-        <polyline points="29,10 39,10 39,20" stroke="#c4972b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <line x1="31" y1="18" x2="39" y2="10" stroke="#c4972b" stroke-width="3" stroke-linecap="round"/>
-      </svg>
-      <span class="text-white font-semibold">Datace</span>
+      <!-- Brand col -->
+      <div>
+        <div class="flex items-center gap-3 mb-5">
+          <svg class="w-9 h-9" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="fIconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f2040"/><stop offset="100%" stop-color="#1c3461"/></linearGradient>
+              <linearGradient id="fsg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="12" fill="url(#fIconBg)"/>
+            <rect class="logo-bar logo-bar-1" x="10" y="11" width="28" height="6" rx="3" fill="url(#fsg)"/>
+            <rect class="logo-bar logo-bar-2" x="10" y="21" width="20" height="6" rx="3" fill="white"/>
+            <rect class="logo-bar logo-bar-3" x="10" y="31" width="12" height="6" rx="3" fill="white" fill-opacity="0.35"/>
+          </svg>
+          <div>
+            <div style="color:white;font-weight:700;font-size:15px;letter-spacing:.15em;text-transform:uppercase;">Datace</div>
+            <div style="color:rgba(255,255,255,.3);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:2px;">Smart Tools for Business</div>
+          </div>
+        </div>
+        <p style="font-size:13px;color:rgba(255,255,255,.3);line-height:1.7;max-width:240px;">Strumenti professionali per automatizzare il lavoro documentale italiano.</p>
+      </div>
+
+      <!-- Strumenti col -->
+      <div>
+        <div class="footer-col-title">Strumenti</div>
+        <a href="/f24-to-excel/" class="footer-link">F24xls</a>
+        <a href="/fattura-elettronica-excel/" class="footer-link">FatturaXLS</a>
+        <a href="/ade-organizer/" class="footer-link">AdE Organizer</a>
+        <a href="/scadenzef24/" class="footer-link">ScadenzeF24</a>
+        <a href="/BustaChiara/" class="footer-link">BustaChiara</a>
+      </div>
+
+      <!-- Risorse col -->
+      <div>
+        <div class="footer-col-title">Risorse</div>
+        <a href="/guida/" class="footer-link">Guide</a>
+        <a href="/chi-siamo" class="footer-link">Chi siamo</a>
+        <a href="/privacy" class="footer-link">Privacy Policy</a>
+        <a href="#contatti" class="footer-link">Contatti</a>
+      </div>
+
     </div>
-    <div class="flex items-center gap-4 text-xs">
-      <a href="/guida/" class="hover:text-gray-200 transition-colors">Guide</a>
-      <span class="text-gray-600">·</span>
-      <a href="/chi-siamo" class="hover:text-gray-200 transition-colors">Chi siamo</a>
-      <span class="text-gray-600">·</span>
-      <a href="/privacy" class="hover:text-gray-200 transition-colors">Privacy Policy</a>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Datace. Tutti i diritti riservati.</span>
+      <span style="color:rgba(255,255,255,.12);">Made in Italy</span>
     </div>
-    <p class="text-xs">&copy; 2026 Datace &nbsp;·&nbsp; Tutti i diritti riservati</p>
   </div>
 </footer>
 
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
