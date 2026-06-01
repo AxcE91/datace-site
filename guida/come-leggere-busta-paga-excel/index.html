@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Come leggere la busta paga in Excel | Guida passo passo | Datace</title>
+  <link rel="icon" type="image/svg+xml" href="/images/logo-icon.svg">
+  <meta name="description" content="Guida completa per capire la busta paga italiana: lordo, contributi INPS, IRPEF, addizionali e netto. Come convertirla in Excel con BustaPagaXLS." />
+  <link rel="canonical" href="https://datacetools.com/guida/come-leggere-busta-paga-excel/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://datacetools.com/guida/come-leggere-busta-paga-excel/" />
+  <meta property="og:title"       content="Come leggere la busta paga in Excel | Guida passo passo | Datace" />
+  <meta property="og:description" content="Guida pratica per capire ogni voce della busta paga italiana e ottenere un Excel spiegato con BustaPagaXLS." />
+  <meta name="twitter:card"       content="summary" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://datacetools.com/guida/come-leggere-busta-paga-excel#article",
+        "headline": "Come leggere la busta paga e convertirla in Excel",
+        "description": "Guida passo passo per capire ogni voce della busta paga italiana: lordo, INPS, IRPEF, addizionali e netto. Con BustaPagaXLS ottieni un Excel spiegato in italiano.",
+        "url": "https://datacetools.com/guida/come-leggere-busta-paga-excel/",
+        "inLanguage": "it",
+        "author": { "@type": "Organization", "name": "Datace", "url": "https://datacetools.com" },
+        "publisher": { "@type": "Organization", "name": "Datace", "url": "https://datacetools.com", "logo": { "@type": "ImageObject", "url": "https://datacetools.com/images/logo-icon.svg" } },
+        "datePublished": "2026-06-01",
+        "dateModified": "2026-06-01"
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://datacetools.com/guida/come-leggere-busta-paga-excel#howto",
+        "name": "Come convertire la busta paga in Excel con BustaPagaXLS",
+        "totalTime": "PT1M",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Carica il PDF", "text": "Vai su bustapagaxls.datacetools.com e carica il PDF della tua busta paga." },
+          { "@type": "HowToStep", "position": 2, "name": "Attendi l'elaborazione AI", "text": "Il sistema estrae il testo e lo analizza con AI per identificare ogni voce retributiva." },
+          { "@type": "HowToStep", "position": 3, "name": "Scarica l'Excel", "text": "Ricevi il file .xlsx con ogni voce spiegata in italiano e il netto verificato matematicamente." }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Come si legge la busta paga?", "acceptedAnswer": { "@type": "Answer", "text": "La busta paga è divisa in tre sezioni principali: le competenze (retribuzione lorda e voci in aumento), le trattenute (INPS, IRPEF, addizionali) e il netto in busta. Il netto è uguale al lordo meno tutte le trattenute." } },
+          { "@type": "Question", "name": "Cosa significa lordo in busta paga?", "acceptedAnswer": { "@type": "Answer", "text": "Il lordo è la retribuzione totale prima di qualsiasi trattenuta. Include lo stipendio base, eventuali straordinari, indennità e altri elementi retributivi." } },
+          { "@type": "Question", "name": "Quanto si paga di INPS sulla busta paga?", "acceptedAnswer": { "@type": "Answer", "text": "I contributi INPS a carico del dipendente sono generalmente il 9,19% del lordo per i lavoratori dipendenti del settore privato. La quota varia in base al contratto collettivo applicato." } },
+          { "@type": "Question", "name": "Come convertire la busta paga in Excel?", "acceptedAnswer": { "@type": "Answer", "text": "Con BustaPagaXLS di Datace: carica il PDF su bustapagaxls.datacetools.com, attendi l'analisi AI e scarica il file Excel con ogni voce spiegata in italiano." } }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Datace", "item": "https://datacetools.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Guide", "item": "https://datacetools.com/guida/" },
+          { "@type": "ListItem", "position": 3, "name": "Come leggere la busta paga in Excel", "item": "https://datacetools.com/guida/come-leggere-busta-paga-excel/" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#1c3461', light: '#2a9db5', dark: '#0f2040', 50: '#eef4fb', gold: '#c4972b' }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+
+  <style>
+    .hero-gradient { background: linear-gradient(135deg, #0f2040 0%, #1c3461 60%, #1d7a94 100%); }
+    .prose-content h2 { font-size: 1.25rem; font-weight: 700; color: #111827; margin: 2rem 0 0.75rem; }
+    .prose-content h3 { font-size: 1.05rem; font-weight: 600; color: #1f2937; margin: 1.5rem 0 0.5rem; }
+    .prose-content p  { color: #4b5563; line-height: 1.75; margin-bottom: 0.75rem; }
+    .prose-content ul { list-style: disc; padding-left: 1.5rem; color: #4b5563; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-content li { margin-bottom: 0.35rem; }
+    .prose-content a  { color: #1c3461; text-decoration: underline; }
+  </style>
+</head>
+
+<body class="bg-gray-50 font-sans text-gray-800 antialiased">
+
+<!-- ── HEADER ──────────────────────────────────────────────────────────────── -->
+<header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+  <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5 group">
+      <svg class="w-9 h-9 shadow-sm rounded-xl flex-shrink-0" viewBox="0 0 48 48" fill="none">
+        <rect width="48" height="48" rx="12" fill="#1c3461"/>
+        <path d="M10 12 L10 36 L21 36 Q32 36 32 24 Q32 12 21 12 Z" fill="white"/>
+        <path d="M16 18 L16 30 L21 30 Q26 30 26 24 Q26 18 21 18 Z" fill="#1c3461"/>
+        <rect x="9" y="12" width="4" height="24" rx="2" fill="#2a9db5"/>
+        <polyline points="29,10 39,10 39,20" stroke="#c4972b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <line x1="31" y1="18" x2="39" y2="10" stroke="#c4972b" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span class="text-xl font-bold text-gray-900 tracking-tight">Datace</span>
+    </a>
+    <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-gray-500">
+      <a href="/"       class="hover:text-brand transition-colors">Strumenti</a>
+      <a href="/guida/" class="text-brand font-semibold">Guide</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── BREADCRUMB ───────────────────────────────────────────────────────────── -->
+<div class="bg-white border-b border-gray-100 py-2 px-6">
+  <div class="max-w-5xl mx-auto text-xs text-gray-400 flex items-center gap-1.5">
+    <a href="/" class="hover:text-brand transition-colors">Datace</a>
+    <span>/</span>
+    <a href="/guida/" class="hover:text-brand transition-colors">Guide</a>
+    <span>/</span>
+    <span class="text-gray-600 font-medium">Come leggere la busta paga in Excel</span>
+  </div>
+</div>
+
+<!-- ── HERO ────────────────────────────────────────────────────────────────── -->
+<section class="hero-gradient text-white py-14 px-6">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex items-center gap-2 mb-4">
+      <span class="text-xs font-semibold bg-white/10 text-blue-100 px-3 py-1 rounded-full">Guida pratica</span>
+      <span class="text-xs text-blue-200">Lettura: 5 minuti</span>
+    </div>
+    <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight mb-4">
+      Come leggere la busta paga e convertirla in Excel
+    </h1>
+    <p class="text-blue-100 text-lg max-w-2xl">
+      Guida completa per capire ogni voce della busta paga italiana — lordo, INPS, IRPEF, addizionali e netto — e come ottenere un Excel spiegato in pochi secondi con BustaPagaXLS.
+    </p>
+  </div>
+</section>
+
+<!-- ── CONTENT ──────────────────────────────────────────────────────────────── -->
+<div class="max-w-5xl mx-auto px-6 py-12 grid lg:grid-cols-3 gap-10">
+
+  <!-- Articolo principale -->
+  <article class="lg:col-span-2 prose-content">
+
+    <h2>La struttura della busta paga italiana</h2>
+    <p>
+      La busta paga (o cedolino paga) è il documento mensile che ogni datore di lavoro è obbligato a consegnare al dipendente. Contiene il dettaglio di tutto ciò che concorre a formare lo stipendio netto: le voci in aumento (competenze) e quelle in diminuzione (trattenute).
+    </p>
+    <p>
+      La struttura standard si divide in tre blocchi principali: intestazione con i dati anagrafici e contrattuali, corpo con le singole voci, e riepilogo finale con il netto da pagare.
+    </p>
+
+    <h2>Le competenze: cosa aumenta lo stipendio</h2>
+    <p>
+      Le <strong>competenze</strong> sono tutte le voci che compongono la retribuzione lorda. Le principali sono:
+    </p>
+    <ul>
+      <li><strong>Paga base</strong> — la retribuzione minima prevista dal CCNL applicato</li>
+      <li><strong>Scatti di anzianità</strong> — aumenti automatici per ogni periodo lavorato</li>
+      <li><strong>Superminimo</strong> — eventuale importo aggiuntivo rispetto al minimo contrattuale</li>
+      <li><strong>Indennità</strong> — rimborsi o compensazioni (mensa, trasporto, rischio, ecc.)</li>
+      <li><strong>Straordinari</strong> — ore lavorate oltre l'orario ordinario, maggiorate per legge o contratto</li>
+      <li><strong>Ratei</strong> — quote mensili di tredicesima, quattordicesima o altri elementi periodici</li>
+    </ul>
+    <p>
+      La somma di tutte queste voci forma la <strong>retribuzione lorda</strong>, ovvero il punto di partenza dal quale vengono calcolate tutte le trattenute.
+    </p>
+
+    <h2>Le trattenute: cosa riduce il netto</h2>
+    <p>
+      Dalla retribuzione lorda vengono detratti obbligatoriamente tre tipi di trattenute:
+    </p>
+
+    <h3>1. Contributi INPS (previdenza)</h3>
+    <p>
+      I contributi a carico del dipendente sono versati all'INPS per finanziare la pensione futura. L'aliquota standard per i lavoratori dipendenti del settore privato è circa il <strong>9,19% del lordo</strong>, ma può variare in base al CCNL. Esistono anche contributi per la disoccupazione (NASPI) e altri fondi, che possono essere a carico del dipendente o dell'azienda.
+    </p>
+
+    <h3>2. IRPEF e detrazioni fiscali</h3>
+    <p>
+      L'IRPEF (Imposta sul Reddito delle Persone Fisiche) è calcolata sul <strong>reddito imponibile fiscale</strong>, che è diverso dal lordo: si ottiene sottraendo i contributi INPS e alcune voci esenti. Le aliquote IRPEF sono progressive (23%, 35%, 43%) e si applicano per scaglioni di reddito annuo.
+    </p>
+    <p>
+      Dal calcolo lordo dell'IRPEF si detraggono le <strong>detrazioni per lavoro dipendente</strong> (obbligatorie per legge) e le detrazioni per carichi di famiglia, ottenendo l'<strong>IRPEF netta</strong> effettivamente trattenuta in busta.
+    </p>
+
+    <h3>3. Addizionali regionali e comunali</h3>
+    <p>
+      Ogni regione e comune italiano applica un'addizionale IRPEF propria. L'<strong>addizionale regionale</strong> varia dall'1,23% al 3,33% a seconda della regione di residenza. L'<strong>addizionale comunale</strong> varia dallo 0% allo 0,8% a seconda del comune.
+    </p>
+    <p>
+      Queste addizionali si riferiscono al reddito dell'anno precedente e vengono recuperate durante l'anno corrente: il saldo di maggio-giugno, l'acconto di novembre-dicembre.
+    </p>
+
+    <h2>Il netto in busta</h2>
+    <p>
+      Il <strong>netto in busta</strong> (o netto da pagare) è la somma che viene effettivamente accreditata sul conto corrente del dipendente. Si calcola come:
+    </p>
+    <p style="background:#eef4fb; padding: 1rem 1.5rem; border-radius: 0.75rem; color: #1c3461; font-weight: 600; font-family: monospace;">
+      Lordo − Contributi INPS − IRPEF netta − Add. regionale − Add. comunale − Altre trattenute = Netto in busta
+    </p>
+    <p>
+      Se ci sono trattenute aggiuntive (anticipi TFR, cessioni del quinto, fondi pensione complementari) queste vengono ulteriormente sottratte.
+    </p>
+
+    <h2 id="step-1">Come convertire la busta paga in Excel con BustaPagaXLS</h2>
+    <p>
+      Capire questi meccanismi dalla busta paga cartacea o PDF è spesso difficile: le voci sono tante, i nomi cambiano da un software paghe all'altro (TeamSystem, Zucchetti, NoiPA...) e la matematica non è sempre immediata. BustaPagaXLS risolve questo problema automaticamente.
+    </p>
+
+    <h3>Passo 1 — Apri BustaPagaXLS</h3>
+    <p>
+      Vai su <a href="https://bustapagaxls.datacetools.com">bustapagaxls.datacetools.com</a>. Non serve installare nulla, registrarsi o creare un account.
+    </p>
+
+    <h3>Passo 2 — Carica il PDF</h3>
+    <p>
+      Trascina il PDF della tua busta paga nell'area di caricamento o clicca per selezionarlo. Se il file è protetto da password, inseriscila nell'apposito campo. Il file deve contenere testo digitale (non scansionato).
+    </p>
+
+    <h3>Passo 3 — Attendi l'elaborazione</h3>
+    <p>
+      Il sistema estrae il testo dal PDF e lo invia a un modello AI che identifica e classifica ogni voce. Viene poi eseguita una verifica matematica automatica: se lordo − trattenute ≠ netto entro ±3€, il sistema riprova fino a 3 volte per correggere eventuali imprecisioni.
+    </p>
+
+    <h3>Passo 4 — Scarica l'Excel</h3>
+    <p>
+      Ricevi un file .xlsx con le voci organizzate in sezioni chiare: competenze, previdenza, fiscale, altre trattenute, netto. Ogni voce ha il suo importo e una spiegazione in italiano semplice.
+    </p>
+
+    <h2>Problemi comuni</h2>
+
+    <h3>PDF scansionato o fotografato</h3>
+    <p>
+      Se la busta paga è stata fotografata o scansionata come immagine, non contiene testo digitale estraibile. Richiedi il PDF originale al datore di lavoro o al consulente del lavoro.
+    </p>
+
+    <h3>PDF protetto da password</h3>
+    <p>
+      Inserisci la password nel campo apposito prima di caricare il file. Se non la conosci, contatta chi ti ha inviato la busta paga.
+    </p>
+
+    <h3>Voci non riconosciute o mancanti</h3>
+    <p>
+      La busta paga contiene voci non standard o molto specifiche del CCNL applicato. In questo caso alcune voci possono rimanere non classificate: vengono riportate comunque nell'Excel come "Altra voce" con l'importo originale.
+    </p>
+
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="lg:col-span-1 flex flex-col gap-5">
+
+    <div class="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
+      <h3 class="font-bold text-gray-900 mb-4 text-sm">BustaPagaXLS supporta</h3>
+      <ul class="flex flex-col gap-2 text-sm text-gray-600">
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          TeamSystem
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          Zucchetti
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          NoiPA / RGS (settore pubblico)
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          DATEV
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          OSRA / Wolters Kluwer
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          PDF protetti da password
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          Verifica matematica automatica
+        </li>
+      </ul>
+      <a href="https://bustapagaxls.datacetools.com/"
+         class="mt-5 flex items-center justify-center gap-2 bg-brand text-white text-sm font-semibold px-4 py-2.5 rounded-xl hover:bg-brand-dark transition-colors">
+        Apri BustaPagaXLS
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
+      <h3 class="font-bold text-gray-900 mb-4 text-sm">Altre guide</h3>
+      <ul class="flex flex-col gap-3">
+        <li><a href="/guida/" class="text-sm text-brand hover:underline font-medium">Tutte le guide Datace</a></li>
+        <li><a href="/guida/come-convertire-f24-excel/" class="text-sm text-gray-500 hover:text-brand transition-colors">Come convertire F24 in Excel</a></li>
+        <li><a href="/guida/come-convertire-fattura-elettronica-excel/" class="text-sm text-gray-500 hover:text-brand transition-colors">Come convertire Fatture XML in Excel</a></li>
+      </ul>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ── FAQ ──────────────────────────────────────────────────────────────────── -->
+<section class="bg-white border-t border-gray-100 py-14 px-6">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Domande frequenti</h2>
+    <div class="flex flex-col gap-4">
+
+      <details class="bg-gray-50 rounded-2xl p-5 group border border-gray-200">
+        <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+          Come si legge la busta paga?
+          <svg class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="mt-3 text-sm text-gray-600 leading-relaxed">La busta paga si divide in competenze (voci che aumentano il lordo) e trattenute (INPS, IRPEF, addizionali). Il netto è lordo meno tutte le trattenute.</p>
+      </details>
+
+      <details class="bg-gray-50 rounded-2xl p-5 group border border-gray-200">
+        <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+          Cosa significa lordo in busta paga?
+          <svg class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="mt-3 text-sm text-gray-600 leading-relaxed">Il lordo è la retribuzione totale prima di qualsiasi trattenuta. Include paga base, straordinari, indennità e altri elementi. Dal lordo si calcolano INPS e IRPEF per arrivare al netto.</p>
+      </details>
+
+      <details class="bg-gray-50 rounded-2xl p-5 group border border-gray-200">
+        <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+          Quanto si paga di INPS in busta paga?
+          <svg class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="mt-3 text-sm text-gray-600 leading-relaxed">I contributi INPS a carico del dipendente sono circa il 9,19% del lordo per il settore privato. L'aliquota esatta dipende dal CCNL applicato e dalla qualifica del lavoratore.</p>
+      </details>
+
+      <details class="bg-gray-50 rounded-2xl p-5 group border border-gray-200">
+        <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+          Come convertire la busta paga in Excel?
+          <svg class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="mt-3 text-sm text-gray-600 leading-relaxed">Con BustaPagaXLS di Datace: carica il PDF su bustapagaxls.datacetools.com, attendi l'analisi AI e scarica il file Excel con ogni voce spiegata in italiano e il netto verificato matematicamente.</p>
+      </details>
+
+      <details class="bg-gray-50 rounded-2xl p-5 group border border-gray-200">
+        <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+          I dati della mia busta paga vengono salvati?
+          <svg class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="mt-3 text-sm text-gray-600 leading-relaxed">No. Il PDF viene elaborato in memoria RAM e cancellato immediatamente dopo la generazione dell'Excel. Nessun file viene scritto su disco e nessun dato viene conservato da Datace.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────────────────── -->
+<footer class="bg-gray-900 text-gray-400 py-8 px-6">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+    <div class="flex items-center gap-2">
+      <svg class="w-6 h-6 rounded-lg" viewBox="0 0 48 48" fill="none">
+        <rect width="48" height="48" rx="10" fill="#1c3461"/>
+        <path d="M10 12 L10 36 L21 36 Q32 36 32 24 Q32 12 21 12 Z" fill="white"/>
+        <path d="M16 18 L16 30 L21 30 Q26 30 26 24 Q26 18 21 18 Z" fill="#1c3461"/>
+        <rect x="9" y="12" width="4" height="24" rx="2" fill="#2a9db5"/>
+        <polyline points="29,10 39,10 39,20" stroke="#c4972b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <line x1="31" y1="18" x2="39" y2="10" stroke="#c4972b" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span class="text-white font-semibold">Datace</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs">
+      <a href="/bustapagaxls/" class="hover:text-gray-200 transition-colors">BustaPagaXLS</a>
+      <span class="text-gray-600">·</span>
+      <a href="/guida/"  class="hover:text-gray-200 transition-colors">Guide</a>
+      <span class="text-gray-600">·</span>
+      <a href="/chi-siamo" class="hover:text-gray-200 transition-colors">Chi siamo</a>
+      <span class="text-gray-600">·</span>
+      <a href="/privacy" class="hover:text-gray-200 transition-colors">Privacy Policy</a>
+    </div>
+    <p class="text-xs">&copy; 2026 Datace &nbsp;·&nbsp; Tutti i diritti riservati</p>
+  </div>
+</footer>
+
+</body>
+</html>
