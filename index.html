@@ -321,6 +321,48 @@
     .excel-grid tr:last-child td { background:rgba(245,158,11,.06); font-weight:700; }
     .excel-grid tr:last-child .amt { color:var(--gold2); }
 
+    /* ── Switch scene Excel <-> PDF (slide carosello) ── */
+    .scenes-wrap { display:none; }
+    @media (min-width:1024px) { .scenes-wrap { display:grid; overflow:hidden; } }
+    .scene { grid-area:1 / 1; min-width:0; will-change:transform,opacity; }
+    .scene-a { animation: slideCycle 11s cubic-bezier(.4,0,.2,1) infinite; }
+    .scene-b { animation: slideCycle 11s cubic-bezier(.4,0,.2,1) infinite; animation-delay:-5.5s; }
+    @keyframes slideCycle {
+      0%   { transform:translateX(42px) scale(.985); opacity:0; }   /* fuori a destra */
+      11%  { transform:translateX(0)    scale(1);    opacity:1; }   /* entrata, decelera */
+      50%  { transform:translateX(0)    scale(1);    opacity:1; }   /* resta (lettura) */
+      61%  { transform:translateX(-42px) scale(.985); opacity:0; }  /* esce a sinistra */
+      100% { transform:translateX(-42px) scale(.985); opacity:0; }  /* attende fuori */
+    }
+    /* nelle finestre 0-11% e 50-61% le due scene si sovrappongono semi-trasparenti */
+    @media (prefers-reduced-motion: reduce) {
+      .scene-a, .scene-b { animation:none; transform:none; }
+      .scene-b { display:none; }
+    }
+
+    /* ── Mockup PDF (BustaChiara) ── */
+    .pdf-wrap {
+      background:rgba(10,22,40,.95); border:1px solid rgba(255,255,255,.1);
+      border-radius:16px; padding:14px 16px;
+    }
+    .pdf-head { display:flex; align-items:center; justify-content:space-between; }
+    .pdf-title { font-size:11px; font-weight:800; letter-spacing:.07em; color:#fff; }
+    .pdf-ok { font-size:9px; font-weight:700; color:#86efac; background:rgba(34,197,94,.12);
+      border:1px solid rgba(34,197,94,.25); border-radius:5px; padding:2px 7px; }
+    .pdf-sub { font-size:10px; color:rgba(255,255,255,.32); margin:3px 0 12px; }
+    .pdf-hero { display:flex; align-items:center; justify-content:space-between;
+      background:rgba(15,32,64,.6); border:1px solid var(--border); border-radius:10px; padding:10px 12px; margin-bottom:10px; }
+    .pdf-hero .lab { font-size:8.5px; color:rgba(255,255,255,.4); letter-spacing:.05em; }
+    .pdf-hero .lordo { font-size:13px; font-weight:700; color:#fff; }
+    .pdf-hero .netto { font-size:17px; font-weight:800; color:var(--gold); }
+    .pdf-hero .arr { color:rgba(255,255,255,.35); font-size:15px; }
+    .pdf-bar { display:flex; height:8px; border-radius:4px; overflow:hidden; margin-bottom:11px; }
+    .pdf-row { display:flex; align-items:center; justify-content:space-between;
+      font-size:11px; color:rgba(255,255,255,.75); padding:5px 2px; border-bottom:1px solid rgba(255,255,255,.05); }
+    .pdf-row .amt { font-family:monospace; }
+    .pdf-foot { display:flex; align-items:center; gap:6px; margin-top:11px;
+      font-size:11px; color:rgba(255,255,255,.25); font-family:monospace; }
+
     /* ── Arrow ── */
     .transform-arrow {
       display:flex; align-items:center; gap:10px;
@@ -522,31 +564,70 @@
           </span>
         </div>
       </div>
-      <div class="transform-wrap hidden lg:flex flex-col" style="gap:10px;">
-        <div class="doc-card">
-          <div class="doc-top"><span class="badge-pdf">PDF</span><span style="font-size:13px;color:rgba(255,255,255,.4);font-family:monospace;">F24_Marzo2025.pdf</span></div>
-          <div class="doc-lines">
-            <div class="line" style="width:100%"></div><div class="line" style="width:78%"></div><div class="line" style="width:88%"></div>
-            <div class="line" style="width:65%;margin-top:12px;background:rgba(255,255,255,.05)"></div><div class="line" style="width:82%;background:rgba(255,255,255,.05)"></div>
+      <div class="scenes-wrap">
+
+        <!-- SCENA A: F24 PDF -> Excel -->
+        <div class="scene scene-a transform-wrap" style="gap:10px;">
+          <div class="doc-card">
+            <div class="doc-top"><span class="badge-pdf">PDF</span><span style="font-size:13px;color:rgba(255,255,255,.4);font-family:monospace;">F24_Marzo2025.pdf</span></div>
+            <div class="doc-lines">
+              <div class="line" style="width:100%"></div><div class="line" style="width:78%"></div><div class="line" style="width:88%"></div>
+              <div class="line" style="width:65%;margin-top:12px;background:rgba(255,255,255,.05)"></div><div class="line" style="width:82%;background:rgba(255,255,255,.05)"></div>
+            </div>
+          </div>
+          <div class="transform-arrow">
+            <div class="arrow-line"></div><div class="arrow-chip">Datace elabora</div>
+            <div class="arrow-line" style="background:linear-gradient(90deg,rgba(245,158,11,.2),transparent);"></div><span class="arrow-head">&#8594;</span>
+          </div>
+          <div class="excel-wrap">
+            <div class="excel-tabs"><div class="excel-tab active">Riepilogo</div><div class="excel-tab">Righe F24</div><div class="excel-tab">Compensazioni</div></div>
+            <table class="excel-grid" style="width:100%">
+              <thead><tr><th>Codice tributo</th><th>Sezione</th><th>Descrizione</th><th style="text-align:right">Importo</th></tr></thead>
+              <tbody>
+                <tr><td style="font-family:monospace">1001</td><td>IRPEF</td><td style="color:rgba(255,255,255,.4)">Acconto II rata</td><td class="amt">&#8364; 1.240,00</td></tr>
+                <tr><td style="font-family:monospace">3918</td><td>IVA</td><td style="color:rgba(255,255,255,.4)">Liquidazione mensile</td><td class="amt">&#8364; 3.480,00</td></tr>
+                <tr><td style="font-family:monospace">0100</td><td>INPS</td><td style="color:rgba(255,255,255,.4)">Contributi artigiani</td><td class="amt">&#8364; 890,50</td></tr>
+                <tr style="border-left:2px solid #F59E0B;"><td colspan="3" style="font-weight:700;font-size:12px;color:rgba(255,255,255,.7);padding-left:8px;">TOTALE VERSATO</td><td class="amt" style="font-size:13px;font-weight:800;">&#8364; 5.610,50</td></tr>
+              </tbody>
+            </table>
+            <div style="padding:8px 12px;display:flex;align-items:center;gap:6px;border-top:1px solid rgba(255,255,255,.05);"><span class="badge-xlsx">XLSX</span><span style="font-size:11px;color:rgba(255,255,255,.25);font-family:monospace;">F24_Marzo2025_export.xlsx · pronto al download</span></div>
           </div>
         </div>
-        <div class="transform-arrow">
-          <div class="arrow-line"></div><div class="arrow-chip">Datace elabora</div>
-          <div class="arrow-line" style="background:linear-gradient(90deg,rgba(245,158,11,.2),transparent);"></div><span class="arrow-head">&#8594;</span>
+
+        <!-- SCENA B: Busta paga PDF -> PDF spiegato -->
+        <div class="scene scene-b transform-wrap" style="gap:10px;">
+          <div class="doc-card">
+            <div class="doc-top"><span class="badge-pdf">PDF</span><span style="font-size:13px;color:rgba(255,255,255,.4);font-family:monospace;">BustaPaga_Aprile2026.pdf</span></div>
+            <div class="doc-lines">
+              <div class="line" style="width:100%"></div><div class="line" style="width:72%"></div><div class="line" style="width:90%"></div>
+              <div class="line" style="width:60%;margin-top:12px;background:rgba(255,255,255,.05)"></div><div class="line" style="width:84%;background:rgba(255,255,255,.05)"></div>
+            </div>
+          </div>
+          <div class="transform-arrow">
+            <div class="arrow-line"></div><div class="arrow-chip">Datace spiega</div>
+            <div class="arrow-line" style="background:linear-gradient(90deg,rgba(245,158,11,.2),transparent);"></div><span class="arrow-head">&#8594;</span>
+          </div>
+          <div class="pdf-wrap">
+            <div class="pdf-head"><span class="pdf-title">BUSTA PAGA SPIEGATA</span><span class="pdf-ok">&#10003; Verificato</span></div>
+            <div class="pdf-sub">Aprile 2026 &nbsp;·&nbsp; Zucchetti</div>
+            <div class="pdf-hero">
+              <div><div class="lab">LORDO</div><div class="lordo">&#8364; 2.581,41</div></div>
+              <span class="arr">&#8594;</span>
+              <div style="text-align:right;"><div class="lab">NETTO IN BUSTA</div><div class="netto">&#8364; 1.896,00</div></div>
+            </div>
+            <div class="pdf-bar">
+              <div style="flex:1896;background:#F59E0B;"></div>
+              <div style="flex:239;background:#2A9DB5;"></div>
+              <div style="flex:428;background:#60A5FA;"></div>
+              <div style="flex:18;background:#64748B;"></div>
+            </div>
+            <div class="pdf-row"><span>Paga base</span><span class="amt" style="color:#86efac;">+ &#8364; 1.701,04</span></div>
+            <div class="pdf-row"><span>Contributi INPS</span><span class="amt" style="color:#fca5a5;">- &#8364; 237,19</span></div>
+            <div class="pdf-row"><span>IRPEF netta</span><span class="amt" style="color:#fca5a5;">- &#8364; 323,74</span></div>
+            <div class="pdf-foot"><span class="badge-pdf">PDF</span><span>BustaChiara_Aprile2026.pdf · pronto al download</span></div>
+          </div>
         </div>
-        <div class="excel-wrap">
-          <div class="excel-tabs"><div class="excel-tab active">Riepilogo</div><div class="excel-tab">Righe F24</div><div class="excel-tab">Compensazioni</div></div>
-          <table class="excel-grid" style="width:100%">
-            <thead><tr><th>Codice tributo</th><th>Sezione</th><th>Descrizione</th><th style="text-align:right">Importo</th></tr></thead>
-            <tbody>
-              <tr><td style="font-family:monospace">1001</td><td>IRPEF</td><td style="color:rgba(255,255,255,.4)">Acconto II rata</td><td class="amt">&#8364; 1.240,00</td></tr>
-              <tr><td style="font-family:monospace">3918</td><td>IVA</td><td style="color:rgba(255,255,255,.4)">Liquidazione mensile</td><td class="amt">&#8364; 3.480,00</td></tr>
-              <tr><td style="font-family:monospace">0100</td><td>INPS</td><td style="color:rgba(255,255,255,.4)">Contributi artigiani</td><td class="amt">&#8364; 890,50</td></tr>
-              <tr style="border-left:2px solid #F59E0B;"><td colspan="3" style="font-weight:700;font-size:12px;color:rgba(255,255,255,.7);padding-left:8px;">TOTALE VERSATO</td><td class="amt" style="font-size:13px;font-weight:800;">&#8364; 5.610,50</td></tr>
-            </tbody>
-          </table>
-          <div style="padding:8px 12px;display:flex;align-items:center;gap:6px;border-top:1px solid rgba(255,255,255,.05);"><span class="badge-xlsx">XLSX</span><span style="font-size:11px;color:rgba(255,255,255,.25);font-family:monospace;">F24_Marzo2025_export.xlsx · pronto al download</span></div>
-        </div>
+
       </div>
     </div>
   </div>
