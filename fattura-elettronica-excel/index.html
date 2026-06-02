@@ -41,7 +41,7 @@
       "Estrae fornitore, cliente, righe, IVA, pagamenti",
       "Esporta su 5 fogli Excel: Riepilogo Fatture, Dettaglio Righe, Riepilogo IVA, Notifiche SdI, Allegati",
       "Elabora fino a 50 fatture contemporaneamente",
-      "Gestisce i lotti con piu fatture nello stesso file",
+      "Gestisce i lotti con più fatture nello stesso file",
       "Nessun dato salvato, elaborazione in RAM"
     ],
     "publisher": { "@type": "Organization", "name": "Datace", "url": "https://datacetools.com" }
@@ -66,11 +66,11 @@
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Come convertire una Fattura Elettronica XML in Excel",
-    "description": "Procedura per estrarre i dati da una o piu fatture elettroniche XML e scaricare un file Excel strutturato con fornitori, clienti, righe e riepiloghi IVA.",
+    "description": "Procedura per estrarre i dati da una o più fatture elettroniche XML e scaricare un file Excel strutturato con fornitori, clienti, righe e riepiloghi IVA.",
     "totalTime": "PT1M",
     "tool": { "@type": "HowToTool", "name": "FatturaXLS", "url": "https://fattura.datacetools.com/" },
     "step": [
-      { "@type": "HowToStep", "position": 1, "name": "Carica le fatture XML", "text": "Vai su fattura.datacetools.com e trascina uno o piu file XML o .p7m delle tue fatture elettroniche nella zona di caricamento. Puoi caricare fino a 50 file contemporaneamente." },
+      { "@type": "HowToStep", "position": 1, "name": "Carica le fatture XML", "text": "Vai su fattura.datacetools.com e trascina uno o più file XML o .p7m delle tue fatture elettroniche nella zona di caricamento. Puoi caricare fino a 50 file contemporaneamente." },
       { "@type": "HowToStep", "position": 2, "name": "Estrazione automatica", "text": "Il motore legge il tracciato FatturaPA e riconosce automaticamente fornitore, cliente, righe di dettaglio, riepiloghi IVA e dati di pagamento." },
       { "@type": "HowToStep", "position": 3, "name": "Scarica l'Excel", "text": "Clicca su Elabora e scarica Excel. Il file viene generato e scaricato immediatamente con 3 fogli: Riepilogo Fatture, Dettaglio Righe e Riepilogo IVA." }
     ]
@@ -86,7 +86,7 @@
       { "@type": "Question", "name": "Come si converte una fattura elettronica XML in Excel?", "acceptedAnswer": { "@type": "Answer", "text": "Carica il file XML su fattura.datacetools.com, il sistema legge il tracciato FatturaPA ed estrae automaticamente tutti i dati, scaricando un file Excel strutturato su 5 fogli. Bastano pochi secondi." } },
       { "@type": "Question", "name": "Sono supportati i file .p7m firmati digitalmente?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Sono supportate sia le fatture XML semplici sia quelle .xml.p7m firmate digitalmente, come quelle scaricate dallo SdI o dal cassetto fiscale." } },
       { "@type": "Question", "name": "I file delle fatture vengono salvati?", "acceptedAnswer": { "@type": "Answer", "text": "No. I file vengono elaborati esclusivamente in memoria RAM e cancellati immediatamente. Nessun dato viene salvato o trasmesso a terzi." } },
-      { "@type": "Question", "name": "Posso convertire piu fatture insieme?", "acceptedAnswer": { "@type": "Answer", "text": "Si, fino a 50 file contemporaneamente. Tutte le fatture vengono unificate in un unico Excel. Sono gestiti anche i file XML che contengono piu fatture (lotti)." } },
+      { "@type": "Question", "name": "Posso convertire più fatture insieme?", "acceptedAnswer": { "@type": "Answer", "text": "Si, fino a 50 file contemporaneamente. Tutte le fatture vengono unificate in un unico Excel. Sono gestiti anche i file XML che contengono più fatture (lotti)." } },
       { "@type": "Question", "name": "Quali dati vengono estratti dalla fattura?", "acceptedAnswer": { "@type": "Answer", "text": "Fornitore e cliente con partita IVA e codice fiscale, tipo, numero e data documento, le righe di dettaglio con quantita e prezzi, i riepiloghi IVA per aliquota con natura ed esigibilita, e le scadenze di pagamento." } },
       { "@type": "Question", "name": "In quanto tempo viene generato l'Excel?", "acceptedAnswer": { "@type": "Answer", "text": "In meno di un minuto. Il file viene elaborato in memoria RAM e il download parte automaticamente non appena la conversione e completata." } }
     ]
