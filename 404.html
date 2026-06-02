@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Pagina non trovata | Datace</title>
+
+  <!-- Redirect case-insensitive: GitHub Pages distingue maiuscole/minuscole.
+       Se l'URL contiene maiuscole (es. /BustaChiara/), lo normalizziamo in minuscolo
+       (/bustachiara/) prima di renderizzare. Se la pagina e gia minuscola e manca
+       davvero, non c'e redirect e si mostra il 404 brandizzato (nessun loop). -->
+  <script>
+    (function () {
+      var p = window.location.pathname;
+      var lower = p.toLowerCase();
+      if (lower !== p) {
+        window.location.replace(lower + window.location.search + window.location.hash);
+      }
+    })();
+  </script>
+
+  <style>
+    :root { --navy:#0a1428; --teal:#2a9db5; --muted:rgba(255,255,255,.45); }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      font-family:'Inter',system-ui,-apple-system,sans-serif;
+      background:var(--navy); color:#fff; min-height:100vh;
+      display:flex; align-items:center; justify-content:center; padding:24px; text-align:center;
+    }
+    .wrap { max-width:440px; }
+    .code { font-size:88px; font-weight:800; letter-spacing:-.04em; line-height:1; color:var(--teal); }
+    h1 { font-size:22px; font-weight:700; margin:16px 0 10px; }
+    p { font-size:14px; color:var(--muted); line-height:1.6; margin-bottom:28px; }
+    a.btn {
+      display:inline-block; background:#fff; color:#0a1428; text-decoration:none;
+      font-weight:700; font-size:14px; padding:12px 24px; border-radius:12px;
+      transition:opacity .2s ease;
+    }
+    a.btn:hover { opacity:.9; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="code">404</div>
+    <h1>Pagina non trovata</h1>
+    <p>La pagina che cerchi non esiste o e stata spostata. Torna alla home per trovare tutti gli strumenti.</p>
+    <a class="btn" href="/">Torna alla home</a>
+  </div>
+</body>
+</html>
