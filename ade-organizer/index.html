@@ -107,10 +107,11 @@
 <body class="font-sans antialiased" style="background:#060E1F;color:white;">
 
 <!-- HEADER -->
+<!-- DATACE HEADER START -->
 <header style="background:rgba(6,14,31,.85);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(16px);" class="sticky top-0 z-50">
   <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-3">
-      <svg class="w-9 h-9 flex-shrink-0" viewBox="0 0 48 48" fill="none">
+    <a href="/" class="flex items-center gap-3 group">
+      <svg class="w-9 h-9 flex-shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient>
           <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f2040"/><stop offset="100%" stop-color="#1c3461"/></linearGradient>
@@ -122,18 +123,19 @@
       </svg>
       <div class="flex flex-col leading-tight">
         <span style="color:white;" class="text-lg font-bold tracking-widest uppercase">Datace</span>
-        <span style="color:rgba(255,255,255,.4);" class="text-[9px] font-medium tracking-[0.2em] uppercase">Smart Tools for Business</span>
+        <span style="color:rgba(255,255,255,.4);" class="text-[9px] font-medium tracking-[0.2em] uppercase">Documenti in dati strutturati</span>
       </div>
     </a>
     <nav class="hidden sm:flex items-center gap-6 text-sm font-medium" style="color:rgba(255,255,255,.5);">
-      <a href="#come-funziona" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Come funziona</a>
-      <a href="#faq"           style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">FAQ</a>
-      <a href="/guida/"        style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Guide</a>
-      <a href="/"              style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Tutti gli strumenti</a>
+      <a href="/#strumenti" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Strumenti</a>
+      <a href="/guida/" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Guide</a>
+      <a href="/chi-siamo" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Chi siamo</a>
+      <a href="/#contatti" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Contatti</a>
     </nav>
-    <a href="https://zip.datacetools.com/" style="background:white;color:#0f2040;font-weight:700;font-size:13px;padding:9px 20px;border-radius:10px;transition:all .2s ease;white-space:nowrap;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">Usa lo strumento</a>
+    <a href="/#strumenti" style="background:white;color:#0f2040;font-weight:700;font-size:13px;padding:9px 20px;border-radius:10px;letter-spacing:.01em;transition:all .2s ease;white-space:nowrap;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">Inizia ora</a>
   </div>
 </header>
+<!-- DATACE HEADER END -->
 
 <!-- HERO -->
 <section class="px-6 py-24" style="background:var(--navy);position:relative;overflow:hidden;">
@@ -162,10 +164,10 @@
 <!-- STATS BAR -->
 <div style="background:rgba(255,255,255,.025);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" class="px-6 py-10">
   <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
-    <div><div class="stat-num">100%</div><div style="font-size:13px;color:var(--muted);margin-top:6px;">Elaborazione in RAM<br/>nessun file salvato</div></div>
-    <div style="border-left:1px solid rgba(255,255,255,.07);"><div class="stat-num">0</div><div style="font-size:13px;color:var(--muted);margin-top:6px;">Dati trasmessi<br/>o ceduti a terzi</div></div>
-    <div style="border-left:1px solid rgba(255,255,255,.07);"><div class="stat-num" style="font-size:2rem;">100MB</div><div style="font-size:13px;color:var(--muted);margin-top:6px;">Dimensione max<br/>file ZIP</div></div>
-    <div style="border-left:1px solid rgba(255,255,255,.07);"><div class="stat-num">2</div><div style="font-size:13px;color:var(--muted);margin-top:6px;">Output generati<br/>Excel + ZIP</div></div>
+    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:96px;"><div class="stat-num">100%</div><div style="font-size:13px;color:var(--muted);margin-top:6px;">Elaborazione in RAM<br/>nessun file salvato</div></div>
+    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:96px;border-left:1px solid rgba(255,255,255,.07);"><div class="stat-num">0</div><div style="font-size:13px;color:var(--muted);margin-top:6px;">Dati trasmessi<br/>o ceduti a terzi</div></div>
+    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:96px;border-left:1px solid rgba(255,255,255,.07);"><div class="stat-num">100MB</div><div style="font-size:13px;color:var(--muted);margin-top:6px;">Dimensione max<br/>file ZIP</div></div>
+    <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:96px;border-left:1px solid rgba(255,255,255,.07);"><div class="stat-num">2</div><div style="font-size:13px;color:var(--muted);margin-top:6px;">Output generati<br/>Excel + ZIP</div></div>
   </div>
 </div>
 
@@ -383,12 +385,13 @@
 </section>
 
 <!-- FOOTER -->
+<!-- DATACE FOOTER START -->
 <footer style="background:#04080F;border-top:1px solid rgba(255,255,255,.06);" class="px-6 pt-16 pb-10">
   <div class="max-w-5xl mx-auto">
     <div class="footer-grid">
       <div>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
-          <svg class="w-9 h-9" viewBox="0 0 48 48" fill="none">
+        <div class="flex items-center gap-3 mb-5">
+          <svg class="w-9 h-9" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="fIconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f2040"/><stop offset="100%" stop-color="#1c3461"/></linearGradient>
               <linearGradient id="fsg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient>
@@ -400,25 +403,25 @@
           </svg>
           <div>
             <div style="color:white;font-weight:700;font-size:15px;letter-spacing:.15em;text-transform:uppercase;">Datace</div>
-            <div style="color:rgba(255,255,255,.3);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:2px;">Smart Tools for Business</div>
+            <div style="color:rgba(255,255,255,.3);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:2px;">Documenti in dati strutturati</div>
           </div>
         </div>
         <p style="font-size:13px;color:rgba(255,255,255,.3);line-height:1.7;max-width:240px;">Strumenti professionali per automatizzare il lavoro documentale italiano.</p>
       </div>
       <div>
         <div class="footer-col-title">Strumenti</div>
-        <a href="/f24-to-excel/" class="footer-link">F24 in Excel</a>
-        <a href="/fattura-elettronica-excel/" class="footer-link">Fattura in Excel</a>
+        <a href="/f24-to-excel/" class="footer-link">F24 PDF in Excel</a>
+        <a href="/fattura-elettronica-excel/" class="footer-link">Fattura elettronica in Excel</a>
         <a href="/ade-organizer/" class="footer-link">Archivio Fatture AdE</a>
         <a href="/scadenzef24/" class="footer-link">Scadenze F24</a>
-        <a href="/bustachiara/" class="footer-link">Busta Paga</a>
+        <a href="/bustachiara/" class="footer-link">Busta paga spiegata</a>
       </div>
       <div>
         <div class="footer-col-title">Risorse</div>
         <a href="/guida/" class="footer-link">Guide</a>
         <a href="/chi-siamo" class="footer-link">Chi siamo</a>
-        <a href="/privacy/" class="footer-link">Privacy Policy</a>
-        <a href="mailto:datacetools@gmail.com" class="footer-link">Contatti</a>
+        <a href="/privacy" class="footer-link">Privacy Policy</a>
+        <a href="/#contatti" class="footer-link">Contatti</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -427,6 +430,7 @@
     </div>
   </div>
 </footer>
+<!-- DATACE FOOTER END -->
 
 </body>
 </html>

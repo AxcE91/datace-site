@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
@@ -8,19 +8,19 @@
   <meta name="google-site-verification" content="aBsjbMCgIMxYkbRcWz6SeD5mHXBb-KRGvx3bucboyxE" />
 
   <!-- SEO -->
-  <title>Datace | Smart Tools for Business</title>
+  <title>Datace | Converti documenti complessi in Excel e report</title>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="icon" type="image/svg+xml" href="/images/logo-icon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="description" content="Datace trasforma documenti fiscali e amministrativi italiani in dati Excel strutturati. Nessuna installazione, zero dati salvati. Smart tools per commercialisti, studi contabili e aziende." />
+  <meta name="description" content="Strumenti online che trasformano documenti e PDF complessi in Excel, report e dati strutturati. Oggi: F24, fatture elettroniche, buste paga. File non conservati permanentemente." />
   <link rel="canonical" href="https://datacetools.com/" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://datacetools.com/" />
-  <meta property="og:title"       content="Datace | Smart Tools for Business" />
-  <meta property="og:description" content="Datace trasforma documenti fiscali e amministrativi italiani in dati Excel strutturati. Nessuna installazione, zero dati salvati. Smart tools per commercialisti, studi contabili e aziende." />
+  <meta property="og:title"       content="Datace | Converti documenti complessi in Excel e report" />
+  <meta property="og:description" content="Strumenti online che trasformano documenti e PDF complessi in Excel, report e dati strutturati. Oggi: F24, fatture elettroniche, buste paga. File non conservati permanentemente." />
   <meta name="twitter:card"       content="summary" />
 
   <!-- JSON-LD: Organization -->
@@ -31,7 +31,7 @@
     "name": "Datace",
     "url": "https://datacetools.com",
     "logo": "https://datacetools.com/images/logo-icon.svg",
-    "description": "Datace crea strumenti di document processing e data automation per aziende e professionisti italiani.",
+    "description": "Datace crea strumenti online che trasformano documenti e PDF complessi in Excel, report e dati strutturati. Gli strumenti attuali coprono documenti fiscali e amministrativi italiani.",
     "foundingDate": "2024",
     "inLanguage": "it",
     "contactPoint": {
@@ -43,35 +43,35 @@
     "makesOffer": [
       {
         "@type": "Offer",
-        "name": "Datace — F24 in Excel",
+        "name": "Datace: F24 PDF in Excel",
         "url": "https://datacetools.com/f24-to-excel/",
         "description": "Converti moduli F24 PDF in file Excel strutturati.",
         "priceCurrency": "EUR"
       },
       {
         "@type": "Offer",
-        "name": "Datace — Fattura Elettronica in Excel",
+        "name": "Datace: Fattura Elettronica in Excel",
         "url": "https://datacetools.com/fattura-elettronica-excel/",
         "description": "Converti Fatture Elettroniche XML (FatturaPA) e .p7m in file Excel strutturati.",
         "priceCurrency": "EUR"
       },
       {
         "@type": "Offer",
-        "name": "Datace — Archivio Fatture Agenzia Entrate",
+        "name": "Datace: Archivio Fatture Agenzia Entrate",
         "url": "https://datacetools.com/ade-organizer/",
         "description": "Organizza il file ZIP scaricato da Fatture e Corrispettivi dell'Agenzia delle Entrate. Genera un Excel strutturato e un archivio riorganizzato per anno e mese.",
         "priceCurrency": "EUR"
       },
       {
         "@type": "Offer",
-        "name": "Datace — Scadenze F24",
+        "name": "Datace: Scadenze F24",
         "url": "https://datacetools.com/scadenzef24/",
         "description": "Carica i tuoi F24 PDF e ottieni un cashflow fiscale con previsione scadenze future: IRPEF, IVA, INPS, IMU. Export Excel su 4 fogli + calendario .ics.",
         "priceCurrency": "EUR"
       },
       {
         "@type": "Offer",
-        "name": "Datace — Busta Paga Spiegata",
+        "name": "Datace: Busta Paga Spiegata",
         "url": "https://datacetools.com/bustachiara/",
         "description": "Carica la tua busta paga e ricevi un report PDF con ogni voce spiegata in italiano. Lordo, INPS, IRPEF, addizionali e netto verificato matematicamente.",
         "priceCurrency": "EUR"
@@ -147,18 +147,6 @@
     }
     .hero > .max-w-6xl { position:relative; z-index:1; }
 
-    /* ── Mobile ── */
-    @media (max-width: 768px) {
-      .hero { min-height: auto; padding-top: 60px; padding-bottom: 60px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
-      .stats-section .grid { grid-template-columns: 1fr; gap: 24px; }
-      .stats-section [style*="border-left"] { border-left: none !important; border-right: none !important; border-top: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); padding: 24px 0; }
-      .pillar { padding: 24px; }
-      .tool-card { padding: 22px; }
-      .excel-grid th, .excel-grid td { padding: 5px 7px; font-size: 10px; }
-    }
-
     /* ── Footer ── */
     .footer-grid {
       display: grid;
@@ -197,9 +185,14 @@
       60%     { transform:scaleX(1);    opacity:1;   }
     }
 
-    /* ── Scroll entrance ── */
-    .fade-up { opacity:0; transform:translateY(32px); transition:opacity .6s ease, transform .6s ease; }
-    .fade-up.in-view { opacity:1; transform:translateY(0); }
+    /* ── Scroll entrance (visibile di default, animata solo se JS attivo) ── */
+    .fade-up { transition:opacity .6s ease, transform .6s ease; }
+    .js .fade-up { opacity:0; transform:translateY(32px); }
+    .js .fade-up.in-view { opacity:1; transform:translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .js .fade-up { opacity:1; transform:none; transition:none; }
+      .logo-bar { animation:none; }
+    }
     .d1{transition-delay:.05s} .d2{transition-delay:.15s}
     .d3{transition-delay:.25s} .d4{transition-delay:.35s} .d5{transition-delay:.45s}
 
@@ -271,117 +264,74 @@
     }
     .btn-secondary:hover { background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.35); }
 
-    /* ── Transformation visual ── */
-    .transform-wrap {
-      position:relative;
-      display:flex; flex-direction:column; gap:12px;
-    }
-    .doc-card {
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--border);
-      border-radius:16px; padding:18px;
-      backdrop-filter:blur(10px);
-    }
-    .doc-card .doc-top {
-      display:flex; align-items:center; gap:10px; margin-bottom:14px;
-    }
-    .badge-pdf { background:rgba(239,68,68,.15); border:1px solid rgba(239,68,68,.3);
-      border-radius:6px; padding:3px 8px; font-size:10px; font-weight:700; color:#fca5a5; }
-    .badge-xlsx { background:rgba(34,197,94,.12); border:1px solid rgba(34,197,94,.25);
-      border-radius:6px; padding:3px 8px; font-size:10px; font-weight:700; color:#86efac; }
-    .doc-lines .line { height:6px; border-radius:3px; background:rgba(255,255,255,.08); margin-bottom:7px; }
+    /* ── Transformation Hub ── */
+    .hub-wrap { display:flex; flex-direction:column; gap:16px; }
+    .hub-svg { width:100%; height:auto; display:block; }
 
-    /* ── Excel mockup ── */
-    .excel-wrap {
-      background:rgba(10,22,40,.95);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:16px; overflow:hidden;
+    /* micro floating sulle card */
+    .hub-float-a { animation: hubFloat 7s ease-in-out infinite; }
+    .hub-float-b { animation: hubFloat 8.5s ease-in-out infinite 1.4s; }
+    @keyframes hubFloat {
+      0%,100% { transform:translateY(0); }
+      50%     { transform:translateY(-3px); }
     }
-    .excel-tabs {
-      display:flex; gap:2px; padding:10px 12px 0;
-      background:rgba(0,0,0,.2);
-    }
-    .excel-tab {
-      padding:5px 14px; border-radius:6px 6px 0 0;
-      font-size:11px; font-weight:600; cursor:default;
-    }
-    .excel-tab.active { background:#1c3461; color:white; }
-    .excel-tab:not(.active) { color:rgba(255,255,255,.3); }
-    .excel-grid { width:100%; border-collapse:collapse; font-size:11px; }
-    .excel-grid th {
-      background:rgba(28,52,97,.5); color:rgba(255,255,255,.5);
-      padding:6px 10px; text-align:left; font-weight:600;
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .excel-grid td {
-      padding:6px 10px; color:rgba(255,255,255,.75);
-      border-bottom:1px solid rgba(255,255,255,.04);
-    }
-    .excel-grid .amt { color:var(--gold); font-family:monospace; text-align:right; }
-    .excel-grid tr:last-child td { background:rgba(245,158,11,.06); font-weight:700; }
-    .excel-grid tr:last-child .amt { color:var(--gold2); }
 
-    /* ── Switch scene Excel <-> PDF (slide carosello) ── */
-    .scenes-wrap { display:none; }
-    @media (min-width:1024px) { .scenes-wrap { display:grid; overflow:hidden; } }
-    .scene { grid-area:1 / 1; min-width:0; will-change:transform,opacity; }
-    .scene-a { animation: slideCycle 11s cubic-bezier(.4,0,.2,1) infinite; }
-    .scene-b { animation: slideCycle 11s cubic-bezier(.4,0,.2,1) infinite; animation-delay:-5.5s; }
-    @keyframes slideCycle {
-      0%   { transform:translateX(42px) scale(.985); opacity:0; }   /* fuori a destra */
-      11%  { transform:translateX(0)    scale(1);    opacity:1; }   /* entrata, decelera */
-      50%  { transform:translateX(0)    scale(1);    opacity:1; }   /* resta (lettura) */
-      61%  { transform:translateX(-42px) scale(.985); opacity:0; }  /* esce a sinistra */
-      100% { transform:translateX(-42px) scale(.985); opacity:0; }  /* attende fuori */
+    /* linee di flusso input -> Datace -> output */
+    .hub-flow { stroke-dasharray:22 118; animation: hubFlow 3.4s linear infinite; }
+    .hub-flow.f2 { animation-delay:.6s; }
+    .hub-flow.f3 { animation-delay:1.2s; }
+    .hub-flow.o1 { animation-delay:.3s; }
+    .hub-flow.o2 { animation-delay:.9s; }
+    .hub-flow.o3 { animation-delay:1.5s; }
+    @keyframes hubFlow { to { stroke-dashoffset:-140; } }
+    /* linee dritte XML/Report: lunghe 94, ciclo dedicato cosi' il flusso le attraversa sempre */
+    .hub-flow.f2, .hub-flow.o2 { stroke-dasharray:22 72; animation-name:hubFlowS; animation-duration:2.3s; }
+    @keyframes hubFlowS { to { stroke-dashoffset:-94; } }
+
+    /* glow/pulse sul nodo Datace */
+    .hub-node-glow { animation: hubPulse 4.5s ease-in-out infinite; }
+    @keyframes hubPulse { 0%,100% { opacity:.25; } 50% { opacity:.55; } }
+
+    /* highlight alternato sugli output */
+    /* highlight sincronizzato col dash: input quando il flusso parte dalla card, output quando arriva */
+    .hub-hl { opacity:0; }
+    .hub-hl.in1 { animation: hubCardIn 3.4s linear infinite; }
+    .hub-hl.in2 { animation: hubCardInS 2.3s linear infinite .6s; }
+    .hub-hl.in3 { animation: hubCardIn 3.4s linear infinite 1.2s; }
+    .hub-hl.out1 { animation: hubCardOut 3.4s linear infinite .3s; }
+    .hub-hl.out2 { animation: hubCardOutS 2.3s linear infinite .9s; }
+    .hub-hl.out3 { animation: hubCardOut 3.4s linear infinite 1.5s; }
+    @keyframes hubCardIn   { 0% { opacity:.9; } 14% { opacity:.9; } 26% { opacity:0; } 100% { opacity:0; } }
+    @keyframes hubCardInS  { 0% { opacity:.9; } 22% { opacity:.9; } 34% { opacity:0; } 100% { opacity:0; } }
+    @keyframes hubCardOut  { 0%,80% { opacity:0; } 87% { opacity:.9; } 96% { opacity:.9; } 100% { opacity:0; } }
+    @keyframes hubCardOutS { 0%,74% { opacity:0; } 82% { opacity:.9; } 96% { opacity:.9; } 100% { opacity:0; } }
+
+    @media (max-width:1023px) {
+      .hub-wrap { max-width:440px; margin:0 auto; }
+      .hub-float-a, .hub-float-b { animation:none; }
     }
-    /* nelle finestre 0-11% e 50-61% le due scene si sovrappongono semi-trasparenti */
+    /* su schermi piccoli il viewBox scala molto: testi piu' grandi e niente dot */
+    @media (max-width:640px) {
+      .hub-float-a circle, .hub-float-b circle { display:none; }
+      .hub-float-a text, .hub-float-b text { font-size:19px; transform:translateX(-12px); }
+      .hub-node-label { font-size:14px; }
+    }
     @media (prefers-reduced-motion: reduce) {
-      .scene-a, .scene-b { animation:none; transform:none; }
-      .scene-b { display:none; }
+      .hub-flow, .hub-node-glow, .hub-hl, .hub-float-a, .hub-float-b { animation:none; }
+      .hub-flow { display:none; }
+      .hub-hl { opacity:0; }
+      .hub-node-glow { opacity:.3; }
     }
-
-    /* ── Mockup PDF (Busta Paga) ── */
-    .pdf-wrap {
-      background:rgba(10,22,40,.95); border:1px solid rgba(255,255,255,.1);
-      border-radius:16px; padding:14px 16px;
-    }
-    .pdf-head { display:flex; align-items:center; justify-content:space-between; }
-    .pdf-title { font-size:11px; font-weight:800; letter-spacing:.07em; color:#fff; }
-    .pdf-ok { font-size:9px; font-weight:700; color:#86efac; background:rgba(34,197,94,.12);
-      border:1px solid rgba(34,197,94,.25); border-radius:5px; padding:2px 7px; }
-    .pdf-sub { font-size:10px; color:rgba(255,255,255,.32); margin:3px 0 12px; }
-    .pdf-hero { display:flex; align-items:center; justify-content:space-between;
-      background:rgba(15,32,64,.6); border:1px solid var(--border); border-radius:10px; padding:10px 12px; margin-bottom:10px; }
-    .pdf-hero .lab { font-size:8.5px; color:rgba(255,255,255,.4); letter-spacing:.05em; }
-    .pdf-hero .lordo { font-size:13px; font-weight:700; color:#fff; }
-    .pdf-hero .netto { font-size:17px; font-weight:800; color:var(--gold); }
-    .pdf-hero .arr { color:rgba(255,255,255,.35); font-size:15px; }
-    .pdf-bar { display:flex; height:8px; border-radius:4px; overflow:hidden; margin-bottom:11px; }
-    .pdf-row { display:flex; align-items:center; justify-content:space-between;
-      font-size:11px; color:rgba(255,255,255,.75); padding:5px 2px; border-bottom:1px solid rgba(255,255,255,.05); }
-    .pdf-row .amt { font-family:monospace; }
-    .pdf-foot { display:flex; align-items:center; gap:6px; margin-top:11px;
-      font-size:11px; color:rgba(255,255,255,.25); font-family:monospace; }
-
-    /* ── Arrow ── */
-    .transform-arrow {
-      display:flex; align-items:center; gap:10px;
-      padding:0 8px;
-    }
-    .arrow-line { flex:1; height:1px; background:linear-gradient(90deg,var(--gold),rgba(245,158,11,.2)); }
-    .arrow-chip {
-      background:rgba(245,158,11,.1); border:1px solid rgba(245,158,11,.25);
-      border-radius:999px; padding:4px 12px;
-      font-size:11px; font-weight:700; color:var(--gold); letter-spacing:.05em;
-      white-space:nowrap;
-    }
-    .arrow-head { color:var(--gold); font-size:16px; }
 
     /* ── Stats ── */
     .stats-section {
       background:rgba(255,255,255,.025);
       border-top:1px solid var(--border); border-bottom:1px solid var(--border);
     }
+    .kpi-block { display:flex; flex-direction:column; align-items:center; justify-content:flex-start; }
+    .kpi-block .stat-num { min-height:3rem; display:flex; align-items:center; justify-content:center; }
+    .kpi-block .kpi-desc { font-size:13px;color:rgba(255,255,255,.4);margin-top:6px; }
+
     .stat-num {
       font-size:3rem; font-weight:800; line-height:1;
       background:linear-gradient(135deg,#fff,#93c5fd);
@@ -474,8 +424,20 @@
       transition: background .2s, border-color .2s;
     }
     .contact-email:hover { background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.2); }
+
+    /* ── Mobile (in fondo: deve vincere sulle regole componente sopra) ── */
+    @media (max-width: 768px) {
+      .hero { min-height: auto; padding-top: 60px; padding-bottom: 60px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .stats-section .grid { grid-template-columns: 1fr; gap: 24px; }
+      .stats-section [style*="border-left"] { border-left: none !important; border-right: none !important; border-top: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); padding: 24px 0; }
+      .pillar { padding: 24px; }
+      .tool-card { padding: 22px; }
+    }
   </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="c1dd6816-ca2c-47ad-a958-3777906252fb"></script>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body class="font-sans antialiased" style="background:#060E1F;color:white;">
@@ -507,7 +469,7 @@
       </svg>
       <div class="flex flex-col leading-tight">
         <span style="color:white;" class="text-lg font-bold tracking-widest uppercase">Datace</span>
-        <span style="color:rgba(255,255,255,.4);" class="text-[9px] font-medium tracking-[0.2em] uppercase">Smart Tools for Business</span>
+        <span style="color:rgba(255,255,255,.4);" class="text-[9px] font-medium tracking-[0.2em] uppercase">Documenti in dati strutturati</span>
       </div>
     </a>
 
@@ -536,9 +498,9 @@
         <!-- Pill -->
         <div class="mb-7"><span class="pill"><span class="pill-dot"></span> 5 strumenti · Made in Italy</span></div>
 
-        <h1 style="font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1.08;letter-spacing:-.02em;" class="mb-6">Il lavoro documentale,<br><span class="grad-text">finalmente automatizzato.</span></h1>
+        <h1 style="font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1.08;letter-spacing:-.02em;" class="mb-6">Documenti complessi,<br><span class="grad-text">trasformati in dati.</span></h1>
 
-        <p style="font-size:1.05rem;color:rgba(255,255,255,.5);line-height:1.8;" class="mb-8 max-w-lg">Datace trasforma documenti fiscali e amministrativi italiani in dati Excel strutturati. Pensato per commercialisti, studi contabili e aziende.</p>
+        <p style="font-size:1.05rem;color:rgba(255,255,255,.5);line-height:1.8;" class="mb-8 max-w-lg">Datace trasforma documenti e PDF complessi in Excel, report e dati strutturati. I primi strumenti coprono il lavoro fiscale e amministrativo italiano: F24, fatture elettroniche, buste paga.</p>
 
         <div class="flex flex-wrap gap-3 mb-10">
           <a href="#strumenti" class="btn-primary">Esplora la suite <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
@@ -552,82 +514,107 @@
           </span>
           <span style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.35);">
             <svg width="13" height="13" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            Output Excel multi-foglio
+            Excel, report e archivi
           </span>
           <span style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.35);">
             <svg width="13" height="13" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-            100% normativa italiana
+            Pensato per documenti italiani
           </span>
           <span style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.35);">
             <svg width="13" height="13" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-            Zero dati salvati
+            File non conservati
           </span>
         </div>
       </div>
-      <div class="scenes-wrap">
+      <div class="hub-wrap">
+        <svg class="hub-svg" viewBox="0 0 560 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Datace trasforma PDF, XML e ZIP in Excel, report e archivi strutturati">
+          <defs>
+            <linearGradient id="hubGold" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/>
+            </linearGradient>
+            <linearGradient id="hubNodeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0f2040"/><stop offset="100%" stop-color="#1c3461"/>
+            </linearGradient>
+            <filter id="hubBlur" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="22"/>
+            </filter>
+          </defs>
 
-        <!-- SCENA A: F24 PDF -> Excel -->
-        <div class="scene scene-a transform-wrap" style="gap:10px;">
-          <div class="doc-card">
-            <div class="doc-top"><span class="badge-pdf">PDF</span><span style="font-size:13px;color:rgba(255,255,255,.4);font-family:monospace;">F24_Marzo2025.pdf</span></div>
-            <div class="doc-lines">
-              <div class="line" style="width:100%"></div><div class="line" style="width:78%"></div><div class="line" style="width:88%"></div>
-              <div class="line" style="width:65%;margin-top:12px;background:rgba(255,255,255,.05)"></div><div class="line" style="width:82%;background:rgba(255,255,255,.05)"></div>
-            </div>
-          </div>
-          <div class="transform-arrow">
-            <div class="arrow-line"></div><div class="arrow-chip">Datace elabora</div>
-            <div class="arrow-line" style="background:linear-gradient(90deg,rgba(245,158,11,.2),transparent);"></div><span class="arrow-head">&#8594;</span>
-          </div>
-          <div class="excel-wrap">
-            <div class="excel-tabs"><div class="excel-tab active">Riepilogo</div><div class="excel-tab">Righe F24</div><div class="excel-tab">Compensazioni</div></div>
-            <table class="excel-grid" style="width:100%">
-              <thead><tr><th>Codice tributo</th><th>Sezione</th><th>Descrizione</th><th style="text-align:right">Importo</th></tr></thead>
-              <tbody>
-                <tr><td style="font-family:monospace">1001</td><td>IRPEF</td><td style="color:rgba(255,255,255,.4)">Acconto II rata</td><td class="amt">&#8364; 1.240,00</td></tr>
-                <tr><td style="font-family:monospace">3918</td><td>IVA</td><td style="color:rgba(255,255,255,.4)">Liquidazione mensile</td><td class="amt">&#8364; 3.480,00</td></tr>
-                <tr><td style="font-family:monospace">0100</td><td>INPS</td><td style="color:rgba(255,255,255,.4)">Contributi artigiani</td><td class="amt">&#8364; 890,50</td></tr>
-                <tr style="border-left:2px solid #F59E0B;"><td colspan="3" style="font-weight:700;font-size:12px;color:rgba(255,255,255,.7);padding-left:8px;">TOTALE VERSATO</td><td class="amt" style="font-size:13px;font-weight:800;">&#8364; 5.610,50</td></tr>
-              </tbody>
-            </table>
-            <div style="padding:8px 12px;display:flex;align-items:center;gap:6px;border-top:1px solid rgba(255,255,255,.05);"><span class="badge-xlsx">XLSX</span><span style="font-size:11px;color:rgba(255,255,255,.25);font-family:monospace;">F24_Marzo2025_export.xlsx · pronto al download</span></div>
-          </div>
-        </div>
+          <!-- glow nodo -->
+          <circle class="hub-node-glow" cx="280" cy="190" r="64" fill="#F59E0B" opacity=".3" filter="url(#hubBlur)"/>
 
-        <!-- SCENA B: Busta paga PDF -> PDF spiegato -->
-        <div class="scene scene-b transform-wrap" style="gap:10px;">
-          <div class="doc-card">
-            <div class="doc-top"><span class="badge-pdf">PDF</span><span style="font-size:13px;color:rgba(255,255,255,.4);font-family:monospace;">BustaPaga_Aprile2026.pdf</span></div>
-            <div class="doc-lines">
-              <div class="line" style="width:100%"></div><div class="line" style="width:72%"></div><div class="line" style="width:90%"></div>
-              <div class="line" style="width:60%;margin-top:12px;background:rgba(255,255,255,.05)"></div><div class="line" style="width:84%;background:rgba(255,255,255,.05)"></div>
-            </div>
-          </div>
-          <div class="transform-arrow">
-            <div class="arrow-line"></div><div class="arrow-chip">Datace spiega</div>
-            <div class="arrow-line" style="background:linear-gradient(90deg,rgba(245,158,11,.2),transparent);"></div><span class="arrow-head">&#8594;</span>
-          </div>
-          <div class="pdf-wrap">
-            <div class="pdf-head"><span class="pdf-title">BUSTA PAGA SPIEGATA</span><span class="pdf-ok">&#10003; Verificato</span></div>
-            <div class="pdf-sub">Aprile 2026 &nbsp;·&nbsp; Zucchetti</div>
-            <div class="pdf-hero">
-              <div><div class="lab">LORDO</div><div class="lordo">&#8364; 2.581,41</div></div>
-              <span class="arr">&#8594;</span>
-              <div style="text-align:right;"><div class="lab">NETTO IN BUSTA</div><div class="netto">&#8364; 1.896,00</div></div>
-            </div>
-            <div class="pdf-bar">
-              <div style="flex:1896;background:#F59E0B;"></div>
-              <div style="flex:239;background:#2A9DB5;"></div>
-              <div style="flex:428;background:#60A5FA;"></div>
-              <div style="flex:18;background:#64748B;"></div>
-            </div>
-            <div class="pdf-row"><span>Paga base</span><span class="amt" style="color:#86efac;">+ &#8364; 1.701,04</span></div>
-            <div class="pdf-row"><span>Contributi INPS</span><span class="amt" style="color:#fca5a5;">- &#8364; 237,19</span></div>
-            <div class="pdf-row"><span>IRPEF netta</span><span class="amt" style="color:#fca5a5;">- &#8364; 323,74</span></div>
-            <div class="pdf-foot"><span class="badge-pdf">PDF</span><span>BustaPaga_Aprile2026.pdf · pronto al download</span></div>
-          </div>
-        </div>
+          <!-- linee base -->
+          <g stroke="rgba(255,255,255,.09)" stroke-width="1.5">
+            <path d="M128 78 C172 78 178 170 222 170"/>
+            <path d="M128 190 L222 190"/>
+            <path d="M128 302 C172 302 178 210 222 210"/>
+            <path d="M338 170 C382 170 388 78 432 78"/>
+            <path d="M338 190 L432 190"/>
+            <path d="M338 210 C382 210 388 302 432 302"/>
+          </g>
+          <!-- flussi animati -->
+          <g stroke="url(#hubGold)" stroke-width="3" stroke-linecap="round">
+            <path class="hub-flow"    d="M128 78 C172 78 178 170 222 170"/>
+            <path class="hub-flow f2" stroke="#F59E0B" d="M128 190 L222 190"/>
+            <path class="hub-flow f3" d="M128 302 C172 302 178 210 222 210"/>
+            <path class="hub-flow o1" d="M338 170 C382 170 388 78 432 78"/>
+            <path class="hub-flow o2" stroke="#F59E0B" d="M338 190 L432 190"/>
+            <path class="hub-flow o3" d="M338 210 C382 210 388 302 432 302"/>
+          </g>
 
+          <!-- input -->
+          <g class="hub-float-a" font-family="Inter,system-ui,sans-serif">
+            <g>
+              <rect x="16" y="51" width="112" height="54" rx="14" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)"/>
+              <rect class="hub-hl in1" x="16" y="51" width="112" height="54" rx="14" fill="rgba(245,158,11,.06)" stroke="rgba(245,158,11,.55)"/>
+              <circle cx="42" cy="78" r="4" fill="#fca5a5"/>
+              <text x="58" y="83" font-size="14" font-weight="700" fill="rgba(255,255,255,.85)">PDF</text>
+            </g>
+            <g>
+              <rect x="16" y="163" width="112" height="54" rx="14" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)"/>
+              <rect class="hub-hl in2" x="16" y="163" width="112" height="54" rx="14" fill="rgba(245,158,11,.06)" stroke="rgba(245,158,11,.55)"/>
+              <circle cx="42" cy="190" r="4" fill="#93c5fd"/>
+              <text x="58" y="195" font-size="14" font-weight="700" fill="rgba(255,255,255,.85)">XML</text>
+            </g>
+            <g>
+              <rect x="16" y="275" width="112" height="54" rx="14" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)"/>
+              <rect class="hub-hl in3" x="16" y="275" width="112" height="54" rx="14" fill="rgba(245,158,11,.06)" stroke="rgba(245,158,11,.55)"/>
+              <circle cx="42" cy="302" r="4" fill="#FBBF24"/>
+              <text x="58" y="307" font-size="14" font-weight="700" fill="rgba(255,255,255,.85)">ZIP</text>
+            </g>
+          </g>
+
+          <!-- nodo Datace -->
+          <g>
+            <rect x="222" y="132" width="116" height="116" rx="26" fill="url(#hubNodeBg)" stroke="rgba(245,158,11,.4)" stroke-width="1.5"/>
+            <rect class="logo-bar logo-bar-1" x="252" y="156" width="56" height="9" rx="4.5" fill="url(#hubGold)"/>
+            <rect class="logo-bar logo-bar-2" x="252" y="171" width="40" height="9" rx="4.5" fill="white"/>
+            <rect class="logo-bar logo-bar-3" x="252" y="186" width="24" height="9" rx="4.5" fill="white" fill-opacity="0.35"/>
+            <text class="hub-node-label" x="280" y="222" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="3" fill="rgba(255,255,255,.9)">DATACE</text>
+          </g>
+
+          <!-- output -->
+          <g class="hub-float-b" font-family="Inter,system-ui,sans-serif">
+            <g>
+              <rect x="432" y="51" width="112" height="54" rx="14" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)"/>
+              <rect class="hub-hl out1" x="432" y="51" width="112" height="54" rx="14" fill="rgba(245,158,11,.06)" stroke="rgba(245,158,11,.55)"/>
+              <circle cx="458" cy="78" r="4" fill="#86efac"/>
+              <text x="474" y="83" font-size="14" font-weight="700" fill="rgba(255,255,255,.85)">Excel</text>
+            </g>
+            <g>
+              <rect x="432" y="163" width="112" height="54" rx="14" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)"/>
+              <rect class="hub-hl out2" x="432" y="163" width="112" height="54" rx="14" fill="rgba(245,158,11,.06)" stroke="rgba(245,158,11,.55)"/>
+              <circle cx="458" cy="190" r="4" fill="#F59E0B"/>
+              <text x="474" y="195" font-size="14" font-weight="700" fill="rgba(255,255,255,.85)">Report</text>
+            </g>
+            <g>
+              <rect x="432" y="275" width="112" height="54" rx="14" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)"/>
+              <rect class="hub-hl out3" x="432" y="275" width="112" height="54" rx="14" fill="rgba(245,158,11,.06)" stroke="rgba(245,158,11,.55)"/>
+              <circle cx="458" cy="302" r="4" fill="#93c5fd"/>
+              <text x="474" y="307" font-size="14" font-weight="700" fill="rgba(255,255,255,.85)">Archivio</text>
+            </g>
+          </g>
+        </svg>
       </div>
     </div>
   </div>
@@ -636,9 +623,9 @@
 <!-- STATS -->
 <div class="stats-section px-6 py-12">
   <div class="max-w-4xl mx-auto grid grid-cols-3 gap-8 text-center">
-    <div><div class="stat-num">5</div><div style="font-size:13px;color:rgba(255,255,255,.4);margin-top:6px;">Strumenti nella suite</div></div>
-    <div style="border-left:1px solid rgba(255,255,255,.07);border-right:1px solid rgba(255,255,255,.07);"><div class="stat-num">0</div><div style="font-size:13px;color:rgba(255,255,255,.4);margin-top:6px;">Dati salvati sui server</div></div>
-    <div><div class="stat-num" style="font-size:2.5rem">&lt;30s</div><div style="font-size:13px;color:rgba(255,255,255,.4);margin-top:6px;">Tempo medio per file</div></div>
+    <div class="kpi-block"><div class="stat-num">5</div><div class="kpi-desc">Strumenti nella suite</div></div>
+    <div class="kpi-block" style="border-left:1px solid rgba(255,255,255,.07);border-right:1px solid rgba(255,255,255,.07);"><div class="stat-num">0</div><div class="kpi-desc">File conservati</div></div>
+    <div class="kpi-block"><div class="stat-num" style="font-size:2.5rem">Rapido</div><div class="kpi-desc">Elaborazione in pochi passaggi</div></div>
   </div>
 </div>
 
@@ -649,12 +636,12 @@
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <a href="/f24-to-excel/" class="tool-card fade-up d1">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;"><div class="t-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" fill="rgba(245,158,11,.15)"/><path d="M14 2v6h6M8 13h8M8 17h5" stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#F59E0B" stroke-width="1.8" stroke-linejoin="round"/></svg></div><span class="t-badge badge-green">Disponibile</span></div>
-        <div><p class="t-name">F24 in Excel</p><p class="t-desc">PDF F24 &rarr; Excel strutturato su 3 fogli. Batch processing, zero errori manuali.</p></div>
+        <div><p class="t-name">F24 PDF in Excel</p><p class="t-desc">PDF F24 &rarr; Excel strutturato su 3 fogli. Batch processing, meno lavoro manuale.</p></div>
         <div class="t-cta">Apri strumento <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
       </a>
       <a href="/fattura-elettronica-excel/" class="tool-card fade-up d2">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;"><div class="t-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" fill="rgba(29,122,148,.2)"/><path d="M14 2v6h6" stroke="#1d7a94" stroke-width="1.8" stroke-linecap="round"/><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#1d7a94" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 12l2.5 2.5L8 17M12.5 17H16" stroke="#2a9db5" stroke-width="1.8" stroke-linecap="round"/></svg></div><span class="t-badge badge-green">Disponibile</span></div>
-        <div><p class="t-name">Fattura in Excel</p><p class="t-desc">Fatture XML e .p7m &rarr; Excel su 5 fogli: Riepilogo, Righe, IVA, SdI, Allegati.</p></div>
+        <div><p class="t-name">Fattura elettronica in Excel</p><p class="t-desc">Fatture XML e .p7m &rarr; Excel su 5 fogli: Riepilogo, Righe, IVA, SdI, Allegati.</p></div>
         <div class="t-cta">Apri strumento <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
       </a>
       <a href="/ade-organizer/" class="tool-card fade-up d3">
@@ -669,7 +656,7 @@
       </a>
       <a href="/bustachiara/" class="tool-card fade-up d3">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;"><div class="t-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round"/></svg></div><span class="t-badge badge-blue">Nuovo</span></div>
-        <div><p class="t-name">Busta Paga</p><p class="t-desc">Busta paga &rarr; PDF che spiega ogni voce. Lordo, INPS, IRPEF e netto verificati.</p></div>
+        <div><p class="t-name">Busta paga spiegata</p><p class="t-desc">Busta paga &rarr; PDF che spiega ogni voce. Lordo, INPS, IRPEF e netto verificati.</p></div>
         <div class="t-cta">Apri strumento <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
       </a>
       <div class="card-soon fade-up d4"><svg width="28" height="28" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg><div><p style="font-size:14px;font-weight:600;color:rgba(255,255,255,.2);">Nuovi strumenti</p><p style="font-size:12px;color:rgba(255,255,255,.15);margin-top:4px;">La suite si espande. Torna presto.</p></div></div>
@@ -680,11 +667,11 @@
 <!-- COME FUNZIONA -->
 <section id="come-funziona" style="background:rgba(255,255,255,.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" class="px-6 py-24">
   <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-16"><div class="label mb-4" style="justify-content:center;">Il processo</div><h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.02em;">Tre passi. Niente di pi&ugrave;.</h2></div>
+    <div class="mb-14"><div class="label mb-4">Il processo</div><h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.02em;" class="max-w-xl">Da file grezzo a output strutturato.</h2></div>
     <div class="grid sm:grid-cols-3 gap-6">
-      <div class="fade-up d1 text-center"><div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg></div><div style="font-size:11px;font-weight:700;letter-spacing:.15em;color:rgba(255,255,255,.2);text-transform:uppercase;margin-bottom:10px;">01</div><h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">Carica il documento</h3><p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;">PDF, XML o ZIP. Trascina o seleziona dal dispositivo.</p></div>
-      <div class="fade-up d2 text-center"><div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg></div><div style="font-size:11px;font-weight:700;letter-spacing:.15em;color:rgba(255,255,255,.2);text-transform:uppercase;margin-bottom:10px;">02</div><h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">Datace elabora</h3><p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;">Estrazione, strutturazione e validazione automatica dei dati fiscali.</p></div>
-      <div class="fade-up d3 text-center"><div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg></div><div style="font-size:11px;font-weight:700;letter-spacing:.15em;color:rgba(255,255,255,.2);text-transform:uppercase;margin-bottom:10px;">03</div><h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">Scarica l'Excel</h3><p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;">Multi-foglio, strutturato, pronto per analisi e workflow.</p></div>
+      <div class="fade-up d1 text-center"><div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg></div><div style="font-size:11px;font-weight:700;letter-spacing:.15em;color:rgba(255,255,255,.2);text-transform:uppercase;margin-bottom:10px;">01</div><h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">Carica PDF, XML o ZIP</h3><p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;">Trascina o seleziona i file dal dispositivo.</p></div>
+      <div class="fade-up d2 text-center"><div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg></div><div style="font-size:11px;font-weight:700;letter-spacing:.15em;color:rgba(255,255,255,.2);text-transform:uppercase;margin-bottom:10px;">02</div><h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">Datace estrae e struttura</h3><p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;">Estrae le informazioni rilevanti e le organizza in un formato leggibile.</p></div>
+      <div class="fade-up d3 text-center"><div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg></div><div style="font-size:11px;font-weight:700;letter-spacing:.15em;color:rgba(255,255,255,.2);text-transform:uppercase;margin-bottom:10px;">03</div><h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">Scarica Excel, report o archivio</h3><p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;">Excel multi-foglio, report o archivio ordinato, pronti per analisi e workflow.</p></div>
     </div>
   </div>
 </section>
@@ -692,19 +679,32 @@
 <!-- PILLARS -->
 <section id="chi-siamo" class="px-6 py-24" style="background:var(--navy);">
   <div class="max-w-5xl mx-auto">
-    <div class="mb-14"><div class="label mb-4">Perch&eacute; Datace</div><h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.02em;" class="max-w-lg">Costruito per chi non pu&ograve; permettersi errori.</h2></div>
+    <div class="mb-14"><div class="label mb-4">Perch&eacute; Datace</div><h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.02em;" class="max-w-lg">Costruito per ridurre lavoro manuale e controlli ripetitivi.</h2></div>
     <div class="grid sm:grid-cols-3 gap-5">
-      <div class="pillar fade-up d1"><div class="pillar-icon"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3>Veloce</h3><p>Da documento grezzo a Excel in meno di 30 secondi. Anche in batch con decine di file.</p></div>
-      <div class="pillar fade-up d2"><div class="pillar-icon"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div><h3>Zero retention</h3><p>Elaboriamo e scartiamo immediatamente. I tuoi documenti non toccano mai un database. Nessun log, nessuna copia.</p></div>
-      <div class="pillar fade-up d3"><div class="pillar-icon"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg></div><h3>100% Italiano</h3><p>Progettato per F24, FatturaPA, SdI e INPS. Non uno strumento generico - uno strumento tuo.</p></div>
+      <div class="pillar fade-up d1"><div class="pillar-icon"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3>Veloce</h3><p>Da documento grezzo a output strutturato in pochi passaggi. Anche con pi&ugrave; file.</p></div>
+      <div class="pillar fade-up d2"><div class="pillar-icon"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div><h3>Zero retention</h3><p>I file vengono elaborati solo per generare l'output e non vengono conservati permanentemente.</p></div>
+      <div class="pillar fade-up d3"><div class="pillar-icon"><svg width="24" height="24" fill="none" stroke="#F59E0B" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg></div><h3>Documenti italiani</h3><p>Progettato per F24, FatturaPA, SdI e INPS. Strumenti pensati per flussi e formati italiani.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COS'È DATACE -->
+<section id="cos-e-datace" class="px-6 py-20" style="background:rgba(255,255,255,.02);border-top:1px solid var(--border);">
+  <div class="max-w-3xl mx-auto">
+    <div class="label mb-4">In breve</div>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:20px;">Cos'&egrave; Datace</h2>
+    <div style="font-size:14px;line-height:1.8;color:var(--muted);">
+      <p style="margin-bottom:16px;">Datace &egrave; una suite di strumenti online che trasforma documenti complessi, come PDF, XML e archivi ZIP, in Excel, report e archivi strutturati. Funziona dal browser, senza installazione, e non conserva permanentemente i file elaborati.</p>
+      <p style="margin-bottom:16px;">Oggi gli strumenti coprono il lavoro fiscale e amministrativo italiano: conversione di F24 PDF in Excel, estrazione dati da fatture elettroniche XML e .p7m, organizzazione degli archivi scaricati da Fatture e Corrispettivi dell'Agenzia delle Entrate, previsione delle scadenze F24 e spiegazione delle buste paga.</p>
+      <p>La suite &egrave; in espansione: i prossimi strumenti applicheranno lo stesso approccio ad altri tipi di documenti. Documento in ingresso, dati strutturati in uscita.</p>
     </div>
   </div>
 </section>
 
 <!-- CONTATTI -->
-<section id="contatti" class="contact-section px-6 py-20 text-center">
-  <div class="max-w-lg mx-auto">
-    <div class="label mb-6" style="justify-content:center;">Contatti</div>
+<section id="contatti" class="contact-section px-6 py-20">
+  <div class="max-w-xl mx-auto">
+    <div class="label mb-4">Contatti</div>
     <h2 style="font-size:2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;">Parliamo.</h2>
     <p style="font-size:15px;color:rgba(255,255,255,.4);line-height:1.7;margin-bottom:32px;">Esigenze specifiche, segnalazioni o vuoi essere aggiornato sui nuovi strumenti?</p>
     <a href="mailto:datacetools@gmail.com" class="contact-email"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>datacetools@gmail.com</a>
@@ -731,7 +731,7 @@
           </svg>
           <div>
             <div style="color:white;font-weight:700;font-size:15px;letter-spacing:.15em;text-transform:uppercase;">Datace</div>
-            <div style="color:rgba(255,255,255,.3);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:2px;">Smart Tools for Business</div>
+            <div style="color:rgba(255,255,255,.3);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:2px;">Documenti in dati strutturati</div>
           </div>
         </div>
         <p style="font-size:13px;color:rgba(255,255,255,.3);line-height:1.7;max-width:240px;">Strumenti professionali per automatizzare il lavoro documentale italiano.</p>
@@ -740,11 +740,11 @@
       <!-- Strumenti col -->
       <div>
         <div class="footer-col-title">Strumenti</div>
-        <a href="/f24-to-excel/" class="footer-link">F24 in Excel</a>
-        <a href="/fattura-elettronica-excel/" class="footer-link">Fattura in Excel</a>
+        <a href="/f24-to-excel/" class="footer-link">F24 PDF in Excel</a>
+        <a href="/fattura-elettronica-excel/" class="footer-link">Fattura elettronica in Excel</a>
         <a href="/ade-organizer/" class="footer-link">Archivio Fatture AdE</a>
         <a href="/scadenzef24/" class="footer-link">Scadenze F24</a>
-        <a href="/bustachiara/" class="footer-link">Busta Paga</a>
+        <a href="/bustachiara/" class="footer-link">Busta paga spiegata</a>
       </div>
 
       <!-- Risorse col -->

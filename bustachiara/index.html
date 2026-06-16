@@ -9,13 +9,13 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="icon" type="image/svg+xml" href="/images/logo-icon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="description" content="Carica la tua busta paga e ricevi un report PDF che spiega ogni voce in italiano. Lordo, INPS, IRPEF, netto, addizionali - tutto chiaro. Privato, nessun dato salvato." />
+  <meta name="description" content="Carica la busta paga PDF e ottieni un report che aiuta a leggere lordo, contributi, IRPEF, trattenute e netto. Il PDF non viene salvato sui server Datace." />
   <link rel="canonical" href="https://datacetools.com/bustachiara/" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://datacetools.com/bustachiara/" />
   <meta property="og:title" content="Capire la busta paga in un clic | Datace — Busta Paga Spiegata" />
-  <meta property="og:description" content="Carica la tua busta paga PDF e scopri cosa significa ogni voce. Report PDF professionale con spiegazioni in italiano." />
+  <meta property="og:description" content="Carica la busta paga PDF e ricevi un report di lettura assistita con spiegazioni in italiano su lordo, trattenute, contributi, IRPEF e netto." />
   <meta name="twitter:card" content="summary" />
 
   <script type="application/ld+json">
@@ -27,11 +27,10 @@
         "@id": "https://datacetools.com/bustachiara/#app",
         "name": "Datace — Busta Paga Spiegata",
         "url": "https://payroll.datacetools.com/",
-        "description": "Carica la tua busta paga e ricevi un report PDF che spiega ogni voce in italiano. Lordo, INPS, IRPEF, netto - tutto chiaro.",
+        "description": "Strumento online per generare un report di lettura assistita della busta paga. Aiuta a interpretare lordo, contributi, IRPEF, trattenute e netto.",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
         "inLanguage": "it",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
         "provider": { "@type": "Organization", "name": "Datace", "url": "https://datacetools.com" }
       },
       {
@@ -82,10 +81,11 @@
 <body class="font-sans antialiased" style="background:#060E1F;color:white;">
 
 <!-- HEADER -->
+<!-- DATACE HEADER START -->
 <header style="background:rgba(6,14,31,.85);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(16px);" class="sticky top-0 z-50">
   <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-3">
-      <svg class="w-9 h-9 flex-shrink-0" viewBox="0 0 48 48" fill="none">
+    <a href="/" class="flex items-center gap-3 group">
+      <svg class="w-9 h-9 flex-shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient>
           <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f2040"/><stop offset="100%" stop-color="#1c3461"/></linearGradient>
@@ -97,17 +97,19 @@
       </svg>
       <div class="flex flex-col leading-tight">
         <span style="color:white;" class="text-lg font-bold tracking-widest uppercase">Datace</span>
-        <span style="color:rgba(255,255,255,.4);" class="text-[9px] font-medium tracking-[0.2em] uppercase">Smart Tools for Business</span>
+        <span style="color:rgba(255,255,255,.4);" class="text-[9px] font-medium tracking-[0.2em] uppercase">Documenti in dati strutturati</span>
       </div>
     </a>
     <nav class="hidden sm:flex items-center gap-6 text-sm font-medium" style="color:rgba(255,255,255,.5);">
       <a href="/#strumenti" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Strumenti</a>
-      <a href="/guida/"     style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Guide</a>
-      <a href="/chi-siamo"  style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Chi siamo</a>
+      <a href="/guida/" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Guide</a>
+      <a href="/chi-siamo" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Chi siamo</a>
+      <a href="/#contatti" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Contatti</a>
     </nav>
-    <a href="https://payroll.datacetools.com/" style="background:white;color:#0f2040;font-weight:700;font-size:13px;padding:9px 20px;border-radius:10px;transition:all .2s ease;white-space:nowrap;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">Apri Busta Paga</a>
+    <a href="/#strumenti" style="background:white;color:#0f2040;font-weight:700;font-size:13px;padding:9px 20px;border-radius:10px;letter-spacing:.01em;transition:all .2s ease;white-space:nowrap;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">Inizia ora</a>
   </div>
 </header>
+<!-- DATACE HEADER END -->
 
 <!-- HERO -->
 <section class="px-6 py-24" style="background:var(--navy);position:relative;overflow:hidden;">
@@ -120,7 +122,7 @@
         Capisci la tua busta paga<br/><span class="grad-text">in un clic</span>
       </h1>
       <p style="font-size:1.05rem;color:var(--muted);line-height:1.8;" class="mb-8 max-w-xl">
-        Carica la tua busta paga e ricevi un <strong style="color:white;">report PDF con ogni voce spiegata in italiano</strong>. Lordo, INPS, IRPEF, addizionali, netto - tutto chiaro, senza cercare su Google.
+        Carica la tua busta paga e ricevi un <strong style="color:white;">report PDF che aiuta a leggere le principali voci della busta paga</strong>. Lordo, INPS, IRPEF, addizionali, netto - con spiegazioni in italiano e output da verificare.
       </p>
       <div class="flex flex-wrap gap-3">
         <a href="https://payroll.datacetools.com/" class="btn-primary">
@@ -128,7 +130,7 @@
           <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
-      <p style="color:rgba(255,255,255,.3);font-size:12px;margin-top:16px;">Gratuito &nbsp;·&nbsp; Nessuna registrazione &nbsp;·&nbsp; Nessun dato salvato</p>
+      <p style="color:rgba(255,255,255,.3);font-size:12px;margin-top:16px;">Nessuna registrazione &nbsp;·&nbsp; PDF non salvato sui server Datace &nbsp;·&nbsp; Analisi AI tramite Google Gemini API</p>
     </div>
   </div>
 </section>
@@ -142,15 +144,15 @@
     </span>
     <span style="display:flex;align-items:center;gap:8px;">
       <svg class="w-4 h-4" style="color:#86efac;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      Elaborazione in pochi secondi
+      Report generato in modo automatico
     </span>
     <span style="display:flex;align-items:center;gap:8px;">
       <svg class="w-4 h-4" style="color:#86efac;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      Nessun dato salvato
+      PDF non salvato sui server Datace
     </span>
     <span style="display:flex;align-items:center;gap:8px;">
       <svg class="w-4 h-4" style="color:#86efac;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-      Supporta TeamSystem, Zucchetti, NoiPA, DATEV e altri
+      Riconosce diversi layout paghe italiani
     </span>
   </div>
 </div>
@@ -161,7 +163,7 @@
     <div class="text-center mb-14">
       <div class="label mb-4" style="justify-content:center;">Il processo</div>
       <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;">Come funziona</h2>
-      <p style="color:var(--muted);margin-top:8px;">Tre passi, meno di un minuto</p>
+      <p style="color:var(--muted);margin-top:8px;">Tre passaggi, senza installazione</p>
     </div>
     <div class="grid sm:grid-cols-3 gap-6">
       <div class="dark-card text-center">
@@ -172,12 +174,12 @@
       <div class="dark-card text-center">
         <div style="width:52px;height:52px;border-radius:16px;background:rgba(28,52,97,.5);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><span style="font-size:18px;font-weight:800;color:var(--gold);">2</span></div>
         <h3 style="font-size:16px;font-weight:700;margin-bottom:10px;">L'AI legge e analizza</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.7;">Il sistema estrae il testo dal PDF e lo invia a un modello AI che identifica e classifica ogni voce retributiva.</p>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;">Il sistema estrae il testo dal PDF e lo invia a Google Gemini API a pagamento per generare una lettura assistita delle principali voci.</p>
       </div>
       <div class="dark-card text-center">
         <div style="width:52px;height:52px;border-radius:16px;background:rgba(29,122,148,.3);border:1px solid rgba(29,122,148,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><span style="font-size:18px;font-weight:800;color:#2a9db5;">3</span></div>
         <h3 style="font-size:16px;font-weight:700;margin-bottom:10px;">Scarica il PDF</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.7;">Ricevi un file PDF con ogni voce spiegata in italiano semplice, la matematica verificata e il netto confermato.</p>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;">Ricevi un file PDF con spiegazioni in italiano semplice, controllo matematico del netto e segnalazione di eventuali discrepanze.</p>
       </div>
     </div>
   </div>
@@ -189,7 +191,7 @@
     <div class="text-center mb-14">
       <div class="label mb-4" style="justify-content:center;">Output</div>
       <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;">Cosa contiene il PDF</h2>
-      <p style="color:var(--muted);margin-top:8px;">Un report professionale che spiega ogni voce</p>
+      <p style="color:var(--muted);margin-top:8px;">Un report di lettura assistita, da controllare prima dell'uso operativo</p>
     </div>
     <div class="grid sm:grid-cols-2 gap-5">
       <div class="dark-card" style="display:flex;align-items:flex-start;gap:16px;">
@@ -200,7 +202,7 @@
         </div>
         <div>
           <p style="font-weight:700;font-size:14px;margin-bottom:6px;">Competenze e retribuzione lorda</p>
-          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Stipendio base, scatti, straordinari, indennità - ogni voce con il suo importo e la spiegazione di cosa rappresenta.</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Stipendio base, scatti, straordinari, indennità - le principali voci con il relativo importo e una spiegazione di cosa rappresentano.</p>
         </div>
       </div>
       <div class="dark-card" style="display:flex;align-items:flex-start;gap:16px;">
@@ -232,8 +234,8 @@
           </svg>
         </div>
         <div>
-          <p style="font-weight:700;font-size:14px;margin-bottom:6px;">Netto verificato matematicamente</p>
-          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Il sistema verifica che Lordo − trattenute = Netto in busta. Se c'è discrepanza, viene segnalata.</p>
+          <p style="font-weight:700;font-size:14px;margin-bottom:6px;">Controllo matematico del netto</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6;">Il sistema controlla la coerenza matematica tra competenze, trattenute e netto quando i dati sono leggibili. Eventuali discrepanze vengono segnalate.</p>
         </div>
       </div>
     </div>
@@ -245,8 +247,8 @@
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-12">
       <div class="label mb-4" style="justify-content:center;">Compatibilità</div>
-      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;">Software paghe supportati</h2>
-      <p style="color:var(--muted);margin-top:8px;">Rilevamento automatico del layout</p>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;">Layout paghe riconosciuti</h2>
+      <p style="color:var(--muted);margin-top:8px;">Copertura in evoluzione, da verificare sul singolo PDF</p>
     </div>
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
       <span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);">TeamSystem</span>
@@ -257,7 +259,7 @@
       <span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);">ADP</span>
       <span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);">Inaz</span>
       <span style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,.7);">JOB / Sistemi S.p.A.</span>
-      <span style="background:transparent;border:1px dashed rgba(255,255,255,.15);border-radius:12px;padding:10px 18px;font-size:13px;font-style:italic;color:rgba(255,255,255,.3);">e altri</span>
+      <span style="background:transparent;border:1px dashed rgba(255,255,255,.15);border-radius:12px;padding:10px 18px;font-size:13px;font-style:italic;color:rgba(255,255,255,.3);">altri layout da verificare</span>
     </div>
   </div>
 </section>
@@ -272,12 +274,15 @@
         </svg>
       </div>
       <div>
-        <p style="font-weight:700;font-size:17px;margin-bottom:10px;">La tua busta paga è privata.</p>
+        <p style="font-weight:700;font-size:17px;margin-bottom:10px;">Privacy e analisi AI</p>
         <p style="color:var(--muted);font-size:13px;line-height:1.7;margin-bottom:10px;">
-          Il PDF viene elaborato esclusivamente in memoria RAM e cancellato immediatamente dopo la generazione del report. Nessun file viene scritto su disco, nessun dato viene conservato o trasmesso a terzi.
+          Il PDF non viene salvato sui server Datace. Il file viene gestito temporaneamente per generare il report e non viene conservato da Datace dopo l'elaborazione.
         </p>
         <p style="color:rgba(255,255,255,.3);font-size:12px;line-height:1.6;">
-          Il testo estratto dal PDF viene inviato all'API di Google Gemini per l'analisi. Google non utilizza i dati inviati tramite API per addestrare i propri modelli (Google API Additional Terms).
+          Per generare la spiegazione, il testo estratto dalla busta paga viene inviato a Google Gemini API a pagamento. Secondo i termini Google per i servizi a pagamento, prompt e risposte non vengono usati per addestrare i modelli o migliorare i prodotti Google.
+        </p>
+        <p style="color:rgba(255,255,255,.3);font-size:12px;line-height:1.6;margin-top:10px;">
+          Il report aiuta a leggere la busta paga, ma non sostituisce consulente del lavoro, ufficio paghe, datore di lavoro o verifiche ufficiali.
         </p>
         <a href="/privacy/" style="display:inline-block;margin-top:14px;font-size:12px;color:#93c5fd;font-weight:600;text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Leggi la Privacy Policy completa →</a>
       </div>
@@ -286,12 +291,13 @@
 </section>
 
 <!-- FOOTER -->
+<!-- DATACE FOOTER START -->
 <footer style="background:#04080F;border-top:1px solid rgba(255,255,255,.06);" class="px-6 pt-16 pb-10">
   <div class="max-w-5xl mx-auto">
     <div class="footer-grid">
       <div>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
-          <svg class="w-9 h-9" viewBox="0 0 48 48" fill="none">
+        <div class="flex items-center gap-3 mb-5">
+          <svg class="w-9 h-9" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="fIconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f2040"/><stop offset="100%" stop-color="#1c3461"/></linearGradient>
               <linearGradient id="fsg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient>
@@ -303,25 +309,25 @@
           </svg>
           <div>
             <div style="color:white;font-weight:700;font-size:15px;letter-spacing:.15em;text-transform:uppercase;">Datace</div>
-            <div style="color:rgba(255,255,255,.3);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:2px;">Smart Tools for Business</div>
+            <div style="color:rgba(255,255,255,.3);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:2px;">Documenti in dati strutturati</div>
           </div>
         </div>
         <p style="font-size:13px;color:rgba(255,255,255,.3);line-height:1.7;max-width:240px;">Strumenti professionali per automatizzare il lavoro documentale italiano.</p>
       </div>
       <div>
         <div class="footer-col-title">Strumenti</div>
-        <a href="/f24-to-excel/" class="footer-link">F24 in Excel</a>
-        <a href="/fattura-elettronica-excel/" class="footer-link">Fattura in Excel</a>
+        <a href="/f24-to-excel/" class="footer-link">F24 PDF in Excel</a>
+        <a href="/fattura-elettronica-excel/" class="footer-link">Fattura elettronica in Excel</a>
         <a href="/ade-organizer/" class="footer-link">Archivio Fatture AdE</a>
         <a href="/scadenzef24/" class="footer-link">Scadenze F24</a>
-        <a href="/bustachiara/" class="footer-link">Busta Paga</a>
+        <a href="/bustachiara/" class="footer-link">Busta paga spiegata</a>
       </div>
       <div>
         <div class="footer-col-title">Risorse</div>
         <a href="/guida/" class="footer-link">Guide</a>
         <a href="/chi-siamo" class="footer-link">Chi siamo</a>
-        <a href="/privacy/" class="footer-link">Privacy Policy</a>
-        <a href="mailto:datacetools@gmail.com" class="footer-link">Contatti</a>
+        <a href="/privacy" class="footer-link">Privacy Policy</a>
+        <a href="/#contatti" class="footer-link">Contatti</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -330,6 +336,7 @@
     </div>
   </div>
 </footer>
+<!-- DATACE FOOTER END -->
 
 </body>
 </html>
