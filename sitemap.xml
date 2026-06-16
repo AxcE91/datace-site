@@ -73,13 +73,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://datacetools.com/chi-siamo</loc>
+    <loc>https://datacetools.com/chi-siamo/</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://datacetools.com/privacy</loc>
+    <loc>https://datacetools.com/privacy/</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
