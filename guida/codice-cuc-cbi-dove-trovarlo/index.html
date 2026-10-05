@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Codice CUC: cos'è e dove trovarlo per i bonifici XML | Guida | Datace</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/svg+xml" href="/images/logo-icon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="description" content="Cos'è il codice CUC (Codice Unico CBI), perché è obbligatorio nei file XML dei bonifici massivi e dove trovarlo: corporate banking, contratto, consulente paghe o banca. Con l'errore che dà la banca quando manca." />
+  <link rel="canonical" href="https://datacetools.com/guida/codice-cuc-cbi-dove-trovarlo/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://datacetools.com/guida/codice-cuc-cbi-dove-trovarlo/" />
+  <meta property="og:title"       content="Codice CUC: cos'è e dove trovarlo per i bonifici XML | Guida | Datace" />
+  <meta property="og:description" content="Il CUC è obbligatorio nei file XML dei bonifici: cos'è, perché la banca lo pretende e dove trovarlo, passo per passo." />
+  <meta name="twitter:card"       content="summary" />
+
+  <!-- JSON-LD: Article + HowTo + FAQPage + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://datacetools.com/guida/codice-cuc-cbi-dove-trovarlo#article",
+        "headline": "Codice CUC: cos'è e dove trovarlo per i bonifici XML",
+        "description": "Cos'è il Codice Unico CBI (CUC), perché è obbligatorio nei file XML dei bonifici SEPA in formato CBI e dove trovarlo.",
+        "url": "https://datacetools.com/guida/codice-cuc-cbi-dove-trovarlo/",
+        "inLanguage": "it",
+        "author": { "@type": "Organization", "name": "Datace", "url": "https://datacetools.com" },
+        "publisher": { "@type": "Organization", "name": "Datace", "url": "https://datacetools.com", "logo": { "@type": "ImageObject", "url": "https://datacetools.com/images/logo-icon.svg" } },
+        "datePublished": "2026-10-05",
+        "dateModified": "2026-10-05"
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://datacetools.com/guida/codice-cuc-cbi-dove-trovarlo#howto",
+        "name": "Come trovare il codice CUC della propria azienda",
+        "description": "Dove cercare il Codice Unico CBI (CUC) da inserire nei file XML dei bonifici massivi.",
+        "totalTime": "PT10M",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Cerca nel corporate banking", "text": "Accedi al servizio aziende della tua banca e cerca il CUC tra i dati dell'azienda, a volte con il nome Codice CBI. In Banca Sella, per esempio, è nella sezione Dati aziendali di SBS CBI Remote Banking.", "url": "https://datacetools.com/guida/codice-cuc-cbi-dove-trovarlo#step-1" },
+          { "@type": "HowToStep", "position": 2, "name": "Controlla il contratto", "text": "Il CUC è di norma riportato nel contratto di corporate banking.", "url": "https://datacetools.com/guida/codice-cuc-cbi-dove-trovarlo#step-2" },
+          { "@type": "HowToStep", "position": 3, "name": "Chiedi a chi prepara già i pagamenti", "text": "Il consulente paghe o il gestionale che oggi manda i flussi alla banca ha già configurato il CUC.", "url": "https://datacetools.com/guida/codice-cuc-cbi-dove-trovarlo#step-3" },
+          { "@type": "HowToStep", "position": 4, "name": "Chiedilo alla banca", "text": "Chiedilo alla filiale, al gestore o all'assistenza corporate banking. Alcune banche chiedono di indicare il codice SIA dell'azienda.", "url": "https://datacetools.com/guida/codice-cuc-cbi-dove-trovarlo#step-4" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://datacetools.com/guida/codice-cuc-cbi-dove-trovarlo#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "Cos'è il codice CUC?", "acceptedAnswer": { "@type": "Answer", "text": "Il CUC (Codice Unico CBI) è il codice con cui la banca riconosce l'azienda che invia un file di pagamenti in formato CBI, come i bonifici massivi in XML. Lo assegna la banca." } },
+          { "@type": "Question", "name": "Il CUC è obbligatorio?", "acceptedAnswer": { "@type": "Answer", "text": "Sì, nei file XML dei bonifici in formato CBI. Senza CUC la banca scarta il file già al controllo dello schema, prima di leggere i bonifici." } },
+          { "@type": "Question", "name": "Il CUC è uguale per tutte le banche?", "acceptedAnswer": { "@type": "Answer", "text": "No. Ogni banca assegna il suo: con conti in due banche l'azienda ha due CUC, e nel file va quello della banca da cui partono i bonifici." } },
+          { "@type": "Question", "name": "Dove trovo il CUC?", "acceptedAnswer": { "@type": "Answer", "text": "Nel corporate banking della tua banca, tra i dati dell'azienda; di norma nel contratto di corporate banking; dal consulente paghe o dal gestionale che già prepara i flussi per la banca; oppure chiedendolo alla banca." } },
+          { "@type": "Question", "name": "Cosa significa l'errore «Il contenuto dell'elemento InitgPty non è completo»?", "acceptedAnswer": { "@type": "Answer", "text": "Che nel file manca il CUC: l'elemento InitgPty è il blocco che identifica chi invia la distinta, e lo schema CBI richiede che contenga il codice. Inserisci il CUC e rigenera il file." } },
+          { "@type": "Question", "name": "Datace conserva il mio CUC?", "acceptedAnswer": { "@type": "Answer", "text": "No. Il CUC lo scrivi nel tuo modello Excel e resta nel tuo file: Datace lo usa solo per generare l'XML e non lo conserva." } }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Datace", "item": "https://datacetools.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Guide", "item": "https://datacetools.com/guida/" },
+          { "@type": "ListItem", "position": 3, "name": "Codice CUC: cos'è e dove trovarlo", "item": "https://datacetools.com/guida/codice-cuc-cbi-dove-trovarlo/" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{brand:{DEFAULT:'#1c3461',light:'#2a9db5',dark:'#0f2040',gold:'#F59E0B'}},fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <style>
+    :root{--navy:#060E1F;--navy2:#0A1628;--navy3:#0F2040;--gold:#F59E0B;--teal:#1d7a94;--border:rgba(255,255,255,0.07);--muted:rgba(255,255,255,0.45);}
+    *{box-sizing:border-box;}body{font-family:'Inter',sans-serif;}
+    .logo-bar{transform-box:fill-box;transform-origin:left center;}
+    .logo-bar-1{animation:barStream 2.8s ease-in-out infinite 0s;}
+    .logo-bar-2{animation:barStream 2.8s ease-in-out infinite .22s;}
+    .logo-bar-3{animation:barStream 2.8s ease-in-out infinite .44s;}
+    @keyframes barStream{0%,100%{transform:scaleX(1);opacity:1;}30%{transform:scaleX(0.32);opacity:0.5;}60%{transform:scaleX(1);opacity:1;}}
+    .pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:500;color:#93c5fd;letter-spacing:.04em;}
+    .pill-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+    .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;align-items:start;}
+    .footer-col-title{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:16px;}
+    .footer-link{display:block;font-size:14px;color:rgba(255,255,255,.45);margin-bottom:10px;text-decoration:none;transition:color .2s ease;}
+    .footer-link:hover{color:white;}
+    .footer-bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.2);}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;gap:8px;text-align:center;}}
+    .prose h2{font-size:1.4rem;font-weight:800;color:#0f2040;letter-spacing:-.01em;margin:2.2rem 0 .8rem;}
+    .prose h3{font-size:1.08rem;font-weight:700;color:#1c3461;margin:1.6rem 0 .5rem;}
+    .prose p{color:#475569;line-height:1.85;margin-bottom:.85rem;font-size:1rem;}
+    .prose ul{list-style:disc;padding-left:1.5rem;color:#475569;line-height:1.85;margin-bottom:1rem;}
+    .prose li{margin-bottom:.4rem;}
+    .prose strong{color:#0f2040;}
+    .prose a{color:#1d7a94;text-decoration:underline;}
+    .prose code{font-family:ui-monospace,Consolas,monospace;font-size:.88em;background:#f1f5f9;border:1px solid #e5e7eb;border-radius:6px;padding:1px 6px;color:#0f2040;}
+    .errore{background:#fef2f2;border:1px solid #fecaca;border-radius:14px;padding:14px 16px;margin:0 0 1rem;font-family:ui-monospace,Consolas,monospace;font-size:.85rem;line-height:1.6;color:#991b1b;}
+    .nota{background:#fffbeb;border:1px solid #fde68a;border-radius:14px;padding:14px 16px;margin:0 0 1rem;color:#92400e;font-size:.95rem;line-height:1.7;}
+    .card{background:white;border:1px solid #e5e7eb;border-radius:18px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+    .faq-q{background:#f8fafc;border:1px solid #e5e7eb;border-radius:16px;padding:18px 20px;}
+    .faq-q summary{font-weight:600;color:#0f2040;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+    .faq-q summary::-webkit-details-marker{display:none;}
+    .faq-q p{margin-top:10px;color:#475569;font-size:.92rem;line-height:1.7;}
+    .faq-q[open] summary .chev{transform:rotate(180deg);}
+    .chev{transition:transform .2s;color:#94a3b8;flex-shrink:0;}
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="c1dd6816-ca2c-47ad-a958-3777906252fb"></script>
+</head>
+<body class="antialiased" style="background:#f1f5f9;">
+
+<!-- HEADER -->
+<!-- DATACE HEADER START -->
+<header style="background:rgba(6,14,31,.85);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(16px);" class="sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group">
+      <svg class="w-9 h-9 flex-shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient>
+          <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f2040"/><stop offset="100%" stop-color="#1c3461"/></linearGradient>
+        </defs>
+        <rect width="48" height="48" rx="12" fill="url(#iconBg)"/>
+        <rect class="logo-bar logo-bar-1" x="10" y="11" width="28" height="6" rx="3" fill="url(#sg)"/>
+        <rect class="logo-bar logo-bar-2" x="10" y="21" width="20" height="6" rx="3" fill="white"/>
+        <rect class="logo-bar logo-bar-3" x="10" y="31" width="12" height="6" rx="3" fill="white" fill-opacity="0.35"/>
+      </svg>
+      <div class="flex flex-col leading-tight">
+        <span style="color:white;" class="text-lg font-bold tracking-widest uppercase">Datace</span>
+        <span style="color:rgba(255,255,255,.4);" class="text-[9px] font-medium tracking-[0.2em] uppercase">Documenti in dati strutturati</span>
+      </div>
+    </a>
+    <nav class="hidden sm:flex items-center gap-6 text-sm font-medium" style="color:rgba(255,255,255,.5);">
+      <a href="/#strumenti" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Strumenti</a>
+      <a href="/guida/" style="color:white;font-weight:600;">Guide</a>
+      <a href="/chi-siamo" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Chi siamo</a>
+      <a href="/#contatti" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Contatti</a>
+    </nav>
+    <a href="/#strumenti" style="background:white;color:#0f2040;font-weight:700;font-size:13px;padding:9px 20px;border-radius:10px;letter-spacing:.01em;transition:all .2s ease;white-space:nowrap;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">Inizia ora</a>
+  </div>
+</header>
+<!-- DATACE HEADER END -->
+
+<!-- BREADCRUMB -->
+<div style="background:var(--navy2);border-bottom:1px solid var(--border);" class="py-2 px-6">
+  <div class="max-w-5xl mx-auto text-xs flex items-center gap-1.5" style="color:rgba(255,255,255,.35);">
+    <a href="/">Datace</a><span>/</span><a href="/guida/">Guide</a><span>/</span>
+    <span style="color:rgba(255,255,255,.6);">Codice CUC: cos'è e dove trovarlo</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="px-6 py-16" style="background:linear-gradient(135deg,#0f2040 0%,#0A1628 55%,#060E1F 100%);position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-20%;left:-5%;width:50%;height:80%;background:radial-gradient(ellipse,rgba(29,122,148,.16) 0%,transparent 65%);"></div>
+  <div class="max-w-3xl mx-auto" style="position:relative;z-index:1;color:white;">
+    <div class="mb-4 flex items-center gap-3">
+      <span class="pill"><span class="pill-dot"></span> Guida pratica</span>
+      <span style="font-size:12px;color:var(--muted);">Lettura 4 min</span>
+    </div>
+    <h1 style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;line-height:1.12;letter-spacing:-.02em;">Codice CUC: cos'è e dove trovarlo</h1>
+    <p style="color:rgba(255,255,255,.6);font-size:1.05rem;line-height:1.7;margin-top:14px;max-width:42rem;">Il CUC è il codice che la banca pretende in ogni file XML di bonifici massivi, ed è anche il dato che quasi nessuno sa dove cercare. Ecco cos'è, perché senza la banca rifiuta il file e dove trovarlo.</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section style="background:#f1f5f9;" class="px-6 py-14">
+  <div class="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
+    <article class="prose lg:col-span-2 card" style="padding:36px 40px;">
+      <h2 style="margin-top:0;">Cos'è il codice CUC</h2>
+      <p>Il <strong>CUC</strong> (Codice Unico CBI) è il codice con cui la banca riconosce l'azienda che le invia un file di pagamenti nel formato <strong>CBI</strong>, lo standard interbancario italiano. È il caso dei <strong>bonifici massivi in XML</strong>: stipendi, fornitori, rimborsi caricati in un solo file nell'home banking.</p>
+      <p>Dentro il file XML il CUC sta nel blocco che dice <em>chi sta inviando la distinta</em> (in gergo tecnico <code>InitgPty</code>, Initiating Party). È un codice di lettere e numeri e <strong>lo assegna la banca</strong>: non si calcola e non si ricava da altri dati.</p>
+
+      <h2>Il CUC è obbligatorio?</h2>
+      <p><strong>Sì, nei file XML dei bonifici in formato CBI.</strong> Non è un requisito dei bonifici SEPA in generale, ma lo schema CBI lo richiede, e le banche controllano il file proprio con quello schema.</p>
+      <p>L'abbiamo verificato caricando nell'home banking di una banca italiana lo stesso file con e senza CUC: con il CUC è stato elaborato, senza è stato <strong>scartato subito</strong>, prima ancora di leggere i bonifici, con questo errore:</p>
+      <div class="errore">Errore di parser XML: "cvc-complex-type.2.4.b: Il contenuto dell'elemento 'InitgPty' non è completo. È previsto uno di '{"urn:CBI:xsd:CBIPaymentRequest.00.04.01":Id}'."</div>
+      <p>Se vedi un messaggio come questo, nel file manca il CUC: inseriscilo e rigenera il file.</p>
+
+      <h2>Tre cose da sapere prima di cercarlo</h2>
+      <ul>
+        <li><strong>È diverso per ogni banca.</strong> Con conti in due banche l'azienda ha due CUC: nel file va quello della banca da cui partono i bonifici, cioè la banca dell'IBAN di addebito.</li>
+        <li><strong>Non è la partita IVA</strong> e non è una parte dell'IBAN.</li>
+        <li><strong>Non confonderlo con il codice SIA</strong>: sono due codici distinti, anche se alcune banche chiedono il SIA per recuperare il CUC.</li>
+      </ul>
+
+      <h2>Dove trovare il CUC</h2>
+      <h3 id="step-1">1. Nel corporate banking della tua banca</h3>
+      <p>Accedi al servizio aziende (corporate banking, remote banking) e cerca il CUC tra i <strong>dati dell'azienda</strong> o del servizio; a volte è chiamato <strong>«Codice CBI»</strong>. In <strong>Banca Sella</strong>, per esempio, la banca indica che il CUC si trova nella sezione <strong>«Dati aziendali»</strong> di SBS CBI Remote Banking. Ogni banca organizza i menu a modo suo: se non lo trovi, passa ai punti successivi.</p>
+      <h3 id="step-2">2. Nel contratto</h3>
+      <p>Il CUC è di norma riportato nel <strong>contratto di corporate banking</strong> o nei documenti di attivazione del servizio.</p>
+      <h3 id="step-3">3. Da chi prepara già i pagamenti</h3>
+      <p>Se oggi i bonifici da file li prepara il <strong>consulente paghe</strong>, uno studio o un <strong>gestionale</strong>, il CUC lo hanno già configurato: chiediglielo.</p>
+      <h3 id="step-4">4. Alla tua banca</h3>
+      <p>Chiedilo alla filiale, al gestore o all'<strong>assistenza corporate banking</strong>. Alcune banche chiedono di indicare il codice SIA dell'azienda per recuperarlo. Se lo sportello non lo conosce, chiedi di parlare con chi segue il <strong>servizio CBI</strong>.</p>
+      <div class="nota">Il CUC si cerca <strong>una volta per banca</strong>. Dopo, si riusa per tutte le distinte successive.</div>
+
+      <h2>Come si usa con Bonifici massivi XML</h2>
+      <p>Con <a href="/bonifici-massivi-xml/">Bonifici massivi XML</a> il CUC si scrive nel foglio <strong>Distinta</strong> del modello Excel, insieme ai dati dell'azienda e all'IBAN di addebito. Compili la Distinta una volta, ti tieni il file e lo riusi ogni mese: il CUC resta nel tuo file, Datace non lo conserva.</p>
+      <p>Se il CUC manca, lo strumento <strong>non genera il file</strong> e te lo dice subito, invece di farti scoprire l'errore in banca.</p>
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="lg:col-span-1 flex flex-col gap-5">
+      <div class="card">
+        <h3 class="font-bold mb-4 text-sm" style="color:#0f2040;">Bonifici massivi XML</h3>
+        <ul class="flex flex-col gap-2 text-sm" style="color:#475569;">
+          <li>✓ Da Excel a file XML SEPA (CBI)</li><li>✓ Stipendi, fornitori, rimborsi</li><li>✓ Controllo IBAN e importi</li><li>✓ Verifica del file prima di scaricarlo</li><li>✓ Gratis, senza registrazione</li><li>✓ Dati non conservati</li>
+        </ul>
+        <a href="https://bonifici.datacetools.com/" class="mt-5 flex items-center justify-center gap-2 text-white text-sm font-semibold px-4 py-2.5 rounded-xl" style="background:#1c3461;">Apri Bonifici massivi XML →</a>
+      </div>
+      <div class="card">
+        <h3 class="font-bold mb-4 text-sm" style="color:#0f2040;">Altre guide</h3>
+        <ul class="flex flex-col gap-3 text-sm">
+          <li><a href="/guida/" style="color:#1d7a94;font-weight:600;">Tutte le guide Datace</a></li>
+          <li><a href="/guida/come-leggere-busta-paga-excel/" style="color:#64748b;">Come leggere la busta paga</a></li>
+          <li><a href="/guida/come-prevedere-scadenze-f24/" style="color:#64748b;">Come prevedere le scadenze F24</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:white;border-top:1px solid #e5e7eb;" class="px-6 py-14">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl font-extrabold text-center mb-8" style="color:#0f2040;">Domande frequenti</h2>
+    <div class="flex flex-col gap-3">
+      <details class="faq-q"><summary>Cos'è il codice CUC?<svg class="chev w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p>Il CUC (Codice Unico CBI) è il codice con cui la banca riconosce l'azienda che invia un file di pagamenti in formato CBI, come i bonifici massivi in XML. Lo assegna la banca.</p></details>
+      <details class="faq-q"><summary>Il CUC è obbligatorio?<svg class="chev w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p>Sì, nei file XML dei bonifici in formato CBI. Senza CUC la banca scarta il file già al controllo dello schema, prima di leggere i bonifici.</p></details>
+      <details class="faq-q"><summary>Il CUC è uguale per tutte le banche?<svg class="chev w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p>No. Ogni banca assegna il suo: con conti in due banche l'azienda ha due CUC, e nel file va quello della banca da cui partono i bonifici.</p></details>
+      <details class="faq-q"><summary>Dove trovo il CUC?<svg class="chev w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p>Nel corporate banking della tua banca, tra i dati dell'azienda; di norma nel contratto di corporate banking; dal consulente paghe o dal gestionale che già prepara i flussi per la banca; oppure chiedendolo alla banca.</p></details>
+      <details class="faq-q"><summary>Cosa significa l'errore «Il contenuto dell'elemento InitgPty non è completo»?<svg class="chev w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p>Che nel file manca il CUC: l'elemento InitgPty è il blocco che identifica chi invia la distinta, e lo schema CBI richiede che contenga il codice. Inserisci il CUC e rigenera il file.</p></details>
+      <details class="faq-q"><summary>Datace conserva il mio CUC?<svg class="chev w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><p>No. Il CUC lo scrivi nel tuo modello Excel e resta nel tuo file: Datace lo usa solo per generare l'XML e non lo conserva.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- DATACE FOOTER START -->
+<footer style="background:#04080F;border-top:1px solid rgba(255,255,255,.06);" class="px-6 pt-16 pb-10">
+  <div class="max-w-5xl mx-auto">
+    <div class="footer-grid">
+      <div>
+        <div class="flex items-center gap-3 mb-5">
+          <svg class="w-9 h-9" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="fIconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f2040"/><stop offset="100%" stop-color="#1c3461"/></linearGradient>
+              <linearGradient id="fsg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/></linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="12" fill="url(#fIconBg)"/>
+            <rect class="logo-bar logo-bar-1" x="10" y="11" width="28" height="6" rx="3" fill="url(#fsg)"/>
+            <rect class="logo-bar logo-bar-2" x="10" y="21" width="20" height="6" rx="3" fill="white"/>
+            <rect class="logo-bar logo-bar-3" x="10" y="31" width="12" height="6" rx="3" fill="white" fill-opacity="0.35"/>
+          </svg>
+          <div>
+            <div style="color:white;font-weight:700;font-size:15px;letter-spacing:.15em;text-transform:uppercase;">Datace</div>
+            <div style="color:rgba(255,255,255,.3);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:2px;">Documenti in dati strutturati</div>
+          </div>
+        </div>
+        <p style="font-size:13px;color:rgba(255,255,255,.3);line-height:1.7;max-width:240px;">Strumenti professionali per automatizzare il lavoro documentale italiano.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Strumenti</div>
+        <a href="/f24-to-excel/" class="footer-link">F24 PDF in Excel</a>
+        <a href="/fattura-elettronica-excel/" class="footer-link">Fattura elettronica in Excel</a>
+        <a href="/ade-organizer/" class="footer-link">Archivio Fatture AdE</a>
+        <a href="/scadenzef24/" class="footer-link">Scadenze F24</a>
+        <a href="/bustachiara/" class="footer-link">Busta paga spiegata</a>
+        <a href="/bonifici-massivi-xml/" class="footer-link">Bonifici massivi XML</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Risorse</div>
+        <a href="/guida/" class="footer-link">Guide</a>
+        <a href="/chi-siamo" class="footer-link">Chi siamo</a>
+        <a href="/privacy" class="footer-link">Privacy Policy</a>
+        <a href="/#contatti" class="footer-link">Contatti</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Datace. Tutti i diritti riservati.</span>
+      <span style="color:rgba(255,255,255,.12);">Made in Italy</span>
+    </div>
+  </div>
+</footer>
+<!-- DATACE FOOTER END -->
+
+</body>
+</html>
