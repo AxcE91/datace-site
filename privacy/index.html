@@ -31,7 +31,7 @@
       --gold:#F59E0B; --gold2:#FBBF24;
       --teal:#1d7a94;
       --border:rgba(255,255,255,0.07);
-      --muted:rgba(255,255,255,0.45);
+      --muted:rgba(255,255,255,0.62);
     }
     *{box-sizing:border-box;}
     body{background:var(--navy);color:white;}
@@ -113,7 +113,7 @@
       -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
       line-height:1;
     }
-    .stat-box .lbl{font-size:12px;color:rgba(255,255,255,.35);margin-top:6px;line-height:1.4;}
+    .stat-box .lbl{font-size:12px;color:rgba(255,255,255,.55);margin-top:6px;line-height:1.4;}
 
     /* Trust block */
     .trust-block{
@@ -129,13 +129,13 @@
       font-size:13px;
     }
     .info-row:last-child{border-bottom:none;}
-    .info-label{color:rgba(255,255,255,.3);font-weight:500;}
+    .info-label{color:rgba(255,255,255,.55);font-weight:500;}
     .info-value{color:rgba(255,255,255,.6);}
 
     /* Footer */
     .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;align-items:start;}
-    .footer-col-title{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:16px;}
-    .footer-link{display:block;font-size:14px;color:rgba(255,255,255,.45);margin-bottom:10px;text-decoration:none;transition:color .2s;}
+    .footer-col-title{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:16px;}
+    .footer-link{display:block;font-size:14px;color:rgba(255,255,255,.62);margin-bottom:10px;text-decoration:none;transition:color .2s;}
     .footer-link:hover{color:white;}
     .footer-bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.2);}
 
@@ -164,14 +164,14 @@
       </svg>
       <div class="flex flex-col leading-tight">
         <span style="color:white;" class="text-lg font-bold tracking-widest uppercase">Datace</span>
-        <span style="color:rgba(255,255,255,.4);" class="text-[9px] font-medium tracking-[0.2em] uppercase">Documenti in dati strutturati</span>
+        <span style="color:rgba(255,255,255,.62);" class="text-[9px] font-medium tracking-[0.2em] uppercase">Documenti in dati strutturati</span>
       </div>
     </a>
-    <nav class="hidden sm:flex items-center gap-6 text-sm font-medium" style="color:rgba(255,255,255,.5);">
-      <a href="/#strumenti" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Strumenti</a>
-      <a href="/guida/" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Guide</a>
-      <a href="/chi-siamo" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Chi siamo</a>
-      <a href="/#contatti" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Contatti</a>
+    <nav class="hidden sm:flex items-center gap-6 text-sm font-medium" style="color:rgba(255,255,255,.62);">
+      <a href="/#strumenti" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.62)'">Strumenti</a>
+      <a href="/guida/" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.62)'">Guide</a>
+      <a href="/chi-siamo" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.62)'">Chi sono</a>
+      <a href="/#contatti" style="transition:color .2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.62)'">Contatti</a>
     </nav>
     <a href="/#strumenti" style="background:white;color:#0f2040;font-weight:700;font-size:13px;padding:9px 20px;border-radius:10px;letter-spacing:.01em;transition:all .2s ease;white-space:nowrap;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">Inizia ora</a>
   </div>
@@ -182,7 +182,7 @@
   <div class="inner">
     <div class="label mb-5">Trasparenza</div>
     <h1 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:12px;">Privacy Policy</h1>
-    <p style="font-size:13px;color:rgba(255,255,255,.3);">Ultimo aggiornamento: ottobre 2026 &nbsp;·&nbsp; Versione 2.1 &nbsp;·&nbsp; Valida per tutti i servizi Datace</p>
+    <p style="font-size:13px;color:rgba(255,255,255,.55);">Ultimo aggiornamento: ottobre 2026 &nbsp;·&nbsp; Versione 2.1 &nbsp;·&nbsp; Valida per tutti i servizi Datace</p>
   </div>
 </section>
 
@@ -195,7 +195,7 @@
     </div>
     <div>
       <p style="font-size:16px;font-weight:700;margin-bottom:8px;">I tuoi documenti non vengono salvati sui server Datace.</p>
-      <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.75;">I file caricati negli strumenti (F24 in Excel, Fattura elettronica in Excel, Archivio Fatture AdE, Scadenze F24, Bonifici massivi XML) vengono elaborati temporaneamente in memoria sui server del servizio per generare l'output. Datace non conserva i documenti caricati. Non utilizziamo database per conservare i documenti caricati.</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.62);line-height:1.75;">I file caricati negli strumenti (F24 in Excel, Fattura elettronica in Excel, Archivio Fatture AdE, Scadenze F24, Bonifici massivi XML) vengono elaborati temporaneamente in memoria sui server del servizio per generare l'output. Datace non conserva i documenti caricati. Non uso database per conservare i documenti caricati.</p>
     </div>
   </div>
 
@@ -212,7 +212,7 @@
       <h2>1. Titolare del trattamento</h2>
       <p>Il titolare del trattamento dei dati personali è:</p>
       <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px;margin-top:12px;">
-        <div class="info-row"><span class="info-label">Brand</span><span class="info-value" style="font-weight:600;color:white;">Datace</span></div>
+        <div class="info-row"><span class="info-label">Titolare</span><span class="info-value" style="font-weight:600;color:white;">Davide Sgroia</span></div>
         <div class="info-row"><span class="info-label">Sede</span><span class="info-value">Italia</span></div>
         <div class="info-row"><span class="info-label">Email</span><span class="info-value"><a href="mailto:datacetools@gmail.com" style="color:#F59E0B;">datacetools@gmail.com</a></span></div>
       </div>
@@ -228,7 +228,7 @@
       <p>Datace è progettato per <strong>ridurre al minimo la conservazione dei documenti caricati</strong>. In concreto:</p>
       <ul style="margin-top:12px;space-y:8px;list-style:none;padding:0;">
         <li style="display:flex;gap:10px;margin-bottom:10px;"><span style="color:#F59E0B;flex-shrink:0;">&#10003;</span><span>gli strumenti F24 in Excel, Fattura elettronica in Excel, Archivio Fatture AdE, Scadenze F24 e Bonifici massivi XML elaborano i file temporaneamente in memoria sui server del servizio per generare l'output: Datace non conserva i documenti caricati;</span></li>
-        <li style="display:flex;gap:10px;margin-bottom:10px;"><span style="color:#F59E0B;flex-shrink:0;">&#10003;</span><span>non utilizziamo database per conservare i documenti caricati;</span></li>
+        <li style="display:flex;gap:10px;margin-bottom:10px;"><span style="color:#F59E0B;flex-shrink:0;">&#10003;</span><span>non uso database per conservare i documenti caricati;</span></li>
         <li style="display:flex;gap:10px;"><span style="color:#F59E0B;flex-shrink:0;">&#10003;</span><span>i dati tecnici minimi necessari al funzionamento sono gestiti dall'infrastruttura di hosting.</span></li>
       </ul>
     </section>
@@ -242,12 +242,12 @@
 
     <section>
       <h2>5. Cookie e tracciamento</h2>
-      <p>I servizi Datace <strong>non utilizzano cookie di profilazione o tracciamento pubblicitario</strong>: nessun Google Analytics, Meta Pixel o strumenti simili. Per le statistiche di utilizzo usiamo <strong>Umami Cloud</strong>, una soluzione di analytics privacy-friendly e senza cookie, che raccoglie dati aggregati e non costruisce profili individuali. Possono essere presenti cookie tecnici strettamente necessari al funzionamento della sessione. Alcuni strumenti possono usare analytics aggregati e senza cookie per capire l'uso tecnico, gli errori e migliorare il servizio. Questi eventi non includono documenti caricati, nomi file, contenuti estratti, importi, codici fiscali, partite IVA o altri dati presenti nei file.</p>
+      <p>I servizi Datace <strong>non utilizzano cookie di profilazione o tracciamento pubblicitario</strong>: nessun Google Analytics, Meta Pixel o strumenti simili. Per le statistiche di utilizzo uso <strong>Umami Cloud</strong>, una soluzione di analytics privacy-friendly e senza cookie, che raccoglie dati aggregati e non costruisce profili individuali. Possono essere presenti cookie tecnici strettamente necessari al funzionamento della sessione. Alcuni strumenti possono usare analytics aggregati e senza cookie per capire l'uso tecnico, gli errori e migliorare il servizio. Questi eventi non includono documenti caricati, nomi file, contenuti estratti, importi, codici fiscali, partite IVA o altri dati presenti nei file.</p>
     </section>
 
     <section>
       <h2>6. Servizi terzi e infrastruttura</h2>
-      <p>Non vendiamo né cediamo i tuoi dati per finalità di marketing. Alcuni fornitori tecnici ricevono i dati necessari a erogare il servizio:</p>
+      <p>Non vendo né cedo i tuoi dati per finalità di marketing. Alcuni fornitori tecnici ricevono i dati necessari a erogare il servizio:</p>
       <ul style="list-style:none;padding:0;margin-top:12px;">
         <li style="display:flex;gap:10px;margin-bottom:10px;font-size:14px;color:rgba(255,255,255,.55);"><span style="color:#F59E0B;flex-shrink:0;">&#183;</span><span><strong style="color:rgba(255,255,255,.8);">Railway</strong> &mdash; infrastruttura e hosting che mantengono attivi i webtool, USA. Trasferimento extra-UE su base SCC.</span></li>
         <li style="display:flex;gap:10px;margin-bottom:10px;font-size:14px;color:rgba(255,255,255,.55);"><span style="color:#F59E0B;flex-shrink:0;">&#183;</span><span><strong style="color:rgba(255,255,255,.8);">GitHub Pages</strong> &mdash; hosting del sito statico datacetools.com, USA. Trasferimento su base SCC.</span></li>
@@ -300,10 +300,10 @@
           </svg>
           <div>
             <div style="color:white;font-weight:700;font-size:15px;letter-spacing:.15em;text-transform:uppercase;">Datace</div>
-            <div style="color:rgba(255,255,255,.3);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:2px;">Documenti in dati strutturati</div>
+            <div style="color:rgba(255,255,255,.55);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:2px;">Documenti in dati strutturati</div>
           </div>
         </div>
-        <p style="font-size:13px;color:rgba(255,255,255,.3);line-height:1.7;max-width:240px;">Strumenti professionali per automatizzare il lavoro documentale italiano.</p>
+        <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;max-width:240px;">Strumenti professionali per automatizzare il lavoro documentale italiano.</p>
       </div>
       <div>
         <div class="footer-col-title">Strumenti</div>
@@ -316,7 +316,7 @@
       <div>
         <div class="footer-col-title">Risorse</div>
         <a href="/guida/" class="footer-link">Guide</a>
-        <a href="/chi-siamo" class="footer-link">Chi siamo</a>
+        <a href="/chi-siamo" class="footer-link">Chi sono</a>
         <a href="/privacy" class="footer-link">Privacy Policy</a>
         <a href="/#contatti" class="footer-link">Contatti</a>
       </div>
